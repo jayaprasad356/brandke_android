@@ -7,47 +7,32 @@
         android:icon="@drawable/home"
         android:enabled="true"
         android:title="Home"
-        app:cnb_iconColor="@color/black"
-        app:cnb_backgroundColor="@color/Primary_yellow"
-        app:cnb_iconTintMode="src_in"
-        app:cnb_textColor="@color/white"/>
+        />
 
     <item
         android:id="@+id/Fintech"
         android:icon="@drawable/finetech"
         android:enabled="true"
         android:title="FinTech"
-        app:cnb_iconColor="@color/black"
-        app:cnb_backgroundColor="@color/Primary_yellow"
-        app:cnb_iconTintMode="src_in"
-        app:cnb_textColor="@color/white"/>
+       />
 
     <item
         android:id="@+id/Token"
         android:icon="@drawable/token"
         android:enabled="true"
         android:title="Token"
-        app:cnb_iconColor="@color/black"
-        app:cnb_backgroundColor="@color/Primary_yellow"
-        app:cnb_iconTintMode="src_in"
-        app:cnb_textColor="@color/white"/>
+       />
 
     <item
         android:id="@+id/Wallet"
         android:icon="@drawable/wallet"
         android:enabled="true"
         android:title="Wallet"
-        app:cnb_iconColor="@color/black"
-        app:cnb_backgroundColor="@color/Primary_yellow"
-        app:cnb_iconTintMode="src_in"
-        app:cnb_textColor="@color/white"/>
+        />
     <item
         android:id="@+id/Profile"
         android:icon="@drawable/profile"
         android:enabled="true"
         android:title="Profile"
-        app:cnb_iconColor="@color/black"
-        app:cnb_backgroundColor="@color/Primary_yellow"
-        app:cnb_iconTintMode="src_in"
-        app:cnb_textColor="@color/white"/>
+       />
 </menu>
