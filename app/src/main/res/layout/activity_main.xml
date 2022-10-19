@@ -12,4 +12,14 @@
         android:layout_height="match_parent">
     </FrameLayout>
 
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:id="@+id/chipNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:fadingEdge="horizontal"
+        app:cnb_menuResource="@menu/home_menu_options" />
+
 </RelativeLayout>

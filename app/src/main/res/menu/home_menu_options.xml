@@ -5,34 +5,44 @@
     <item
         android:id="@+id/Home"
         android:icon="@drawable/home"
-        android:enabled="true"
         android:title="Home"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/Primary_yellow"
         />
 
     <item
         android:id="@+id/Fintech"
         android:icon="@drawable/finetech"
-        android:enabled="true"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/Primary_yellow"
         android:title="FinTech"
        />
 
     <item
         android:id="@+id/Token"
         android:icon="@drawable/token"
-        android:enabled="true"
         android:title="Token"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/Primary_yellow"
        />
 
     <item
         android:id="@+id/Wallet"
         android:icon="@drawable/wallet"
-        android:enabled="true"
         android:title="Wallet"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/Primary_yellow"
         />
     <item
         android:id="@+id/Profile"
         android:icon="@drawable/profile"
-        android:enabled="true"
         android:title="Profile"
+        app:cnb_iconColor="@color/black"
+        app:cnb_textColor="@color/white"
+        app:cnb_backgroundColor="@color/Primary_yellow"
        />
 </menu>
