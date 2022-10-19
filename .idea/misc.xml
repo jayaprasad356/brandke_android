@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/otp_bg_default.xml" value="0.2545" />
+        <entry key="..\:/brandke_android/app/src/main/res/drawable/otp_bg.xml" value="0.2545" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_login.xml" value="0.2264151024877837" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_main.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_otp.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_register.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_sign_up.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/fragment_fin_tech_fragmnet.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/fragment_home_fargment.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/fragment_profile.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/fragment_token_fargment.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/fragment_wallet.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/menu/home_menu_options.xml" value="0.18881578947368421" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
