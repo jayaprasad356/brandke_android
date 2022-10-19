@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/otp_bg_default.xml" value="0.2545" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable/otp_bg.xml" value="0.2545" />
+        <entry key="..\:/brandke_android/app/src/main/res/drawable/profile_bg.xml" value="0.1355" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_login.xml" value="0.2264151024877837" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_main.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_otp.xml" value="0.18881578947368421" />

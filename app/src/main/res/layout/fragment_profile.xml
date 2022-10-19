@@ -90,6 +90,9 @@
             android:text="Orders"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            
             />
 
 
