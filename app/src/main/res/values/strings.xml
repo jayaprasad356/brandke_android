@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Brandke</string>
+
     <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="order_no">Order No:</string>
+
+    <string name="_18">18</string>
+
+    <string name="item">item</string>
 </resources>
