@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import Adaptors.OrderAdaptor;
 import Models.OrderModel;
 
 public class OrderActivity extends AppCompatActivity {
@@ -17,7 +16,7 @@ public class OrderActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Activity activity;
     private ArrayList<OrderModel> orderModelArrayList;
-    private OrderAdaptor orderAdaptor;
+    private Adaptors.OrderAdapter orderAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +33,7 @@ public class OrderActivity extends AppCompatActivity {
         orderModelArrayList = new ArrayList<>();
         orderModelArrayList.add(new OrderModel("1","1","Paddy","20/10/2022","8000","Processing"));
         orderModelArrayList.add(new OrderModel("2","1","Wheat","19/10/2022","5000","Processing"));
-        orderAdaptor = new OrderAdaptor(orderModelArrayList,activity);
-        recyclerView.setAdapter(orderAdaptor);
+        orderAdapter = new Adaptors.OrderAdapter(orderModelArrayList,activity);
+        recyclerView.setAdapter(orderAdapter);
     }
 }

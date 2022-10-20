@@ -4,26 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.greymatter.brandke.R;
 
 import java.util.ArrayList;
 
-import Models.CartModel;
 import Models.WalletModel;
 
-public class WalletAdaptor extends RecyclerView.Adapter<WalletAdaptor.viewholder> {
+public class WalletAdapter extends RecyclerView.Adapter<Adaptors.WalletAdapter.viewholder> {
 
     private ArrayList<WalletModel> walletModelArrayList;
     private Context context;
 
-    public WalletAdaptor(ArrayList<WalletModel> walletModelArrayList, Context context) {
+    public WalletAdapter(ArrayList<WalletModel> walletModelArrayList, Context context) {
         this.walletModelArrayList = walletModelArrayList;
         this.context = context;
     }

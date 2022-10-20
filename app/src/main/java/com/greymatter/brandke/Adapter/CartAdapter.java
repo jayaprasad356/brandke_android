@@ -17,12 +17,12 @@ import java.util.ArrayList;
 
 import Models.CartModel;
 
-public class CartAdaptor extends RecyclerView.Adapter<CartAdaptor.viewholder> {
+public class CartAdapter extends RecyclerView.Adapter<Adaptors.CartAdapter.viewholder> {
 
     private ArrayList<CartModel> cartModelArrayList;
     private Context context;
 
-    public CartAdaptor(ArrayList<CartModel> cartModelArrayList,Context context) {
+    public CartAdapter(ArrayList<CartModel> cartModelArrayList, Context context) {
         this.cartModelArrayList = cartModelArrayList;
         this.context = context;
     }

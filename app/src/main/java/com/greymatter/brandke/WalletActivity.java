@@ -9,11 +9,6 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import Adaptors.NotificationAdaptor;
-import Adaptors.OrderAdaptor;
-import Adaptors.WalletAdaptor;
-import Models.NotificationModel;
-import Models.OrderModel;
 import Models.WalletModel;
 
 public class WalletActivity extends AppCompatActivity {
@@ -22,7 +17,7 @@ public class WalletActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Activity activity;
     private ArrayList<WalletModel> walletModelArrayList;
-    private WalletAdaptor walletAdaptor;
+    private Adaptors.WalletAdapter walletAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +33,7 @@ public class WalletActivity extends AppCompatActivity {
         walletModelArrayList = new ArrayList<>();
         walletModelArrayList.add(new WalletModel("-₹1500","22-10-2022","Debit"));
         walletModelArrayList.add(new WalletModel("-₹1200","22-10-2022","Credit"));
-        walletAdaptor = new WalletAdaptor(walletModelArrayList,activity);
-        recyclerView.setAdapter(walletAdaptor);
+        walletAdapter = new Adaptors.WalletAdapter(walletModelArrayList,activity);
+        recyclerView.setAdapter(walletAdapter);
     }
 }

@@ -9,10 +9,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import Adaptors.NotificationAdaptor;
-import Adaptors.OrderAdaptor;
 import Models.NotificationModel;
-import Models.OrderModel;
 
 public class NotificationActivity extends AppCompatActivity {
 
@@ -20,7 +17,7 @@ public class NotificationActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Activity activity;
     private ArrayList<NotificationModel> notificationModelArrayList;
-    private NotificationAdaptor notificationAdaptor;
+    private Adaptors.NotificationAdapter notificationAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +33,7 @@ public class NotificationActivity extends AppCompatActivity {
         notificationModelArrayList = new ArrayList<>();
         notificationModelArrayList.add(new NotificationModel("Welcome","Thanks for creating the account"));
         notificationModelArrayList.add(new NotificationModel("Offers","Grab the latest offers"));
-        notificationAdaptor = new NotificationAdaptor(notificationModelArrayList,activity);
-        recyclerView.setAdapter(notificationAdaptor);
+        notificationAdapter = new Adaptors.NotificationAdapter(notificationModelArrayList,activity);
+        recyclerView.setAdapter(notificationAdapter);
     }
 }

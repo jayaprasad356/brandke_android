@@ -14,14 +14,13 @@ import com.greymatter.brandke.R;
 import java.util.ArrayList;
 
 import Models.NotificationModel;
-import Models.OrderModel;
 
-public class NotificationAdaptor extends RecyclerView.Adapter<NotificationAdaptor.OrderViewHolder> {
+public class NotificationAdapter extends RecyclerView.Adapter<Adaptors.NotificationAdapter.OrderViewHolder> {
 
     private ArrayList<NotificationModel> orderModelArrayList;
     private Context context;
 
-    public NotificationAdaptor(ArrayList<NotificationModel> orderModelArrayList, Context context) {
+    public NotificationAdapter(ArrayList<NotificationModel> orderModelArrayList, Context context) {
         this.context = context;
         this.orderModelArrayList  = orderModelArrayList;
     }

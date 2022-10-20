@@ -15,12 +15,12 @@ import java.util.ArrayList;
 
 import Models.OrderModel;
 
-public class OrderAdaptor extends RecyclerView.Adapter<OrderAdaptor.OrderViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<Adaptors.OrderAdapter.OrderViewHolder> {
 
     private ArrayList<OrderModel> orderModelArrayList;
     private Context context;
 
-    public OrderAdaptor(ArrayList<OrderModel> orderModelArrayList,Context context) {
+    public OrderAdapter(ArrayList<OrderModel> orderModelArrayList, Context context) {
         this.context = context;
         this.orderModelArrayList  = orderModelArrayList;
     }
