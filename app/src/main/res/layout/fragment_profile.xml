@@ -88,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Orders"
+            android:id="@+id/order_txt"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
@@ -96,14 +97,13 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
             />
-
 
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/cart_txt"
             android:text="Cart"
             android:drawableStart="@drawable/ic_shopping_cart"
             android:textColor="@color/grey"
@@ -113,13 +113,13 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
-
             />
+
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/notification_txt"
             android:text="Notification"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
@@ -136,6 +136,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/password_txt"
             android:text="Change Password"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
@@ -152,6 +153,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/wallet_txt"
             android:text="Wallet"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
@@ -161,13 +163,13 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
-
             />
+
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/contact_txt"
             android:text="Contact us"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
@@ -177,9 +179,8 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
-
             />
+
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
@@ -193,10 +194,8 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
-
-
             />
+
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_width="match_parent"
@@ -210,13 +209,7 @@
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
             android:drawablePadding="@dimen/_20sdp"
             android:gravity="center_vertical"
-
             />
 
-
-
     </LinearLayout>
-
-
-
 </RelativeLayout>
