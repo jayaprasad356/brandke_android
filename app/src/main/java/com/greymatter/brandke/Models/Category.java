@@ -11,19 +11,22 @@ public class Category {
     private String ProductOfferPrice;
     private String ProductOriginalPrice;
     private String ProductQuantity;
-    private CardView CvBtnDecrement;
-    private CardView CvBtnIncrement;
-    private String TvTotalCount;
-    private TextView TvDelete;
-    private TextView TvSaveForLater;
+    private int LikeBtn;
+    private String ProductOffPercent;
 
-    public Category(int productImage, String productName, String productOfferPrice, String productOriginalPrice, String productQuantity, String tvTotalCount) {
+    public Category(int productImage, String productName, String productOfferPrice, String productOriginalPrice, String productQuantity, String productOffPercent,int likeBtn) {
         ProductImage = productImage;
         ProductName = productName;
         ProductOfferPrice = productOfferPrice;
         ProductOriginalPrice = productOriginalPrice;
         ProductQuantity = productQuantity;
-        TvTotalCount = tvTotalCount;
+        ProductOffPercent = productOffPercent;
+        LikeBtn = likeBtn;
+    }
+
+    public Category(int productImage, String productName) {
+        ProductImage = productImage;
+        ProductName = productName;
     }
 
     public int getProductImage() {
@@ -66,43 +69,19 @@ public class Category {
         ProductQuantity = productQuantity;
     }
 
-    public CardView getCvBtnDecrement() {
-        return CvBtnDecrement;
+    public int getLikeBtn() {
+        return LikeBtn;
     }
 
-    public void setCvBtnDecrement(CardView cvBtnDecrement) {
-        CvBtnDecrement = cvBtnDecrement;
+    public void setLikeBtn(int likeBtn) {
+        LikeBtn = likeBtn;
     }
 
-    public CardView getCvBtnIncrement() {
-        return CvBtnIncrement;
+    public String getProductOffPercent() {
+        return ProductOffPercent;
     }
 
-    public void setCvBtnIncrement(CardView cvBtnIncrement) {
-        CvBtnIncrement = cvBtnIncrement;
-    }
-
-    public String getTvTotalCount() {
-        return TvTotalCount;
-    }
-
-    public void setTvTotalCount(String tvTotalCount) {
-        TvTotalCount = tvTotalCount;
-    }
-
-    public TextView getTvDelete() {
-        return TvDelete;
-    }
-
-    public void setTvDelete(TextView tvDelete) {
-        TvDelete = tvDelete;
-    }
-
-    public TextView getTvSaveForLater() {
-        return TvSaveForLater;
-    }
-
-    public void setTvSaveForLater(TextView tvSaveForLater) {
-        TvSaveForLater = tvSaveForLater;
+    public void setProductOffPercent(String productOffPercent) {
+        ProductOffPercent = productOffPercent;
     }
 }

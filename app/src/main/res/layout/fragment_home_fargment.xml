@@ -125,10 +125,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
                     android:text="Category"
-                    android:layout_margin="@dimen/_8sdp"
+                    android:fontFamily="@font/poppins_medium"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"/>
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:id="@+id/view_all"
@@ -151,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_30sdp"
                 />
 
         </LinearLayout>

@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_9sdp"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_gravity="center"
     tools:context=".LoginActivity">
 
 
@@ -19,6 +22,7 @@
 
 
             <ImageView
+                android:id="@+id/ProductImage"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
                 android:background="@drawable/product_img" />
@@ -31,9 +35,10 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/ProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Protuct Name"
+            android:text="Product Name"
             android:gravity="center"
             android:textSize="@dimen/_14sdp"
             android:textColor="@color/white"
