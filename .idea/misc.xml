@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/visha/AndroidStudioProjects/brandke_android/app/src/main/res/drawable/ic_shopping_cart.xml" value="0.15989583333333332" />
+        <entry key="..\:/Users/visha/AndroidStudioProjects/brandke_android/app/src/main/res/layout/activity_payment.xml" value="0.1388888888888889" />
+        <entry key="..\:/Users/visha/AndroidStudioProjects/brandke_android/app/src/main/res/layout/fragment_home_fargment.xml" value="0.14375" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/otp_bg_default.xml" value="0.2545" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable/address_spot.xml" value="0.1255" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable/continue_btn.xml" value="0.1255" />

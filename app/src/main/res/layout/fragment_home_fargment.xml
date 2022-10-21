@@ -32,7 +32,6 @@
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:layout_alignParentRight="true"
-            android:background="@drawable/ic_shopping_cart_yellow"
             android:backgroundTint="@color/black"
 
             />
@@ -78,7 +77,6 @@
                     android:layout_gravity="center"
                     android:layout_width="@dimen/_24sdp"
                     android:layout_height="@dimen/_24sdp"
-                    android:background="@drawable/ic_shopping_cart_yellow"
                     />
 
 
@@ -152,13 +150,6 @@
                 android:layout_marginLeft="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 />
-
-
-
-
-
-
-
 
         </LinearLayout>
     </ScrollView>
