@@ -92,7 +92,11 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_vector"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
             />
 
 
@@ -101,11 +105,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cart"
+            android:drawableStart="@drawable/ic_shopping_cart"
             android:textColor="@color/grey"
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -116,7 +125,12 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_notification"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -127,7 +141,12 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_password"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -138,7 +157,12 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_wallet"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -149,7 +173,12 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_contact"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -160,7 +189,13 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_rate"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
+
+
             />
         <TextView
             android:layout_marginTop="@dimen/_10sdp"
@@ -171,7 +206,11 @@
             android:background="@drawable/profile_bg"
             android:padding="@dimen/_10sdp"
             android:layout_marginHorizontal="@dimen/_10sdp"
+            android:drawableStart="@drawable/ic_logout"
             android:drawableEnd="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:drawablePadding="@dimen/_20sdp"
+            android:gravity="center_vertical"
+
             />
 
 
