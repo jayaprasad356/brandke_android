@@ -2,11 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_9sdp"
     android:layout_marginVertical="@dimen/_10sdp"
-    android:layout_gravity="center"
     tools:context=".LoginActivity">
 
 
@@ -22,9 +21,10 @@
 
 
             <ImageView
-                android:id="@+id/ProductImage"
+                android:id="@+id/ImgProduct"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
+                android:scaleType="fitXY"
                 android:background="@drawable/product_img" />
 
 
@@ -35,7 +35,7 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/ProductName"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Product Name"
@@ -47,11 +47,6 @@
             android:layout_gravity="bottom|center"
 
             />
-
-
-
-
-
 
 
     </com.google.android.material.card.MaterialCardView>

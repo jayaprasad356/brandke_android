@@ -12,6 +12,7 @@
         android:layout_height="match_parent">
     </FrameLayout>
 
+
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/chipNavigationBar"
         android:layout_width="match_parent"

@@ -2,25 +2,23 @@ package com.greymatter.brandke;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.greymatter.brandke.Adapter.CategoryAdapter;
-import com.greymatter.brandke.Adapter.RecyclerOnClickListener;
-import com.greymatter.brandke.Models.Category;
+import com.greymatter.brandke.Adapter.CategoryListAdapter;
+import com.greymatter.brandke.Adapter.ProductAdapter;
+import com.greymatter.brandke.Models.Categorylist;
+import com.greymatter.brandke.Models.Product;
 
 import java.util.ArrayList;
 
-public class CategoryActivity extends AppCompatActivity implements RecyclerOnClickListener{
+public class CategoryActivity extends AppCompatActivity{
 
-    RecyclerView categoryRecycleView;
-    private CategoryAdapter categoryAdapter;
-    protected ArrayList<Category> categoryArrayList;
+    RecyclerView recycleView;
     Activity activity;
+    ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,33 +27,35 @@ public class CategoryActivity extends AppCompatActivity implements RecyclerOnCli
 
         activity = CategoryActivity.this;
 
-        categoryRecycleView = findViewById(R.id.categoryRecycleView);
-        categoryRecycleView.setLayoutManager(new GridLayoutManager(this,2));
-        categoryRecycleView.setHasFixedSize(true);
-        buildRecyclerView();
-    }
+        recycleView = findViewById(R.id.categoryRecycleView);
 
-    private void buildRecyclerView() {
-        categoryArrayList = new ArrayList<>();
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryArrayList.add(new Category(R.drawable.product_img,"Wheat","₹300","₹500","2kg","40%off",R.raw.love));
-        categoryAdapter = new CategoryAdapter(categoryArrayList,this,this);
-        categoryRecycleView.setAdapter(categoryAdapter);
-    }
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(activity,2);
+        recycleView.setLayoutManager(gridLayoutManager);
 
-    @Override
-    public void onRecyclerItemClick(int position) {
+
+        productlist();
 
     }
 
-    @Override
-    public void onRecyclerItemClick(int position, int Size) {
+    private void productlist() {
 
+        ArrayList<Product> products = new ArrayList<>();
+
+        Product categorylist1 = new Product("","Fruits","");
+        Product categorylist2 = new Product("","Fruits","");
+        Product categorylist3 = new Product("","Fruits","");
+        Product categorylist4 = new Product("","Fruits","");
+
+        products.add(categorylist1);
+        products.add(categorylist2);
+        products.add(categorylist3);
+        products.add(categorylist4);
+
+
+
+        productAdapter = new ProductAdapter(activity,products );
+        recycleView.setAdapter(productAdapter);
     }
+
+
 }
