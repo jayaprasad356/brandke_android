@@ -45,8 +45,6 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Glide.with(activity).load(product.getImage()).placeholder(R.drawable.product_img).into(holder.ImgProduct);
         holder.tvName.setText(product.getName());
 
-
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +69,6 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
             ImgProduct = itemView.findViewById(R.id.ImgProduct);
             tvName = itemView.findViewById(R.id.tvName);
-
         }
     }
 }

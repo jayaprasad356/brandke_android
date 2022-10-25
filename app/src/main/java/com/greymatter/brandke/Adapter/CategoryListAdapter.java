@@ -72,7 +72,6 @@ public class CategoryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             super(itemView);
             ImgProduct = itemView.findViewById(R.id.ImgProduct);
             tvName = itemView.findViewById(R.id.tvName);
-
         }
     }
 }

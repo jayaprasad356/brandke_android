@@ -29,6 +29,7 @@
             android:src="@drawable/token_logo" />
 
         <ImageView
+            android:id="@+id/imgcart"
             android:layout_width="@dimen/_24sdp"
             android:layout_height="@dimen/_24sdp"
             android:layout_alignParentRight="true"
@@ -62,6 +63,7 @@
 
 
                     <EditText
+                        android:id="@+id/etSearch"
                         android:layout_weight="3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,8 +147,7 @@
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:text="view all"
                     android:textColor="@color/Primary_yellow"
-                    android:textSize="@dimen/_12sdp"
-                    />
+                    android:textSize="@dimen/_12sdp" />
 
             </RelativeLayout>
             <androidx.recyclerview.widget.RecyclerView

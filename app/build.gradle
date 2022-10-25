@@ -44,7 +44,7 @@ dependencies {
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.31'
 
     implementation 'com.airbnb.android:lottie:3.4.0'
-    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
 
     // Api  Implementation
     implementation 'com.github.bumptech.glide:glide:4.11.0'
