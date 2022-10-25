@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.transition.Slide;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -26,6 +25,7 @@ import com.google.gson.Gson;
 import com.greymatter.brandke.Adapter.CategoryListAdapter;
 import com.greymatter.brandke.Adapter.SliderAdapterExample;
 import com.greymatter.brandke.Models.Categorylist;
+import com.greymatter.brandke.Models.Slide;
 import com.greymatter.brandke.helper.ApiConfig;
 import com.greymatter.brandke.helper.Constant;
 import com.greymatter.brandke.helper.Session;
@@ -142,7 +142,7 @@ public class HomeFargment extends Fragment  {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
 
                             if (jsonObject1 != null) {
-                                Slide group = g.fromJson(jsonObject1.toString(), Slide.class);
+                                com.greymatter.brandke.Models.Slide group = g.fromJson(jsonObject1.toString(), Slide.class);
                                 slides.add(group);
                             } else {
                                 break;
