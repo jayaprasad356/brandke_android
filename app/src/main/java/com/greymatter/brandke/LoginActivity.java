@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         params.put(Constant.MOBILE,etMobile.getText().toString().trim());
         params.put(Constant.PASSWORD,etPassword.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
-            Log.d("LOGIN_RES",response);
+            Log.d("LOGIN_RES",etMobile.getText().toString().trim() + etPassword.getText().toString().trim());
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);

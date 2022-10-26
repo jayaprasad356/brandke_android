@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 true);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.FrameLyt,
-                        new HomeFargment()).commit();
+                        new HomeFragment()).commit();
 
         bottomMenu();
 
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         Fragment fragment = null;
                         switch (i){
                             case R.id.Home:
-                                fragment = new HomeFargment();
+                                fragment = new HomeFragment();
                                 break;
                             case R.id.Fintech:
                                 fragment = new FinTechFragmnet();
