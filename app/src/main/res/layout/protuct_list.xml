@@ -9,7 +9,11 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:strokeColor="@color/Primary_yellow"
+        app:strokeWidth="@dimen/_1sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        >
 
 
         <LinearLayout
@@ -49,6 +53,7 @@
                 android:padding="@dimen/_2sdp"
                 />
             <TextView
+                android:id="@+id/tvPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="399"
@@ -59,14 +64,15 @@
                 android:textStyle="bold"
                 />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="499"
+                android:text="₹ 499"
                 android:gravity="left"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_14sdp"
                 android:padding="@dimen/_2sdp"
                 android:textStyle="bold"
+                android:foreground="@drawable/strikethrough_foreground"
                 />
 
             <com.google.android.material.divider.MaterialDivider
@@ -87,14 +93,15 @@
                     android:layout_centerVertical="true"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddcart"
                     android:layout_width="@dimen/_50sdp"
                     android:layout_height="wrap_content"
-                    android:text="ADD"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/black"
-                    app:strokeWidth="@dimen/_1sdp"
-                    app:strokeColor="@color/Primary_yellow"
                     android:layout_alignParentRight="true"
+                    android:backgroundTint="@color/white"
+                    android:text="ADD"
+                    android:textColor="@color/black"
+                    app:strokeColor="@color/Primary_yellow"
+                    app:strokeWidth="@dimen/_1sdp"
 
                     />
 

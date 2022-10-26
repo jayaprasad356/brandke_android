@@ -19,7 +19,13 @@ public class OtpActivity extends AppCompatActivity {
         btnVerifyOtp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OtpActivity.this,WalletActivity .class));
+
+                Intent i = new Intent(OtpActivity.this, LoginActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+                finish();
+
             }
         });
     }

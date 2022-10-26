@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.greymatter.brandke.CategoryActivity;
 import com.greymatter.brandke.Models.Categorylist;
 import com.greymatter.brandke.R;
+import com.greymatter.brandke.helper.Constant;
 
 
 import java.util.ArrayList;
@@ -52,6 +53,7 @@ public class CategoryListAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, CategoryActivity.class);
+                intent.putExtra(Constant.CATEGORY_ID,category.getId());
                 activity.startActivity(intent);
 
             }

@@ -37,13 +37,14 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/CartRecyclerView"
+        android:id="@+id/cartRecycleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/one"
         android:layout_marginTop="@dimen/_10sdp" />
 
     <LinearLayout
+        android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -70,6 +71,7 @@
                     android:layout_height="@dimen/_20sdp"
                     android:src="@drawable/rupee"/>
                 <TextView
+                    android:id="@+id/tvTotalPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3000.0"
@@ -95,6 +97,7 @@
                     android:layout_marginStart="10sp"
                     android:layout_gravity="center"/>
                 <TextView
+                    android:id="@+id/tvIdemcount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="X2"
@@ -109,6 +112,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tvcontinuebtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/continue_btn"
@@ -120,6 +124,15 @@
             android:layout_weight="1.2"/>
 
     </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imgEmpty"
+        android:visibility="gone"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/cartempty"/>
 
 
 </RelativeLayout>

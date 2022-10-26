@@ -24,8 +24,8 @@
                 android:id="@+id/ImgProduct"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
-                android:scaleType="fitXY"
-                android:background="@drawable/product_img" />
+                android:background="@drawable/product_img"
+                android:scaleType="fitXY" />
 
 
 
@@ -40,11 +40,12 @@
             android:layout_height="wrap_content"
             android:text="Product Name"
             android:gravity="center"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="@dimen/_12sdp"
             android:textColor="@color/white"
             android:padding="@dimen/_2sdp"
             android:textStyle="bold"
             android:layout_gravity="bottom|center"
+
 
             />
 

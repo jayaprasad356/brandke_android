@@ -249,6 +249,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tvcontinuebtn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/continue_btn"

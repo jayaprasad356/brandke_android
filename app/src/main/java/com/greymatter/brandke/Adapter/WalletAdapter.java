@@ -1,58 +1,74 @@
-package Adaptors;
+package com.greymatter.brandke.Adapter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.greymatter.brandke.Models.Wallet;
 import com.greymatter.brandke.R;
+
 
 import java.util.ArrayList;
 
-import Models.WalletModel;
+public class WalletAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-public class WalletAdapter extends RecyclerView.Adapter<Adaptors.WalletAdapter.viewholder> {
+    final Activity activity;
+    ArrayList<Wallet> wallets;
 
-    private ArrayList<WalletModel> walletModelArrayList;
-    private Context context;
-
-    public WalletAdapter(ArrayList<WalletModel> walletModelArrayList, Context context) {
-        this.walletModelArrayList = walletModelArrayList;
-        this.context = context;
+    public WalletAdapter(Activity activity, ArrayList<Wallet> wallets) {
+        this.activity = activity;
+        this.wallets = wallets;
     }
-
     @NonNull
     @Override
-    public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.wallet_model_layout,parent,false);
-        return new viewholder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(activity).inflate(R.layout.wallet_model_layout, parent, false);
+        return new ExploreItemHolder(view);
+    }
+
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holderParent, int position) {
+        final ExploreItemHolder holder = (ExploreItemHolder) holderParent;
+        final Wallet wallet = wallets.get(position);
+        if (wallet.getType().equals("credit")){
+            holder.tvAmount.setTextColor(ContextCompat.getColor(activity, R.color.green));
+            holder.tvAmount.setText("+"+wallet.getAmount());
+            holder.tvDate.setText(wallet.getDate());
+            holder.tvBalance.setText(wallet.getType());
+
+        }
+        else {
+            holder.tvAmount.setTextColor(ContextCompat.getColor(activity, R.color.red));
+            holder.tvAmount.setText("-"+wallet.getAmount());
+            holder.tvDate.setText(wallet.getDate());
+            holder.tvBalance.setText(wallet.getType());
+
+        }
+
+
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        WalletModel model = walletModelArrayList.get(position);
-        holder.Amount.setText(model.getAmount());
-        holder.Date.setText(model.getDate());
-        holder.Status.setText(model.getStatus());
+    public int getItemCount()
+    {
+        return wallets.size();
     }
 
-    @Override
-    public int getItemCount() {
-        return walletModelArrayList.size();
-    }
-    protected class viewholder extends RecyclerView.ViewHolder {
-        private TextView Amount;
-        private TextView Date;
-        private TextView Status;
-        public viewholder(@NonNull View itemView) {
+    static class ExploreItemHolder extends RecyclerView.ViewHolder {
+        final TextView tvAmount,tvDate,tvBalance;
+        public ExploreItemHolder(@NonNull View itemView) {
             super(itemView);
-            Amount = itemView.findViewById(R.id.tvAmount);
-            Date = itemView.findViewById(R.id.tvDate);
-            Status = itemView.findViewById(R.id.tvStatus);
+            tvAmount = itemView.findViewById(R.id.tvAmount);
+            tvDate = itemView.findViewById(R.id.tvDate);
+            tvBalance = itemView.findViewById(R.id.tvStatus);
         }
     }
 }

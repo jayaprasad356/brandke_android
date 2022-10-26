@@ -16,15 +16,13 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import Models.WalletModel;
 
 public class WalletActivity extends AppCompatActivity {
 
 
     private RecyclerView recyclerView;
     private Activity activity;
-    private ArrayList<WalletModel> walletModelArrayList;
-    private Adaptors.WalletAdapter walletAdapter;
+
     private CardView cvRecharge,CvCancel,CvRechargeInDialog;
     private EditText etAmount,etMessage;
     @Override
@@ -35,7 +33,7 @@ public class WalletActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.WalletRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
-        BuildRecyclerView();
+        //BuildRecyclerView();
 
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog);
@@ -72,11 +70,11 @@ public class WalletActivity extends AppCompatActivity {
         });
     }
 
-    private void BuildRecyclerView() {
-        walletModelArrayList = new ArrayList<>();
-        walletModelArrayList.add(new WalletModel("-₹1500","22-10-2022","Debit"));
-        walletModelArrayList.add(new WalletModel("-₹1200","22-10-2022","Credit"));
-        walletAdapter = new Adaptors.WalletAdapter(walletModelArrayList,activity);
-        recyclerView.setAdapter(walletAdapter);
-    }
+//    private void BuildRecyclerView() {
+//        walletModelArrayList = new ArrayList<>();
+//        walletModelArrayList.add(new WalletModel("-₹1500","22-10-2022","Debit"));
+//        walletModelArrayList.add(new WalletModel("-₹1200","22-10-2022","Credit"));
+//        walletAdapter = new Adaptors.WalletAdapter(walletModelArrayList,activity);
+//        recyclerView.setAdapter(walletAdapter);
+//    }
 }

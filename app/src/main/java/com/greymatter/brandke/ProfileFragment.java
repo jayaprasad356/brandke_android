@@ -1,5 +1,6 @@
 package com.greymatter.brandke;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.greymatter.brandke.helper.Session;
 
 public class ProfileFragment extends Fragment {
 
@@ -21,8 +23,9 @@ public class ProfileFragment extends Fragment {
     TextView notification_txt;
     TextView password_txt;
     TextView wallet_txt;
-    TextView contact_txt;
-
+    TextView contact_txt,tvlogout;
+    Activity activity;
+    Session session;
 
     public ProfileFragment() {
 
@@ -34,12 +37,16 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootview = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        activity = getActivity();
+        session = new Session(activity);
+
         order_txt = rootview.findViewById(R.id.order_txt);
         cart_txt = rootview.findViewById(R.id.cart_txt);
         notification_txt = rootview.findViewById(R.id.notification_txt);
         password_txt = rootview.findViewById(R.id.password_txt);
         wallet_txt = rootview.findViewById(R.id.wallet_txt);
         contact_txt = rootview.findViewById(R.id.contact_txt);
+        tvlogout = rootview.findViewById(R.id.tvlogout);
 
         order_txt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +94,13 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),contactusActivity.class);
                 startActivity(intent);
+            }
+        });
+        tvlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                session.logoutUser(activity);
+
             }
         });
 

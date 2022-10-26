@@ -85,10 +85,12 @@ public class HomeFargment extends Fragment  {
         view_txt = root.findViewById(R.id.view_all);
         imgCart = root.findViewById(R.id.imgcart);
         etSearch = root.findViewById(R.id.etSearch);
-        categoryRecycleView = root.findViewById(R.id.categoryRecycleView);
+        etSearch = root.findViewById(R.id.etSearch);
+      //  tvTitle = root.findViewById(R.id.tvTitle);
+
         sliderView = root.findViewById(R.id.image_slider);
-        tvTitle.setText("Hi, "+session.getData(Constant.NAME));
-        categoryRecycleView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false));
+      //  tvTitle.setText("Hi, "+session.getData(Constant.NAME));
+
         catgorylist();
         view_txt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +108,7 @@ public class HomeFargment extends Fragment  {
             }
         });
 
-        slideslist();
+       slideslist();
         sliderView.setSliderAdapter(adapter);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
         sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
@@ -162,22 +164,45 @@ public class HomeFargment extends Fragment  {
 
     private void catgorylist() {
 
-        ArrayList<Categorylist> categorylists = new ArrayList<>();
+        Map<String, String> params = new HashMap<>();
+        ApiConfig.RequestToVolley((result, response) -> {
 
-        Categorylist categorylist1 = new Categorylist("","Fruits","");
-        Categorylist categorylist2 = new Categorylist("","Fruits","");
-        Categorylist categorylist3 = new Categorylist("","Fruits","");
-        Categorylist categorylist4 = new Categorylist("","Fruits","");
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+                        JSONObject object = new JSONObject(response);
+                        JSONArray jsonArray = object.getJSONArray(Constant.DATA);
+                        Gson g = new Gson();
+                        ArrayList<Categorylist> categories = new ArrayList<>();
 
-        categorylists.add(categorylist1);
-        categorylists.add(categorylist2);
-        categorylists.add(categorylist3);
-        categorylists.add(categorylist4);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
+                            if (jsonObject1 != null) {
+                                Categorylist group = g.fromJson(jsonObject1.toString(), Categorylist.class);
+                                categories.add(group);
+                            } else {
+                                break;
+                            }
+                        }
+                        categoryListAdapter = new CategoryListAdapter(getActivity(), categories);
+                        recyclerView.setAdapter(categoryListAdapter);
 
 
 
-        categoryListAdapter = new CategoryListAdapter(getActivity(), categorylists);
-        recyclerView.setAdapter(categoryListAdapter);
+                    } else {
+                        Toast.makeText(activity, "" + String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, activity, Constant.CATEGORY_LIST_URL, params, true);
+
+
+
 
     }
 

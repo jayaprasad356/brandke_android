@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:layout_margin="@dimen/_15sdp">
         <TextView
-            android:id="@+id/NotificationName"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Notification one"
@@ -24,7 +24,7 @@
             android:textSize="@dimen/_14sdp"
             android:textColor="@color/black"/>
         <TextView
-            android:id="@+id/NotificationDescription"
+            android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="hello world is one of the hardest \nthing in programming."

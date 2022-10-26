@@ -1,15 +1,16 @@
 package com.greymatter.brandke.Models;
 
 public class Product {
-    String id,name,image;
-    public Product(){
+    String id, product_name,category_name,image,description,brand,price;
 
-    }
-
-    public Product(String id, String name, String image) {
+    public Product(String id, String product_name, String category_name, String image, String description, String brand, String price) {
         this.id = id;
-        this.name = name;
+        this.product_name = product_name;
+        this.category_name = category_name;
         this.image = image;
+        this.description = description;
+        this.brand = brand;
+        this.price = price;
     }
 
     public String getId() {
@@ -20,12 +21,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
     }
 
     public String getImage() {
@@ -34,5 +43,29 @@ public class Product {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 }
