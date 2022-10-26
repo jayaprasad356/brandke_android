@@ -191,7 +191,7 @@ public class RegisterActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
                         Toast.makeText(activity, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(activity, MainActivity.class));
+                        startActivity(new Intent(activity, LoginActivity.class));
                         finish();
                     }
                     else {
