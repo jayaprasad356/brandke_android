@@ -44,7 +44,9 @@ public class SignUpActivity extends AppCompatActivity {
                 }
 
                 else {
-
+                    Intent i = new Intent(activity,OtpActivity.class);
+                    i.putExtra(Constant.MOBILE,etPhoneNumber.getText().toString());
+                    startActivity(i);
                     registerUser();
                 }
 
@@ -53,27 +55,6 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void registerUser()  {
-        Map<String, String> params = new HashMap<>();
-        params.put(Constant.MOBILE,etPhoneNumber.getText().toString().trim());
-
-        ApiConfig.RequestToVolley((result, response) -> {
-            if (result) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
-                        Toast.makeText(activity, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(activity, OtpActivity.class));
-                        finish();
-                    }
-                    else {
-                        Toast.makeText(activity, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e){
-                    e.printStackTrace();
-                }
-            }
-        }, activity, Constant.SIGNUP_URL, params,true);
-
 
     }
 }

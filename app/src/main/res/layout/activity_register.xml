@@ -57,104 +57,204 @@
                 android:textSize="14sp" />
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/fifth"
-                style="@style/LoginTextInputLayoutStyle"
+            <LinearLayout
+                android:id="@+id/LytofFeilds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fourth"
-                android:layout_marginTop="20dp"
-                android:textColorHint="@color/black"
-                app:hintTextColor="@color/Primary_yellow"
-                android:layout_marginHorizontal="35dp"
-                android:hint="Name">
+                android:orientation="vertical">
 
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPhoneNumber"
-                    android:textColor="@color/black"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fifth"
+                    style="@style/LoginTextInputLayoutStyle"
                     android:layout_width="match_parent"
-                    android:backgroundTint="@color/Primary_yellow"
-                    android:textSize="14sp"
-                    android:layout_height="60dp" >
-                </com.google.android.material.textfield.TextInputEditText>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fourth"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="Name"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
 
-            </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:backgroundTint="@color/Primary_yellow"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"></com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/Sixth"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fifth"
-                app:hintTextColor="@color/Primary_yellow"
-                android:layout_marginTop="10dp"
-                android:textColorHint="@color/black"
-                android:layout_marginHorizontal="35dp"
-                android:hint="Email">
-
-                <!--this is the actual edit text which takes the input-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPassword"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/Sixth"
+                    style="@style/LoginTextInputLayoutStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fifth"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Email"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/seven"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Sixth"
-                android:layout_marginHorizontal="35dp"
-                android:layout_marginTop="10dp"
-                android:hint="Password"
-                android:textColorHint="@color/black"
-                app:hintTextColor="@color/Primary_yellow">
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <!--this is the actual edit text which takes the input-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etpassword"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/feildOccupation"
+                    style="@style/LoginTextInputLayoutStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Sixth"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Occupation"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOccupation"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/eight"
-                style="@style/LoginTextInputLayoutStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seven"
-                app:hintTextColor="@color/Primary_yellow"
-                android:layout_marginTop="10dp"
-                android:textColorHint="@color/black"
-                android:layout_marginHorizontal="35dp"
-                android:hint="Confirm Password">
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <!--this is the actual edit text which takes the input-->
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etConfirmPassword"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
+                <Spinner
+                    android:id="@+id/spinGender"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:entries="@array/Gender"
+                    android:padding="@dimen/_12sdp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feildOccupation"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Address"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feildOccupation"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Pincode"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPinCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:id="@+id/spinVillageName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_12sdp" />
+
+                <Spinner
+                    android:id="@+id/spinDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/_12sdp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/seven"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Password"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etpassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/eight"
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seven"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Confirm Password"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
 
 
             <LinearLayout
                 android:id="@+id/nine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/eight"
+                android:layout_below="@id/LytofFeilds"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="20dp">
 
