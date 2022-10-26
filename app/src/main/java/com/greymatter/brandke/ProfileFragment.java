@@ -11,11 +11,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.greymatter.brandke.helper.ApiConfig;
+import com.greymatter.brandke.helper.Constant;
 import com.greymatter.brandke.helper.Session;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
@@ -28,6 +39,10 @@ public class ProfileFragment extends Fragment {
     Activity activity;
     ImageButton ibEditprofile;
     Session session;
+
+    EditText etoldPassword,etNewpassword,etConfirmpassword;
+    Button btnChange;
+
 
     public ProfileFragment() {
 
@@ -88,9 +103,17 @@ public class ProfileFragment extends Fragment {
         password_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
-                bottomSheetDialog.setContentView(R.layout.bottom_password_change);
-                bottomSheetDialog.show();
+
+//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
+//                bottomSheetDialog.setContentView(R.layout.bottom_password_change);
+//                bottomSheetDialog.show();
+
+
+//                BottomSheetDialogFragment bottomSheetFragment = new YourBottomSheetFragmentClass();
+//                bottomSheetFragment.show(getFragmentManager(), bottomSheetFragment.getTag());
+
+                Intent intent = new Intent(getActivity(),ChangepasswordActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -101,7 +124,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         contact_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +139,9 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+
+
         return rootview;
     }
+
 }
