@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -18,15 +20,30 @@ public class OrderActivity extends AppCompatActivity {
     private ArrayList<OrderModel> orderModelArrayList;
     private Adaptors.OrderAdapter orderAdapter;
 
+    ImageView backbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order);
         activity = OrderActivity.this;
+
+
+
+        backbtn = findViewById(R.id.backbtn);
+
         recyclerView = findViewById(R.id.order);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         BuildRecyclerView();
+
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void BuildRecyclerView() {

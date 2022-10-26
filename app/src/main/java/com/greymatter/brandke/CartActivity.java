@@ -50,12 +50,20 @@ public class CartActivity extends AppCompatActivity {
         activity = CartActivity.this;
         session = new Session(activity);
         tvcontinuebtn = findViewById(R.id.tvcontinuebtn);
-       // backimg = findViewById(R.id.backimg);
+        backimg = findViewById(R.id.backbtn);
         imgEmpty = findViewById(R.id.imgEmpty);
         tvQuantity = findViewById(R.id.tvQuantity);
         tvTotalPrice = findViewById(R.id.tvTotalPrice);
         r1 = findViewById(R.id.ll1);
         cartRecycleView = findViewById(R.id.cartRecycleView);
+
+
+        backimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
         cartRecycleView.setLayoutManager(new LinearLayoutManager(CartActivity.this, LinearLayoutManager.VERTICAL, false));

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -25,6 +26,7 @@ public class ProfileFragment extends Fragment {
     TextView wallet_txt;
     TextView contact_txt,tvlogout;
     Activity activity;
+    ImageButton ibEditprofile;
     Session session;
 
     public ProfileFragment() {
@@ -42,11 +44,22 @@ public class ProfileFragment extends Fragment {
 
         order_txt = rootview.findViewById(R.id.order_txt);
         cart_txt = rootview.findViewById(R.id.cart_txt);
+        ibEditprofile = rootview.findViewById(R.id.ibEditprofile);
         notification_txt = rootview.findViewById(R.id.notification_txt);
         password_txt = rootview.findViewById(R.id.password_txt);
         wallet_txt = rootview.findViewById(R.id.wallet_txt);
         contact_txt = rootview.findViewById(R.id.contact_txt);
         tvlogout = rootview.findViewById(R.id.tvlogout);
+
+        ibEditprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(activity,UserUpdateActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         order_txt.setOnClickListener(new View.OnClickListener() {
             @Override
