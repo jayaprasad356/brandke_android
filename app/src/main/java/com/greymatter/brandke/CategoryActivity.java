@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -32,6 +34,8 @@ public class CategoryActivity extends AppCompatActivity{
     ProductAdapter productAdapter;
     String CategoryId;
 
+    ImageView backbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +47,17 @@ public class CategoryActivity extends AppCompatActivity{
 
 
         recycleView = findViewById(R.id.categoryRecycleView);
+        backbtn = findViewById(R.id.backbtn);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(activity,2);
         recycleView.setLayoutManager(gridLayoutManager);
+
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
 
         productlist();

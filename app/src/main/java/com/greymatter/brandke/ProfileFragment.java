@@ -11,10 +11,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.greymatter.brandke.helper.ApiConfig;
+import com.greymatter.brandke.helper.Constant;
 import com.greymatter.brandke.helper.Session;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
@@ -25,7 +37,12 @@ public class ProfileFragment extends Fragment {
     TextView wallet_txt;
     TextView contact_txt,tvlogout;
     Activity activity;
+    ImageButton ibEditprofile;
     Session session;
+
+    EditText etoldPassword,etNewpassword,etConfirmpassword;
+    Button btnChange;
+
 
     public ProfileFragment() {
 
@@ -42,11 +59,22 @@ public class ProfileFragment extends Fragment {
 
         order_txt = rootview.findViewById(R.id.order_txt);
         cart_txt = rootview.findViewById(R.id.cart_txt);
+        ibEditprofile = rootview.findViewById(R.id.ibEditprofile);
         notification_txt = rootview.findViewById(R.id.notification_txt);
         password_txt = rootview.findViewById(R.id.password_txt);
         wallet_txt = rootview.findViewById(R.id.wallet_txt);
         contact_txt = rootview.findViewById(R.id.contact_txt);
         tvlogout = rootview.findViewById(R.id.tvlogout);
+
+        ibEditprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(activity,UserUpdateActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         order_txt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,9 +103,17 @@ public class ProfileFragment extends Fragment {
         password_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
-                bottomSheetDialog.setContentView(R.layout.bottom_password_change);
-                bottomSheetDialog.show();
+
+//                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getActivity());
+//                bottomSheetDialog.setContentView(R.layout.bottom_password_change);
+//                bottomSheetDialog.show();
+
+
+//                BottomSheetDialogFragment bottomSheetFragment = new YourBottomSheetFragmentClass();
+//                bottomSheetFragment.show(getFragmentManager(), bottomSheetFragment.getTag());
+
+                Intent intent = new Intent(getActivity(),ChangepasswordActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -88,7 +124,6 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
         contact_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,6 +139,9 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+
+
         return rootview;
     }
+
 }

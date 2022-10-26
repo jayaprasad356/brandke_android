@@ -13,6 +13,7 @@
         app:strokeColor="@color/Primary_yellow"
         app:strokeWidth="@dimen/_1sdp"
         app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
         >
 
 
@@ -78,7 +79,7 @@
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_6sdp"
+                android:layout_marginVertical="@dimen/_4sdp"
                 />
 
             <RelativeLayout
@@ -94,7 +95,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAddcart"
-                    android:layout_width="@dimen/_50sdp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:backgroundTint="@color/white"

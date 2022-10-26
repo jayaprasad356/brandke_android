@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment  {
         view_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoryActivity.class);
+                Intent intent = new Intent(getActivity(),CategoryListActivity.class);
                 startActivity(intent);
             }
         });

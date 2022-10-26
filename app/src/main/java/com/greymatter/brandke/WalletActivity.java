@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class WalletActivity extends AppCompatActivity {
 
     private CardView cvRecharge,CvCancel,CvRechargeInDialog;
     private EditText etAmount,etMessage;
+
+    ImageView backbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,14 @@ public class WalletActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
         //BuildRecyclerView();
+
+        backbtn=findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_dialog);

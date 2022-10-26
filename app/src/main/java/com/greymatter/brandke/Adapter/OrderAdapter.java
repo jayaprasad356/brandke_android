@@ -1,6 +1,6 @@
-package Adaptors;
+package com.greymatter.brandke.Adapter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,59 +9,64 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.greymatter.brandke.Models.Order;
 import com.greymatter.brandke.R;
 
 import java.util.ArrayList;
 
-import Models.OrderModel;
 
-public class OrderAdapter extends RecyclerView.Adapter<Adaptors.OrderAdapter.OrderViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private ArrayList<OrderModel> orderModelArrayList;
-    private Context context;
+    final Activity activity;
+    ArrayList<Order> orders;
 
-    public OrderAdapter(ArrayList<OrderModel> orderModelArrayList, Context context) {
-        this.context = context;
-        this.orderModelArrayList  = orderModelArrayList;
+    public OrderAdapter(Activity activity, ArrayList<Order> orders) {
+        this.activity = activity;
+        this.orders = orders;
     }
 
     @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater
-                .from(context)
-                .inflate(R.layout.order_model_layout,parent,false);
-        return new OrderViewHolder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(activity).inflate(R.layout.order_model_layout, parent, false);
+        return new ExploreItemHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        OrderModel orderModel = orderModelArrayList.get(position);
-        holder.OrderNumber.setText(orderModel.getOrderNumber());
-        holder.OrderCount.setText(orderModel.getOrderItemCount());
-        holder.OrderName.setText(orderModel.getOrderName());
-        holder.OrderDate.setText(orderModel.getOrderPlacedDate());
-        holder.OrderAmount.setText(orderModel.getOrderAmount());
-        holder.OrderStatus.setText(orderModel.getStatus());
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holderParent, int position) {
+        final ExploreItemHolder holder = (ExploreItemHolder) holderParent;
+        final Order order = orders.get(position);
+
+        holder.tvId.setText("Order No. "+order.getId());
+        holder.tvQuantity.setText(order.getQuantity()+" items");
+        holder.tvProductname.setText(order.getProduct_name());
+        holder.tvTotal.setText(order.getTotal());
+        holder.tvOrderdate.setText("Order placed on "+order.getOrder_date());
+        holder.tvStatus.setText(order.getStatus());
+
     }
 
     @Override
     public int getItemCount() {
-        return orderModelArrayList.size();
+        return orders.size();
     }
 
-    protected static class OrderViewHolder extends RecyclerView.ViewHolder {
+    static class ExploreItemHolder extends RecyclerView.ViewHolder {
 
-        private TextView OrderNumber,OrderCount,OrderName,OrderDate,OrderAmount,OrderStatus;
-        public OrderViewHolder(@NonNull View itemView) {
+        final TextView tvId,tvQuantity,tvProductname,tvOrderdate;
+        final TextView tvTotal,tvStatus;
+
+        public ExploreItemHolder(@NonNull View itemView) {
             super(itemView);
-            OrderNumber =itemView.findViewById(R.id.tvOrderNumber);
-            OrderCount =itemView.findViewById(R.id.tvOrderCount);
-            OrderName =itemView.findViewById(R.id.tvOrderName);
-            OrderDate =itemView.findViewById(R.id.tvOrderDate);
-            OrderAmount =itemView.findViewById(R.id.tvAmount);
-            OrderStatus = itemView.findViewById(R.id.tvOderStatus);
+            tvId = itemView.findViewById(R.id.tvId);
+            tvQuantity = itemView.findViewById(R.id.tvQuantity);
+            tvProductname = itemView.findViewById(R.id.tvProductname);
+            tvTotal = itemView.findViewById(R.id.tvTotal);
+            tvOrderdate = itemView.findViewById(R.id.tvOrderdate);
+            tvStatus = itemView.findViewById(R.id.tvStatus);
+
         }
     }
 }
+
