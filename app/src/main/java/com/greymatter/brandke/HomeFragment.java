@@ -43,7 +43,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class HomeFargment extends Fragment  {
+public class HomeFragment extends Fragment  {
 
 
     RecyclerView recyclerView;
@@ -52,14 +52,13 @@ public class HomeFargment extends Fragment  {
     TextView view_txt;
     SliderView sliderView;
     Activity activity;
-    RecyclerView categoryRecycleView;
     Session session;
     private SliderAdapterExample adapter;
     TextView tvTitle,tvCartCount;
     ImageView imgCart;
     EditText etSearch;
 
-    public HomeFargment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -72,15 +71,14 @@ public class HomeFargment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_home_fargment, container, false);
+        View root = inflater.inflate(R.layout.fragment_home_fragment, container, false);
 
         activity = getActivity();
         adapter = new SliderAdapterExample(activity);
         session = new Session(activity);
 
         recyclerView = root.findViewById(R.id.categoryRecycleView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
-        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false));
 
         view_txt = root.findViewById(R.id.view_all);
         imgCart = root.findViewById(R.id.imgcart);
