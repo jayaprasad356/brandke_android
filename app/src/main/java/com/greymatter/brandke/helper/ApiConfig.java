@@ -137,6 +137,41 @@ public class ApiConfig extends Application {
 
 
     }
+    public static void GetVolleyRequest(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final boolean isProgress) {
+        if (ProgressDisplay.mProgressBar != null) {
+            ProgressDisplay.mProgressBar.setVisibility(View.GONE);
+        }
+        final ProgressDisplay progressDisplay = new ProgressDisplay(activity);
+        progressDisplay.hideProgress();
+
+        if (isProgress)
+            progressDisplay.showProgress();
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, response -> {
+            if (ApiConfig.isConnected(activity))
+                callback.onSuccess(true, response);
+            if (isProgress)
+                progressDisplay.hideProgress();
+        }, error -> {
+            if (isProgress)
+                progressDisplay.hideProgress();
+            if (ApiConfig.isConnected(activity))
+                callback.onSuccess(false, "");
+            String message = VolleyErrorMessage(error);
+            if (!message.equals(""))
+                Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+        }) {
+
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                return params;
+            }
+        };
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(0, 0, 0));
+        ApiConfig.getInstance().getRequestQueue().getCache().clear();
+        ApiConfig.getInstance().addToRequestQueue(stringRequest);
+    }
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -148,6 +183,4 @@ public class ApiConfig extends Application {
         req.setTag(TAG);
         getRequestQueue().add(req);
     }
-
-
 }
