@@ -42,7 +42,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
     RecyclerView cartRecycleView;
     Activity activity;
     Session session;
-    ImageView backimg;
+    ImageView backbtn;
     CartAdapter cartAdapter;
     Button btnProceed;
     RadioButton rdCOD,rdUpi,rdWallet;
@@ -65,7 +65,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
         tvDeliverycharges = findViewById(R.id.tvDeliverycharges);
         tvGrandTotal = findViewById(R.id.tvGrandTotal);
         cartRecycleView = findViewById(R.id.cartRecycleView);
-        backimg = findViewById(R.id.backimg);
+        backbtn = findViewById(R.id.backbtn);
         btnProceed = findViewById(R.id.btnProceed);
         rdCOD = findViewById(R.id.rdCOD);
         rdUpi = findViewById(R.id.rdUpi);
@@ -73,7 +73,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
 
         rdWallet.setText("Wallet"+"(₹ "+session.getData(Constant.BALANCE)+")");
 
-        backimg.setOnClickListener(new View.OnClickListener() {
+        backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();

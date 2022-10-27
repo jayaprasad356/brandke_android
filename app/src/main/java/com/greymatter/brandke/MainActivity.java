@@ -4,15 +4,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+
+import com.greymatter.brandke.helper.ApiConfig;
+import com.greymatter.brandke.helper.Constant;
+import com.greymatter.brandke.helper.Session;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
 
     public static FragmentManager fm = null;
     ChipNavigationBar chipNavigationBar;
+    Session session;
+    Activity activity;
 
 
 
@@ -20,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        activity = MainActivity.this;
+        session = new Session(activity);
 
         fm = getSupportFragmentManager();
 
@@ -72,4 +88,30 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+    private void userDetails()
+    {
+        Map<String, String> params = new HashMap<>();
+        params.put(Constant.USER_ID,session.getData(Constant.ID));
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getBoolean(Constant.SUCCESS)) {
+                        JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
+                        session.setData(Constant.BALANCE,jsonArray.getJSONObject(0).getString(Constant.BALANCE));
+                    }
+
+                } catch (JSONException e){
+                    e.printStackTrace();
+                }
+            }
+        }, activity, Constant.USER_DETAILS_URL, params,false);
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        userDetails();
+    }
+
 }

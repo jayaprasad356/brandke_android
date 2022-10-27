@@ -87,6 +87,8 @@ public class CartActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
+                        tvTotalPrice.setText(jsonObject.getString(Constant.TOTAL_PRICE));
+                        tvQuantity.setText(jsonObject.getString(Constant.TOTAL_ITEMES));
                         r1.setVisibility(View.VISIBLE);
                         imgEmpty.setVisibility(View.GONE);
                         JSONObject object = new JSONObject(response);

@@ -11,38 +11,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/one"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_40sdp"
-            android:background="@color/Primary_yellow">
-
-            <LinearLayout
-                android:id="@+id/linear"
+            android:layout_height="@dimen/_55sdp"
+            app:cardBackgroundColor="@color/Primary_yellow">
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8sdp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/backimg"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
+                    android:id="@+id/backbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_20sdp"
                     android:src="@drawable/ic_back" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Checkout"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/_17sdp"
-                    android:textStyle="normal" />
-
-            </LinearLayout>
-
-        </androidx.appcompat.widget.Toolbar>
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">

@@ -17,19 +17,9 @@
 
 
             <ImageView
-                android:id="@+id/layerone"
-                android:layout_width="130dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/token_logo" />
-
-            <ImageView
                 android:id="@+id/first"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_below="@id/layerone"
-                android:layout_marginTop="20dp"
                 android:src="@drawable/signup_bg" />
 
             <TextView
@@ -77,6 +67,8 @@
                     android:layout_width="match_parent"
                     android:backgroundTint="@color/Primary_yellow"
                     android:textSize="14sp"
+                    android:inputType="number"
+                    android:maxLength="10"
                     android:layout_height="60dp" >
                 </com.google.android.material.textfield.TextInputEditText>
 

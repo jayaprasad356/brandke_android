@@ -42,6 +42,10 @@ public class SignUpActivity extends AppCompatActivity {
                     etPhoneNumber.setError("Enter Mobile");
                     etPhoneNumber.requestFocus();
                 }
+                else if (etPhoneNumber.getText().length() != 10){
+                    etPhoneNumber.setError("Invaild Mobile");
+                    etPhoneNumber.requestFocus();
+                }
 
                 else {
                     Intent i = new Intent(activity,OtpActivity.class);
