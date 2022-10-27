@@ -90,6 +90,15 @@ public class HomeFragment extends Fragment  {
       //  tvTitle.setText("Hi, "+session.getData(Constant.NAME));
 
         catgorylist();
+
+        imgCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),CartActivity.class);
+                startActivity(intent);
+
+            }
+        });
         view_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
