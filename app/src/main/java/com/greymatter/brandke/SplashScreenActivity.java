@@ -33,12 +33,24 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void GotoActivity()
     {
+        Session session = new Session(SplashScreenActivity.this);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashScreenActivity.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
+                if (session.getBoolean("is_logged_in")){
+                    Intent intent=new Intent(SplashScreenActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }else{
+                    Intent intent=new Intent(SplashScreenActivity.this,LoginActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+
+
+
             }
         },2000);
     }

@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
-    TextView order_txt;
+    TextView order_txt,tvName,tvMobile;
     TextView cart_txt;
     TextView notification_txt;
     TextView password_txt;
@@ -65,6 +65,12 @@ public class ProfileFragment extends Fragment {
         wallet_txt = rootview.findViewById(R.id.wallet_txt);
         contact_txt = rootview.findViewById(R.id.contact_txt);
         tvlogout = rootview.findViewById(R.id.tvlogout);
+        tvName = rootview.findViewById(R.id.tvName);
+        tvMobile = rootview.findViewById(R.id.tvMobile);
+
+
+        tvName.setText(session.getData(Constant.NAME));
+        tvMobile.setText("+91 "+session.getData(Constant.MOBILE));
 
         ibEditprofile.setOnClickListener(new View.OnClickListener() {
             @Override

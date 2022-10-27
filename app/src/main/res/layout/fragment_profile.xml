@@ -53,17 +53,16 @@
                         android:layout_height="wrap_content"
                         android:text="Prasad"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/_14sdp"
-                        />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
+                        android:id="@+id/tvMobile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9965313369"
-                        android:textSize="@dimen/_12sdp"
                         android:layout_below="@+id/tvName"
+                        android:text="9965313369"
                         android:textColor="@color/white"
-                        />
+                        android:textSize="@dimen/_12sdp" />
                 </RelativeLayout>
 
 

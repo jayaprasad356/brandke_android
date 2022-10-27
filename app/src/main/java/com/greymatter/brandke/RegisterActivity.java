@@ -30,7 +30,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private Button btnSignUp;
-    private EditText etName,etEmail,etPassword,etConfirmPassword,etOccupation,etGender,etAddress,etVillage,etPinCode,etDistrict;
+    private EditText etName,etEmail,etPassword,etConfirmPassword,etOccupation,etAddress,etPinCode;
     private Activity activity;
     private Spinner SpinGender,SpinVillage,SpinDistrict;
 
@@ -180,11 +180,11 @@ public class RegisterActivity extends AppCompatActivity {
         params.put(Constant.PASSWORD,etPassword.getText().toString().trim());
         params.put(Constant.MOBILE,getIntent().getStringExtra(Constant.MOBILE));
         params.put(Constant.OCCUPATION,etOccupation.getText().toString().trim());
-        params.put(Constant.GENDER,etGender.getText().toString().trim());
+        params.put(Constant.GENDER,SpinGender.getSelectedItem().toString().trim());
         params.put(Constant.ADDRESS,etAddress.getText().toString().trim());
-        params.put(Constant.VILLAGE,etVillage.getText().toString().trim());
+        params.put(Constant.VILLAGE,SpinVillage.getSelectedItem().toString().trim());
         params.put(Constant.PINCODE,etPinCode.getText().toString().trim());
-        params.put(Constant.DISTRICT,etDistrict.getText().toString().trim());
+        params.put(Constant.DISTRICT,SpinDistrict.getSelectedItem().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
             if (result) {
                 try {
