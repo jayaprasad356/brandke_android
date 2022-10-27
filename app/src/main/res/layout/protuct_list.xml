@@ -34,11 +34,7 @@
 
 
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
+
 
 
                 <TextView
@@ -47,20 +43,26 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/_2sdp"
                     android:text=""
+                    android:layout_gravity="center"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="@dimen/_10sdp" />
+
+
+
+
+
 
             <TextView
                 android:layout_toRightOf="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2 g"
+                android:layout_gravity="center"
                 android:textColor="@color/grey"
-                android:textSize="@dimen/_14sdp"
+                android:textSize="@dimen/_10sdp"
                 android:padding="@dimen/_2sdp"
                 />
 
-            </RelativeLayout>
             <TextView
                 android:id="@+id/tvPrice"
                 android:layout_width="match_parent"
@@ -109,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:backgroundTint="@color/white"
-                    android:text="Add to cart"
+                    android:text="View"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     app:strokeColor="@color/Primary_yellow"

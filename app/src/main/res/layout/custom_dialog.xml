@@ -42,7 +42,9 @@
             android:layout_width="match_parent"
             android:backgroundTint="@color/Primary_yellow"
             android:textSize="14sp"
-            android:layout_height="60dp" >
+            android:layout_height="60dp"
+            android:inputType="number"
+            >
         </com.google.android.material.textfield.TextInputEditText>
 
     </com.google.android.material.textfield.TextInputLayout>

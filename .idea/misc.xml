@@ -7,6 +7,8 @@
         <entry key="..\:/Users/visha/AndroidStudioProjects/brandke_android/app/src/main/res/layout/activity_payment.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/visha/AndroidStudioProjects/brandke_android/app/src/main/res/layout/fragment_home_fargment.xml" value="0.14375" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/greystroks.xml" value="0.1" />
+        <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/ic_add.xml" value="0.1" />
+        <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/ic_remove.xml" value="0.1" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable-v24/otp_bg_default.xml" value="0.2545" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable/address_spot.xml" value="0.1255" />
         <entry key="..\:/brandke_android/app/src/main/res/drawable/continue_btn.xml" value="0.1255" />
@@ -31,8 +33,9 @@
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_order.xml" value="0.20416666666666666" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_otp.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_payment.xml" value="0.19010416666666666" />
-        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_product_details.xml" value="0.20416666666666666" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_product_details.xml" value="0.25" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_register.xml" value="0.18881578947368421" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_search.xml" value="0.20416666666666666" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_sign_up.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_user_update.xml" value="0.20416666666666666" />

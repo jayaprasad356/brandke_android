@@ -16,8 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.greymatter.brandke.CartActivity;
+import com.greymatter.brandke.CategoryListActivity;
 import com.greymatter.brandke.Models.Categorylist;
 import com.greymatter.brandke.Models.Product;
+import com.greymatter.brandke.ProductDetailsActivity;
 import com.greymatter.brandke.R;
 import com.greymatter.brandke.helper.ApiConfig;
 import com.greymatter.brandke.helper.Constant;
@@ -61,8 +63,16 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         holder.btnAddcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addcart(product.getId());
+//                addcart(product.getId());
 
+                Intent intent = new Intent(activity, ProductDetailsActivity.class);
+                intent.putExtra(Constant.ID,product.getId());
+                intent.putExtra(Constant.PRODUCT_NAME,product.getProduct_name());
+                intent.putExtra(Constant.PRICE,product.getPrice());
+                intent.putExtra(Constant.PRODUCT_DESCRIPTION,product.getDescription());
+                intent.putExtra(Constant.PRODUCT_IMAGE,product.getImage());
+                intent.putExtra(Constant.PRODUCT_BRAND,product.getBrand());
+                activity.startActivity(intent);
             }
         });
 

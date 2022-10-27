@@ -242,7 +242,6 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
 
     }
 
-
     @Override
     public void onTransactionCompleted(TransactionDetails transactionDetails) {
 

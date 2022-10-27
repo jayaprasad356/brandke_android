@@ -1,10 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProductDetailsActivity">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/linearlayout"
+      android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_55sdp"
+        app:cardBackgroundColor="@color/Primary_yellow">
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/backbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvCatName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Product Details"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+      </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <ImageView
+          android:id="@+id/imgproduct"
+          android:layout_width="@dimen/_110sdp"
+          android:layout_height="@dimen/_160sdp"
+          android:src="@drawable/image"
+          android:layout_margin="@dimen/_20sdp"/>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/_25sdp"
+          android:layout_marginEnd="@dimen/_15sdp"
+          android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_productname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pupuk Urea"
+            android:textColor="@color/black"
+            android:layout_margin="5dp"
+            android:textSize="@dimen/_18sdp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1kg/pohon/Tahun"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
+
+        <TextView
+            android:id="@+id/brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Specification/Formula"
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:15:15"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:12:17:2"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/Primary_yellow"
+        />
+
+
+    <TextView
+        android:id="@+id/tvdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="descrition"
+        android:padding="@dimen/_10sdp"
+        />
+    <RelativeLayout
+        android:id="@+id/lytQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_10sdp"
+        >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginBottom="10dp"
+          android:text="Quantity"
+          android:textAlignment="viewStart"
+          android:textColor="@color/black"
+          android:textStyle="bold" />
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btnAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnMinusQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/app_name"
+            android:padding="7dp"
+            app:srcCompat="@drawable/ic_remove" />
+
+        <TextView
+            android:id="@+id/tvQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="1"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnAddQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/app_name"
+            android:padding="7dp"
+            app:srcCompat="@drawable/ic_add" />
+      </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/addbtn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="@dimen/_13sdp"
+      android:layout_marginTop="@dimen/_13sdp"
+      android:layout_marginEnd="@dimen/_13sdp"
+      android:layout_marginBottom="20dp"
+      android:backgroundTint="@color/Primary_yellow"
+      android:padding="@dimen/_13sdp"
+      android:text="Add to Cart"
+      android:textAllCaps="false"
+      android:textSize="@dimen/_13sdp" />
+
+
+
+
+
+</RelativeLayout>
