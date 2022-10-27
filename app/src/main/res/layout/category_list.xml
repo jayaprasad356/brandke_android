@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_9sdp"
-    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_alignParentLeft="true"
+    android:layout_marginStart="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
     tools:context=".LoginActivity">
 
 
@@ -16,9 +18,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/ImgProduct"
@@ -26,11 +26,6 @@
                 android:layout_height="@dimen/_100sdp"
                 android:background="@drawable/product_img"
                 android:scaleType="fitXY" />
-
-
-
-
-
 
         </RelativeLayout>
 
@@ -45,8 +40,6 @@
             android:padding="@dimen/_2sdp"
             android:textStyle="bold"
             android:layout_gravity="bottom|center"
-
-
             />
 
 
