@@ -133,6 +133,7 @@
                 android:textColor="@color/black"></com.google.android.material.button.MaterialButton>
 
             <LinearLayout
+                android:id="@+id/llsignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btnLogin"
@@ -158,7 +159,20 @@
                     android:fontFamily="@font/poppins_medium"
                     android:text="Sign up"
                     android:textColor="@color/Primary_yellow" />
+
+
+
             </LinearLayout>
+
+            <ImageView
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/llsignup"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:background="@drawable/logo_bottom"
+                />
         </RelativeLayout>
     </ScrollView>
+
+
 </RelativeLayout>

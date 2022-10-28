@@ -135,14 +135,17 @@
                 <Spinner
                     android:id="@+id/spinGender"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
                     android:layout_marginHorizontal="@dimen/_30sdp"
                     android:entries="@array/Gender"
-                    android:padding="@dimen/_12sdp" />
+                    android:padding="@dimen/_12sdp"
+                    android:background="@drawable/spinner_bg"
+
+                    />
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/LoginTextInputLayoutStyle"
                     android:layout_width="match_parent"
@@ -181,28 +184,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:inputType="number"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
                 <Spinner
                     android:id="@+id/spinVillageName"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
-                    android:padding="@dimen/_12sdp" />
+                    android:background="@drawable/spinner_bg"
+                     />
 
                 <Spinner
                     android:id="@+id/spinDistrict"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
-                    android:padding="@dimen/_12sdp" />
+                    android:background="@drawable/spinner_bg"
+                    />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/seven"

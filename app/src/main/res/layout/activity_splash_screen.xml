@@ -16,4 +16,13 @@
            />
 
 
+        <ImageView
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:background="@drawable/logo_bottom"
+            />
+
+
 </RelativeLayout>

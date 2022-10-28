@@ -7,7 +7,7 @@
         android:icon="@drawable/home"
         android:title="Home"
         app:cnb_iconColor="@color/black"
-        app:cnb_textColor="@color/white"
+        app:cnb_textColor="@color/black"
         app:cnb_backgroundColor="@color/Primary_yellow"
         />
 
@@ -15,7 +15,7 @@
         android:id="@+id/Fintech"
         android:icon="@drawable/finetech"
         app:cnb_iconColor="@color/black"
-        app:cnb_textColor="@color/white"
+        app:cnb_textColor="@color/black"
         app:cnb_backgroundColor="@color/Primary_yellow"
         android:title="FinTech"
        />
@@ -25,7 +25,7 @@
         android:icon="@drawable/token"
         android:title="Token"
         app:cnb_iconColor="@color/black"
-        app:cnb_textColor="@color/white"
+        app:cnb_textColor="@color/black"
         app:cnb_backgroundColor="@color/Primary_yellow"
        />
 
@@ -34,7 +34,7 @@
         android:icon="@drawable/wallet"
         android:title="Wallet"
         app:cnb_iconColor="@color/black"
-        app:cnb_textColor="@color/white"
+        app:cnb_textColor="@color/black"
         app:cnb_backgroundColor="@color/Primary_yellow"
         />
     <item
@@ -42,7 +42,7 @@
         android:icon="@drawable/profile"
         android:title="Profile"
         app:cnb_iconColor="@color/black"
-        app:cnb_textColor="@color/white"
+        app:cnb_textColor="@color/black"
         app:cnb_backgroundColor="@color/Primary_yellow"
        />
 </menu>
