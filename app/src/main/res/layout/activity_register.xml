@@ -6,8 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".RegisterActivity">
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/token_logo"
+        />
+
 
     <ScrollView
+        android:layout_below="@+id/img_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,7 +27,7 @@
             <ImageView
                 android:id="@+id/first"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/signup2_bg" />
 
@@ -136,11 +145,9 @@
                     android:id="@+id/spinGender"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
-                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="@dimen/_30sdp"
+                    android:layout_marginHorizontal="35dp"
                     android:entries="@array/Gender"
                     android:padding="@dimen/_12sdp"
                     android:background="@drawable/spinner_bg"
@@ -192,10 +199,9 @@
                     android:id="@+id/spinVillageName"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
-                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
+                    android:layout_marginHorizontal="35dp"
                     android:background="@drawable/spinner_bg"
                      />
 
@@ -203,10 +209,9 @@
                     android:id="@+id/spinDistrict"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_45sdp"
-                    android:layout_marginStart="@dimen/_24sdp"
                     android:layout_marginTop="@dimen/_20sdp"
-                    android:layout_marginEnd="@dimen/_24sdp"
                     android:layout_weight="1"
+                    android:layout_marginHorizontal="35dp"
                     android:background="@drawable/spinner_bg"
                     />
 
@@ -219,6 +224,7 @@
                     android:layout_marginTop="10dp"
                     android:hint="Password"
                     android:textColorHint="@color/black"
+                    app:passwordToggleEnabled="true"
                     app:hintTextColor="@color/Primary_yellow">
 
                     <!--this is the actual edit text which takes the input-->
@@ -227,7 +233,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:inputType="textPassword"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -241,6 +248,7 @@
                     android:layout_marginTop="10dp"
                     android:hint="Confirm Password"
                     android:textColorHint="@color/black"
+                    app:passwordToggleEnabled="true"
                     app:hintTextColor="@color/Primary_yellow">
 
                     <!--this is the actual edit text which takes the input-->
@@ -249,7 +257,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:textColor="@color/black"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:inputType="textPassword"
+
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
