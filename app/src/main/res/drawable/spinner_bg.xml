@@ -7,8 +7,8 @@
 
 
     <stroke
-        android:width="@dimen/_1sdp"
-        android:color="@color/Secondary_yellow"
+        android:width="@dimen/_2sdp"
+        android:color="@color/Primary_yellow"
         />
 
     <corners
