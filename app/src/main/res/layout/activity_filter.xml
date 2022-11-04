@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity"
-    android:orientation="vertical"
-
-    >
-
-
+    tools:context=".FilterActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_55sdp"
         app:cardBackgroundColor="@color/Primary_yellow">
@@ -33,58 +29,61 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Search Product"
+                android:text="Filter Product"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_marginVertical="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginHorizontal="@dimen/_10sdp"
         >
 
-
-
-    <EditText
-        android:layout_weight="2.4"
-        android:id="@+id/etSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/otp_bg_active"
-        android:padding="@dimen/_14sdp"
-        android:hint="Search Product"
-        android:textColorHint="@color/grey"
-        android:drawableStart="@drawable/ic_search"
-        android:drawablePadding="@dimen/_20sdp"
-        />
-
-
-        <ImageButton
-            android:id="@+id/ibFilterBtn"
-            android:layout_width="@dimen/_34sdp"
-            android:layout_height="@dimen/_34sdp"
-            android:background="@drawable/filter_bg"
-            android:layout_gravity="center"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:backgroundTint="@color/Primary_yellow"
-            android:src="@drawable/ic_system_uicons_filtering"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             />
 
+        <com.google.android.material.slider.RangeSlider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="10000"
+            app:values="@array/initial_values"
+            android:stepSize="500.0"
+            />
 
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/productRecycleView"
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:backgroundTint="@color/Primary_yellow"
+        android:padding="@dimen/_14sdp"
+        android:text="Click here to Filter"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_12sdp"
+        app:cornerRadius="@dimen/_8sdp" />
 
 
-</LinearLayout>
+
+
+</RelativeLayout>

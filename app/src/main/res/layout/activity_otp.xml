@@ -7,6 +7,9 @@
     android:background="@color/white"
     tools:context=".OtpActivity">
 
+
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -113,12 +116,11 @@
                 android:textColor="@color/black"></com.google.android.material.button.MaterialButton>
 
             <ImageView
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/btnVerify"
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_40sdp"
-                android:background="@drawable/logo_bottom"
-                />
+                android:layout_below="@+id/btnVerify"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/logo_bottom" />
 
         </RelativeLayout>
     </ScrollView>

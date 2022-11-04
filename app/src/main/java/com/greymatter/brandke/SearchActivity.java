@@ -12,6 +12,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.gson.Gson;
@@ -35,6 +36,7 @@ public class SearchActivity extends AppCompatActivity {
     ImageView backimg;
     RecyclerView productRecycleView;
     ProductAdapter productAdapter;
+    ImageButton ibFilterBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class SearchActivity extends AppCompatActivity {
         activity = SearchActivity.this;
         etSearch = findViewById(R.id.etSearch);
         backimg = findViewById(R.id.backimg);
+        ibFilterBtn = findViewById(R.id.ibFilterBtn);
+
         productRecycleView = findViewById(R.id.productRecycleView);
         backimg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +55,15 @@ public class SearchActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ibFilterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, FilterActivity.class);
+                startActivity(intent);
+            }
+        });
+
         etSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

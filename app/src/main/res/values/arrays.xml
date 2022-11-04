@@ -16,4 +16,10 @@
         <item>"Lawyer"</item>
         <item>"Others"</item>
     </string-array>
+
+    <array name="initial_values">
+        <item>0</item>
+        <item>1000</item>
+    </array>
+
 </resources>
