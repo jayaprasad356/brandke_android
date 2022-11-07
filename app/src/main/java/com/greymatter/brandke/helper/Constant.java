@@ -57,7 +57,7 @@ public class Constant {
     public static final String PINCODE = "pincode";
     public static final String DISTRICT = "district";
     public static final String TWITTER = "twitter";
-    public static final String WHATSAPP = "whatsapp";
+    public static final String LINKEDIN = "linkedin";
     public static final String FACEBOOK = "facebook";
     public static final String INSTAGRAM = "instagram";
     public static final String AGE = "age";
@@ -83,6 +83,6 @@ public class Constant {
     public static final String PRODUCT_DESCRIPTION = "productdescription";
     public static final String PRODUCT_IMAGE = "productimage";
     public static final String PRODUCT_BRAND = "brand";
-    public static final String UPI_ID_VAL = "pos.5070940@indus";
+    public static final String UPI_ID_VAL = "";
 
 }
