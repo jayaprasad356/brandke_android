@@ -10,6 +10,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.slider.RangeSlider;
 import com.greymatter.brandke.helper.Constant;
@@ -20,6 +21,7 @@ public class FilterActivity extends AppCompatActivity {
     RangeSlider rangeSlider;
     String from,to;
     Button btnFilter;
+    TextView tvFromRange,tvToRange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class FilterActivity extends AppCompatActivity {
 
         backimg = findViewById(R.id.backimg);
         btnFilter = findViewById(R.id.btnFilter);
+        tvToRange = findViewById(R.id.tvToRange);
+        tvFromRange = findViewById(R.id.tvFromRange);
 
 
         backimg.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +53,10 @@ public class FilterActivity extends AppCompatActivity {
                 //Log.d("PRICE_RANGE",slider.getValues().get(0) + "");
                 from = Math.round(slider.getValues().get(0))+ "";
                 to = Math.round(slider.getValues().get(1))+ "";
+
+
+                tvFromRange.setText(from);
+                tvToRange.setText(to);
 
             }
         });

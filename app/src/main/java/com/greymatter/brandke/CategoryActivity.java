@@ -1,5 +1,6 @@
 package com.greymatter.brandke;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.slider.RangeSlider;
 import com.google.gson.Gson;
 import com.greymatter.brandke.Adapter.CategoryListAdapter;
 import com.greymatter.brandke.Adapter.ProductAdapter;
@@ -35,10 +37,11 @@ public class CategoryActivity extends AppCompatActivity{
     Activity activity;
     ProductAdapter productAdapter;
     String CategoryId;
-    TextView tvCatName;
+    TextView tvCatName,tvFromRange,tvToRange;
     Session session;
     String getproductname;
-
+    RangeSlider rangeSlider;
+    String from,to;
     ImageView backbtn;
 
     @Override
@@ -49,6 +52,32 @@ public class CategoryActivity extends AppCompatActivity{
 
         activity = CategoryActivity.this;
         session = new Session(activity);
+
+        rangeSlider = findViewById(R.id.rangeSlider);
+        tvFromRange = findViewById(R.id.tvFromRange);
+        tvToRange = findViewById(R.id.tvToRange);
+
+        rangeSlider.addOnSliderTouchListener(new RangeSlider.OnSliderTouchListener() {
+            @Override
+            public void onStartTrackingTouch(@NonNull RangeSlider slider) {
+
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(@NonNull RangeSlider slider) {
+                //Log.d("PRICE_RANGE",slider.getValues().get(0) + "");
+                from = Math.round(slider.getValues().get(0))+ "";
+                to = Math.round(slider.getValues().get(1))+ "";
+
+
+                tvFromRange.setText(from);
+                tvToRange.setText(to);
+
+
+            }
+        });
+
 
         CategoryId = getIntent().getStringExtra(Constant.CATEGORY_ID);
 
@@ -80,6 +109,7 @@ public class CategoryActivity extends AppCompatActivity{
     private void productlist() {
 
         Map<String, String> params = new HashMap<>();
+
         params.put(Constant.CATEGORY_ID,CategoryId);
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("PRODUCTS_RES",response);
