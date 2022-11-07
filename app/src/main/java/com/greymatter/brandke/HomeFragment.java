@@ -102,8 +102,12 @@ public class HomeFragment extends Fragment  {
         view_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(),CategoryListActivity.class);
+                Intent intent = new Intent(activity, CategoryActivity.class);
+                intent.putExtra(Constant.CATEGORY_ID,"all");
+                intent.putExtra(Constant.PRODUCT_NAME,"ALL Products");
                 startActivity(intent);
+//                Intent intent = new Intent(getActivity(),CategoryListActivity.class);
+//                startActivity(intent);
             }
         });
         etSearch.setOnTouchListener(new View.OnTouchListener() {

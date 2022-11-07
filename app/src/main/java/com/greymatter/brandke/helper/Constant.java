@@ -2,8 +2,9 @@ package com.greymatter.brandke.helper;
 
 public class Constant {
 
-    public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
+    //public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
     //public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
+    public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
     //public static final String MainBaseUrl = "http://smartgram.co/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String LOGIN_URL = BaseUrl + "login.php";
@@ -25,6 +26,7 @@ public class Constant {
     public static final String ADD_APPOINTMENT_URL = BaseUrl + "add-appointment.php";
     public static final String WALLET_LIST = BaseUrl + "walletlist.php";
     public static final String SEARCH_LIST = BaseUrl + "searchproducts.php";
+    public static final String FILTER_LIST = BaseUrl + "filterproducts.php";
     public static final String SETTINGS_LIST = BaseUrl + "settings.php";
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
     public static final String MOBILE = "mobile";
@@ -41,7 +43,10 @@ public class Constant {
     public static final String NEWPASSWORD = "newpassword";
     public static final String OLDPASSWORD = "oldpassword";
     public static final String NAME = "name";
+    public static final String FROM = "from";
+    public static final String TO = "to";
     public static final String SEARCH = "search";
+    public static final String FILTER = "filter";
     public static final String PASSWORD = "password";
     public static final String OCCUPATION = "occupation";
     public static final String GENDER = "gender";

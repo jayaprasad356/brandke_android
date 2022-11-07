@@ -113,5 +113,9 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         userDetails();
     }
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
 
 }

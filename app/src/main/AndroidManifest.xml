@@ -60,11 +60,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".FilterProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".FilterActivity"
             android:exported="false" />
         <activity
             android:name=".CategoryListActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ChangepasswordActivity"
             android:exported="false" />

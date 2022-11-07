@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -50,6 +51,9 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
     String Address = "";
     String Mobile = "";
     String GrandTotal = "";
+    String GrandTotal_ = "";
+    TextView tvDiscount;
+    boolean discountapplied = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
         rdCOD = findViewById(R.id.rdCOD);
         rdUpi = findViewById(R.id.rdUpi);
         rdWallet = findViewById(R.id.rdWallet);
+        tvDiscount = findViewById(R.id.tvDiscount);
 
         rdWallet.setText("Wallet"+"(₹ "+session.getData(Constant.BALANCE)+")");
 
@@ -126,7 +131,49 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
             }
         });
 
+        rdCOD.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                setDiscount();
+            }
+        });
+        rdWallet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                setDiscount();
+            }
+        });
+        rdUpi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                setDiscount();
+            }
+        });
 
+
+    }
+
+    private void setDiscount()
+    {
+        if (rdCOD.isChecked()){
+            discountapplied = false;
+            GrandTotal = GrandTotal_;
+            tvDiscount.setText("0");
+            tvGrandTotal.setText(GrandTotal);
+
+        }else {
+            if (!discountapplied){
+                discountapplied = true;
+                double amount = Double.parseDouble(GrandTotal);
+                double res = (amount / 100.0f) * 1;
+                GrandTotal = (Integer.parseInt(GrandTotal) - Math.round(res)) + "";
+                tvDiscount.setText(Math.round(res) + "");
+                tvGrandTotal.setText(GrandTotal);
+
+            }
+
+
+        }
     }
 
     private void makePayment(String amount, String upi, String name, String desc, String transactionId) {
@@ -207,12 +254,13 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                         Mobile = jsonObject.getString(Constant.MOBILE);
                         Address = jsonObject.getString(Constant.NAME) + "," + jsonObject.getString(Constant.ADDRESS);
                         GrandTotal = jsonObject.getString(Constant.GRAND_TOTAL);
+                        GrandTotal_ = jsonObject.getString(Constant.GRAND_TOTAL);
                         tvSubtotal.setText(jsonObject.getString(Constant.SUB_TOTAL));
                         tvDeliverycharges.setText(DeliveryCharges);
                         tvName.setText(jsonObject.getString(Constant.NAME));
                         tvAddress.setText(jsonObject.getString(Constant.ADDRESS));
                         tvMobile.setText(jsonObject.getString(Constant.MOBILE));
-                        tvGrandTotal.setText(jsonObject.getString(Constant.GRAND_TOTAL));
+                        tvGrandTotal.setText(GrandTotal);
                         JSONObject object = new JSONObject(response);
                         JSONArray jsonArray = object.getJSONArray(Constant.CART_ITEMS);
                         Gson g = new Gson();
