@@ -26,9 +26,9 @@ public class contactusActivity extends AppCompatActivity {
 
     ImageView backbtn;
     TextView tvName,tvMobile,tvEmail,tvAddress;
-    ImageView imgTwitter,imgFacebook,imgWhatsapp,imgInstagram;
+    ImageView imgTwitter,imgFacebook,imgLinkedin,imgInstagram;
     Activity activity;
-    String twitter,whatsapp,facebook,instagram;
+    String twitter,linkedin,facebook,instagram;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class contactusActivity extends AppCompatActivity {
         tvEmail = findViewById(R.id.tvEmail);
         imgTwitter = findViewById(R.id.imgTwitter);
         imgFacebook = findViewById(R.id.imgFacebook);
-        imgWhatsapp = findViewById(R.id.imgWhatsapp);
+        imgLinkedin = findViewById(R.id.imgLinkedin);
         imgInstagram = findViewById(R.id.imgInstagram);
         backbtn =findViewById(R.id.backbtn);
 
@@ -72,14 +72,14 @@ public class contactusActivity extends AppCompatActivity {
                         tvMobile.setText(jsonArray.getJSONObject(0).getString(Constant.MOBILE));
                         tvEmail.setText(jsonArray.getJSONObject(0).getString(Constant.EMAIL));
                         twitter = jsonArray.getJSONObject(0).getString(Constant.TWITTER);
-                        whatsapp = jsonArray.getJSONObject(0).getString(Constant.WHATSAPP);
+                        linkedin = jsonArray.getJSONObject(0).getString(Constant.LINKEDIN);
                         facebook = jsonArray.getJSONObject(0).getString(Constant.FACEBOOK);
                         instagram = jsonArray.getJSONObject(0).getString(Constant.INSTAGRAM);
                         if (!twitter.isEmpty()){
                             imgTwitter.setVisibility(View.VISIBLE);
                         }
-                        if (!whatsapp.isEmpty()){
-                            imgWhatsapp.setVisibility(View.VISIBLE);
+                        if (!linkedin.isEmpty()){
+                            imgLinkedin.setVisibility(View.VISIBLE);
                         }
                         if (!facebook.isEmpty()){
                             imgFacebook.setVisibility(View.VISIBLE);
@@ -122,10 +122,10 @@ public class contactusActivity extends AppCompatActivity {
                             }
 
                         });
-                        imgWhatsapp.setOnClickListener(view -> {
+                        imgLinkedin.setOnClickListener(view -> {
                             try {
 
-                                open(whatsapp);
+                                open(linkedin);
 
                             } catch (Exception e) {
                                 e.printStackTrace();

@@ -19,7 +19,7 @@
 
     <array name="initial_values">
         <item>0</item>
-        <item>1000</item>
+        <item>10000</item>
     </array>
 
 </resources>

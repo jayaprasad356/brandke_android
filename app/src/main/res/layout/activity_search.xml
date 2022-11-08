@@ -72,6 +72,7 @@
             android:background="@drawable/filter_bg"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/_10sdp"
+            android:visibility="gone"
             android:backgroundTint="@color/Primary_yellow"
             android:src="@drawable/ic_system_uicons_filtering"
             />

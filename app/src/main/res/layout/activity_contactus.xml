@@ -74,7 +74,7 @@
         android:textSize="@dimen/_12sdp" />
 
     <TextView
-        android:id="@+id/tvMobile"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
@@ -84,6 +84,7 @@
         android:textSize="@dimen/_12sdp" />
 
     <TextView
+        android:id="@+id/tvMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_40sdp"
@@ -117,29 +118,33 @@
 
         <ImageView
             android:id="@+id/imgTwitter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_margin="@dimen/_15sdp"
-            android:src="@drawable/twitter" />
+            android:visibility="gone"
+            android:src="@drawable/youtube" />
 
         <ImageView
-            android:id="@+id/imgWhatsapp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/imgLinkedin"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_margin="@dimen/_15sdp"
-            android:src="@drawable/whatsapp" />
+            android:visibility="gone"
+            android:src="@drawable/linkedin" />
 
         <ImageView
             android:id="@+id/imgFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_15sdp"
+            android:visibility="gone"
             android:src="@drawable/facebook" />
 
         <ImageView
             android:id="@+id/imgInstagram"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_margin="@dimen/_15sdp"
             android:src="@drawable/instagram" />
 

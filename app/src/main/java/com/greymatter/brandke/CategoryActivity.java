@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,8 +42,9 @@ public class CategoryActivity extends AppCompatActivity{
     Session session;
     String getproductname;
     RangeSlider rangeSlider;
-    String from,to;
+    String from = "0",to = "10000";
     ImageView backbtn;
+    Button btnFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class CategoryActivity extends AppCompatActivity{
         rangeSlider = findViewById(R.id.rangeSlider);
         tvFromRange = findViewById(R.id.tvFromRange);
         tvToRange = findViewById(R.id.tvToRange);
+        btnFilter = findViewById(R.id.btnFilter);
 
         rangeSlider.addOnSliderTouchListener(new RangeSlider.OnSliderTouchListener() {
             @Override
@@ -100,17 +103,25 @@ public class CategoryActivity extends AppCompatActivity{
                 onBackPressed();
             }
         });
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                productlist();
 
-
+            }
+        });
         productlist();
+
+
 
     }
 
     private void productlist() {
 
         Map<String, String> params = new HashMap<>();
-
         params.put(Constant.CATEGORY_ID,CategoryId);
+        params.put(Constant.FROM,from);
+        params.put(Constant.TO,to);
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("PRODUCTS_RES",response);
 
