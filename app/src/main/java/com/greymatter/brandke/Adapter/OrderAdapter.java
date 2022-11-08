@@ -1,6 +1,7 @@
 package com.greymatter.brandke.Adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.greymatter.brandke.Models.Order;
+import com.greymatter.brandke.OrderViewActivity;
 import com.greymatter.brandke.R;
 
 import java.util.ArrayList;
@@ -42,8 +44,18 @@ public class OrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         holder.tvQuantity.setText(order.getQuantity()+" items");
         holder.tvProductname.setText(order.getProduct_name());
         holder.tvTotal.setText(order.getTotal());
-        holder.tvOrderdate.setText("Order placed on "+order.getOrder_date());
+        holder.tvOrderdate.setText(order.getOrder_date());
         holder.tvStatus.setText(order.getStatus());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(activity, OrderViewActivity.class);
+                activity.startActivity(intent);
+
+            }
+        });
 
     }
 
