@@ -91,6 +91,7 @@ public class Constant {
     public static final String IMAGE = "image";
     public static final String PRODUCT_BRAND = "brand";
     public static final String MEASUREMENT = "measurement";
+    public static final String NEW_USER = "new user";
     public static final String UPI_ID_VAL = "";
 
 }
