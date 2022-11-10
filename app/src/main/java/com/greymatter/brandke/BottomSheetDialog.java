@@ -33,6 +33,9 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
     ImageView algo_button;
     Button course_button;
 
+    public BottomSheetDialog(Activity activity) {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable
             ViewGroup container, @Nullable Bundle savedInstanceState)

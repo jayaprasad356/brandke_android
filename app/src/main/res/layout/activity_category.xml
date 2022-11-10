@@ -42,12 +42,21 @@
                 android:textSize="@dimen/_14sdp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_gravity="end"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_weight="3"
                 android:layout_width="wrap_content"
@@ -67,6 +76,7 @@
 
                 <RelativeLayout
                     android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -99,6 +109,7 @@
                     android:layout_height="wrap_content"
                     android:valueFrom="0"
                     android:valueTo="10000"
+                    android:visibility="gone"
                     app:values="@array/initial_values"
                     android:stepSize="500.0"
                     />
@@ -110,12 +121,7 @@
 
 
             </LinearLayout>
-            <Button
-                android:id="@+id/btnFilter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Filter"
-                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 

@@ -12,10 +12,11 @@
 
     <string name="item">item</string>
     <string-array name="brandarray">
-        <item> John Phillips </item>
+        <item>All</item>
+        <item>John Phillips</item>
         <item>Safe 2 shine</item>
         <item>Him Herbal</item>
-        <item>Pioneer </item>
+        <item>Pioneer</item>
         <item>"Sarju's"</item>
         <item>Meenal</item>
         <item>Alto</item>

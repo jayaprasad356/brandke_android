@@ -77,6 +77,14 @@
             android:text="1kg/pohon/Tahun"
             android:layout_margin="@dimen/_3sdp"
             android:textSize="@dimen/_13sdp"/>
+        <TextView
+            android:id="@+id/tvMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/_3sdp"
+            android:textSize="@dimen/_13sdp"/>
 
         <TextView
             android:id="@+id/brand"

@@ -1,9 +1,9 @@
 package com.greymatter.brandke.Models;
 
 public class Product {
-    String id, product_name,category_name,image,description,brand,price;
+    String id, product_name,category_name,image,description,brand,price,measurement,unit;
 
-    public Product(String id, String product_name, String category_name, String image, String description, String brand, String price) {
+    public Product(String id, String product_name, String category_name, String image, String description, String brand, String price, String measurement, String unit) {
         this.id = id;
         this.product_name = product_name;
         this.category_name = category_name;
@@ -11,6 +11,8 @@ public class Product {
         this.description = description;
         this.brand = brand;
         this.price = price;
+        this.measurement = measurement;
+        this.unit = unit;
     }
 
     public String getId() {
@@ -67,5 +69,21 @@ public class Product {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getMeasurement() {
+        return measurement;
+    }
+
+    public void setMeasurement(String measurement) {
+        this.measurement = measurement;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

@@ -2,9 +2,9 @@ package com.greymatter.brandke.helper;
 
 public class Constant {
 
-    public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
+    //public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
     //public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
-    //public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
+    public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
     //public static final String MainBaseUrl = "http://smartgram.co/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String LOGIN_URL = BaseUrl + "login.php";
@@ -44,6 +44,10 @@ public class Constant {
     public static final String OLDPASSWORD = "oldpassword";
     public static final String NAME = "name";
     public static final String FROM = "from";
+    public static final String FROM_M = "from_m";
+    public static final String TO_M = "to_m";
+    public static final String BRAND = "brand";
+    public static final String UNIT = "unit";
     public static final String TO = "to";
     public static final String SEARCH = "search";
     public static final String FILTER = "filter";
@@ -84,7 +88,9 @@ public class Constant {
     public static final String TOTAL_PRICE = "total_price" ;
     public static final String PRODUCT_DESCRIPTION = "productdescription";
     public static final String PRODUCT_IMAGE = "productimage";
+    public static final String IMAGE = "image";
     public static final String PRODUCT_BRAND = "brand";
+    public static final String MEASUREMENT = "measurement";
     public static final String UPI_ID_VAL = "";
 
 }

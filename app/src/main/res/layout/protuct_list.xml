@@ -53,10 +53,11 @@
 
 
             <TextView
+                android:id="@+id/tvMeasurement"
                 android:layout_toRightOf="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 g"
+                android:text=""
                 android:layout_gravity="center"
                 android:textColor="@color/grey"
                 android:textSize="@dimen/_10sdp"

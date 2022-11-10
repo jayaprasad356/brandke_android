@@ -28,7 +28,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     Button addbtn;
     ImageView backimg;
     ImageView imgproduct;
-    TextView tv_productname,tvdescription,brand,tvQuantity;
+    TextView tv_productname,tvdescription,brand,tvQuantity,tvMeasurement;
     String getproductname,getdescription,getbrand,getImage;
     Activity activity;
     Button btnAddToCart;
@@ -38,6 +38,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     String Price;
     Session session;
     TextView tvPrice;
+    String Measurement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         addbtn = findViewById(R.id.addbtn);
         tv_productname = findViewById(R.id.tv_productname);
         tvdescription = findViewById(R.id.tvdescription);
+        tvMeasurement = findViewById(R.id.tvMeasurement);
         imgproduct = findViewById(R.id.imgproduct);
         brand = findViewById(R.id.brand);
         backimg = findViewById(R.id.backbtn);
@@ -62,8 +64,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         getdescription = getIntent().getStringExtra(Constant.PRODUCT_DESCRIPTION);
         getImage = getIntent().getStringExtra(Constant.PRODUCT_IMAGE);
         getbrand = getIntent().getStringExtra(Constant.PRODUCT_BRAND);
+        Measurement = getIntent().getStringExtra(Constant.MEASUREMENT);
         ProductId = getIntent().getStringExtra(Constant.ID);
         Price = getIntent().getStringExtra(Constant.PRICE);
+        tvMeasurement.setText(Measurement);
 
         imgMinus.setOnClickListener(v -> addQuantity(false));
         imgAdd.setOnClickListener(v -> addQuantity(true));

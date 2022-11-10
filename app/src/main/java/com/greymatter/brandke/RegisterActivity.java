@@ -48,6 +48,8 @@ public class RegisterActivity extends AppCompatActivity {
     public static final int REQUEST_IMAGE_CAPTURE = 111;
     ImageView ivInactive,ivactive;
     TextView tvactive;
+    boolean aadhaaruploaded = false;
+    String filePath = null;
 
 
 
@@ -128,7 +130,10 @@ public class RegisterActivity extends AppCompatActivity {
                 etPinCode.setError("PinCode");
             }else if(SpinDistrict.getSelectedItemId() == 0){
                 Toast.makeText(activity, "Select District", Toast.LENGTH_SHORT).show();
-            }else{
+            }else if (!aadhaaruploaded){
+                Toast.makeText(activity, "Upload Aadhaar Card", Toast.LENGTH_SHORT).show();
+            }
+            else{
                 RegisterUser();
             }
         });
@@ -208,6 +213,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void RegisterUser() {
         Map<String, String> params = new HashMap<>();
+        Map<String, String> fileParams = new HashMap<>();
         params.put(Constant.NAME,etName.getText().toString().trim());
         params.put(Constant.EMAIL,etEmail.getText().toString().trim());
         params.put(Constant.PASSWORD,etPassword.getText().toString().trim());
@@ -218,6 +224,7 @@ public class RegisterActivity extends AppCompatActivity {
         params.put(Constant.VILLAGE,SpinVillage.getSelectedItem().toString().trim());
         params.put(Constant.PINCODE,etPinCode.getText().toString().trim());
         params.put(Constant.DISTRICT,SpinDistrict.getSelectedItem().toString().trim());
+        fileParams.put(Constant.IMAGE, filePath);
         ApiConfig.RequestToVolley((result, response) -> {
             if (result) {
                 try {
@@ -234,17 +241,13 @@ public class RegisterActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, activity, Constant.SIGNUP_URL, params,true);
+        }, activity, Constant.SIGNUP_URL, params,fileParams);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-
-
-
-
             if (requestCode == SELECT_FILE) {
 
                 imageUri = data.getData();
@@ -270,6 +273,8 @@ public class RegisterActivity extends AppCompatActivity {
                 tvactive.setVisibility(View.VISIBLE);
                 ivactive.setVisibility(View.VISIBLE);
                 ivInactive.setVisibility(View.GONE);
+                filePath = result.getUriFilePath(activity, true);
+                aadhaaruploaded = true;
 
 //                filePath = result.getUriFilePath(activity, true);
 //                Glide.with(activity).load(filePath).into(postimg);

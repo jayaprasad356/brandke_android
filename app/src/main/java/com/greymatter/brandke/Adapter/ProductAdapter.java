@@ -60,6 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Glide.with(activity).load(product.getImage()).placeholder(R.drawable.product_img).into(holder.ImgProduct);
         holder.tvName.setText(product.getProduct_name());
         holder.tvPrice.setText("₹ "+product.getPrice());
+        holder.tvMeasurement.setText(product.getMeasurement()+product.getUnit());
         holder.btnAddcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +73,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 intent.putExtra(Constant.PRODUCT_DESCRIPTION,product.getDescription());
                 intent.putExtra(Constant.PRODUCT_IMAGE,product.getImage());
                 intent.putExtra(Constant.PRODUCT_BRAND,product.getBrand());
+                intent.putExtra(Constant.MEASUREMENT,product.getMeasurement()+product.getUnit());
                 activity.startActivity(intent);
             }
         });
@@ -135,13 +137,14 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     static class ExploreItemHolder extends RecyclerView.ViewHolder {
 
         final ImageView ImgProduct;
-        final TextView tvName,tvPrice;
+        final TextView tvName,tvPrice,tvMeasurement;
         final Button btnAddcart;
         public ExploreItemHolder(@NonNull View itemView) {
             super(itemView);
             ImgProduct = itemView.findViewById(R.id.ImgProduct);
             tvName = itemView.findViewById(R.id.tvName);
             tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvMeasurement = itemView.findViewById(R.id.tvMeasurement);
             btnAddcart = itemView.findViewById(R.id.btnAddcart);
 
         }
