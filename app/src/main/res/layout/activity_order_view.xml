@@ -45,6 +45,7 @@
 
 
         <TextView
+            android:id="@+id/tvOderId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Order No : 6"
@@ -58,6 +59,7 @@
 
 
         <TextView
+            android:id="@+id/tvProductname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Potatasium Fertilizer"
@@ -78,6 +80,7 @@
             >
 
             <ImageView
+                android:id="@+id/imageProduct"
                 android:layout_width="@dimen/_160sdp"
                 android:layout_height="@dimen/_160sdp"
                 android:background="@drawable/product_img"
@@ -87,6 +90,7 @@
 
 
         <TextView
+            android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Oder Placed On : 02-02-2020"
@@ -99,6 +103,7 @@
 
 
         <TextView
+            android:id="@+id/tvQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="item : 3"
@@ -109,6 +114,7 @@
             />
 
         <TextView
+            android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Status : Ordered"
@@ -127,9 +133,11 @@
 
 
     <TextView
+        android:id="@+id/tvAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-4dp"
         android:background="@color/Secondary_yellow"
         android:fontFamily="@font/poppins_medium"
         android:padding="@dimen/_10sdp"

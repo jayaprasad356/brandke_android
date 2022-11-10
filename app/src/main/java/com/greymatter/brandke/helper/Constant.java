@@ -2,8 +2,8 @@ package com.greymatter.brandke.helper;
 
 public class Constant {
 
-    //public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
-    public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
+    public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
+    //public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
     //public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
     //public static final String MainBaseUrl = "http://smartgram.co/";
     public static final String BaseUrl = MainBaseUrl + "api/";
@@ -67,6 +67,8 @@ public class Constant {
     public static final String HISTORY = "history";
     public static final String BALANCE = "balance";
     public static final String DATA = "data";
+    public static final String DATE = "date";
+    public static final String STATUS = "status";
     public static final String CART_ITEMS = "cart_items";
     public static final String SUB_TOTAL = "sub_total";
     public static final String DELIVERY_CHARGES = "delivery_charges";

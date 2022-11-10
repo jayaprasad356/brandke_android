@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.greymatter.brandke.Models.Order;
 import com.greymatter.brandke.OrderViewActivity;
 import com.greymatter.brandke.R;
+import com.greymatter.brandke.helper.Constant;
 
 import java.util.ArrayList;
 
@@ -52,6 +53,13 @@ public class OrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onClick(View v) {
 
                 Intent intent = new Intent(activity, OrderViewActivity.class);
+                intent.putExtra(Constant.ID,order.getId());
+                intent.putExtra(Constant.PRODUCT_NAME,order.getProduct_name());
+                intent.putExtra(Constant.TOTAL_PRICE,order.getTotal());
+                intent.putExtra(Constant.DATE,order.getOrder_date());
+                intent.putExtra(Constant.STATUS,order.getStatus());
+                intent.putExtra(Constant.QUANTITY,order.getQuantity());
+                intent.putExtra(Constant.PRODUCT_IMAGE,order.getImage());
                 activity.startActivity(intent);
 
             }

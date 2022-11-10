@@ -1,18 +1,27 @@
 package com.greymatter.brandke;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.canhub.cropper.CropImage;
+import com.canhub.cropper.CropImageView;
 import com.google.gson.Gson;
 import com.greymatter.brandke.helper.ApiConfig;
 import com.greymatter.brandke.helper.Constant;
@@ -33,6 +42,14 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etName,etEmail,etPassword,etConfirmPassword,etOccupation,etAddress,etPinCode;
     private Activity activity;
     private Spinner SpinGender,SpinVillage,SpinDistrict;
+    CardView cvUploadAdhar;
+    Uri imageUri;
+    public static final int SELECT_FILE = 110;
+    public static final int REQUEST_IMAGE_CAPTURE = 111;
+    ImageView ivInactive,ivactive;
+    TextView tvactive;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +66,24 @@ public class RegisterActivity extends AppCompatActivity {
         SpinVillage = findViewById(R.id.spinVillageName);
         SpinDistrict = findViewById(R.id.spinDistrict);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
+        cvUploadAdhar = findViewById(R.id.cvUploadAdhar);
+        ivInactive = findViewById(R.id.ivInactive);
+        ivactive = findViewById(R.id.ivactive);
+        tvactive = findViewById(R.id.tvactive);
+
         activity = RegisterActivity.this;
         defaultspinnerList();
+
+        cvUploadAdhar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent, SELECT_FILE);
+            }
+        });
+
         etPinCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -202,5 +235,50 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         }, activity, Constant.SIGNUP_URL, params,true);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+
+
+
+
+            if (requestCode == SELECT_FILE) {
+
+                imageUri = data.getData();
+                CropImage.activity(imageUri)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setRequestedSize(300, 300)
+                        .setOutputCompressFormat(Bitmap.CompressFormat.PNG)
+                        .setAspectRatio(1, 1)
+                        .start(activity);
+            }
+            else if (requestCode == REQUEST_IMAGE_CAPTURE) {
+                CropImage.activity(imageUri)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setRequestedSize(300, 300)
+                        .setOutputCompressFormat(Bitmap.CompressFormat.PNG)
+                        .setAspectRatio(1, 1)
+                        .start(activity);
+            } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+                CropImage.ActivityResult result = CropImage.getActivityResult(data);
+                assert result != null;
+
+
+                tvactive.setVisibility(View.VISIBLE);
+                ivactive.setVisibility(View.VISIBLE);
+                ivInactive.setVisibility(View.GONE);
+
+//                filePath = result.getUriFilePath(activity, true);
+//                Glide.with(activity).load(filePath).into(postimg);
+//                thumbnailexist = true;
+
+
+            }
+        }
+
+
     }
 }

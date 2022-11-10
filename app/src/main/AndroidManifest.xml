@@ -67,7 +67,11 @@
             android:exported="false" />
         <activity
             android:name=".FilterActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+
+
+        </activity>
         <activity
             android:name=".CategoryListActivity"
             android:exported="true" />
@@ -94,6 +98,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".PaymentActivity"
@@ -117,8 +122,14 @@
             android:name=".AddressActivity"
             android:exported="true" />
         <activity
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+
+        </activity>
         <activity
             android:name=".OtpActivity"
             android:exported="false" />

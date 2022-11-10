@@ -55,8 +55,8 @@ public class FilterActivity extends AppCompatActivity {
                 to = Math.round(slider.getValues().get(1))+ "";
 
 
-                tvFromRange.setText(from);
-                tvToRange.setText(to);
+                tvFromRange.setText("₹ "+from);
+                tvToRange.setText("₹ "+to);
 
             }
         });

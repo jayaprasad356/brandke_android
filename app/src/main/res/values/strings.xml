@@ -11,4 +11,21 @@
     <string name="_18">18</string>
 
     <string name="item">item</string>
+    <string-array name="brandarray">
+        <item> John Phillips </item>
+        <item>Safe 2 shine</item>
+        <item>Him Herbal</item>
+        <item>Pioneer </item>
+        <item>"Sarju's"</item>
+        <item>Meenal</item>
+        <item>Alto</item>
+        <item>Krishi Gaurav</item>
+        <item>Pheasant Bio</item>
+        <item>Shyama</item>
+        <item>Comfomax</item>
+
+    </string-array>
+
+
+
 </resources>
