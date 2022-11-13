@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "436152574910",
+    "project_id": "token-1d1be",
+    "storage_bucket": "token-1d1be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436152574910:android:da795629dc4eed66280fef",
+        "android_client_info": {
+          "package_name": "com.kapp.bharat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436152574910-e6bd4cbumkqffrtdufjbvce1gsib0dg8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kapp.bharat",
+            "certificate_hash": "8881fdd25c090af0389a1c16daa2b5a47b80e897"
+          }
+        },
+        {
+          "client_id": "436152574910-os372bpiqkonmj215uqn3kq6mpqc7or3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_9ZSS-_ywTMUJnEcXJOGJTYh_JO6RS2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436152574910-os372bpiqkonmj215uqn3kq6mpqc7or3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
