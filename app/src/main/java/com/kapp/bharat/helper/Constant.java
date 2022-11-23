@@ -31,6 +31,7 @@ public class Constant {
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
     public static final String MOBILE = "mobile";
     public static final String ID = "id";
+    public static final String AADHAR_NUMBER = "aadhar_num";
     public static final String USER_ID = "user_id";
     public static final String DOCTOR_ID = "doctor_id";
     public static final String FEES = "fees";

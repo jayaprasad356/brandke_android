@@ -37,7 +37,7 @@ import java.util.Map;
 public class RegisterActivity extends AppCompatActivity {
 
     private Button btnSignUp;
-    private EditText etName,etEmail,etPassword,etConfirmPassword,etOccupation,etAddress,etPinCode;
+    private EditText etName,etEmail,etPassword,etConfirmPassword,etOccupation,etAddress,etPinCode,etAadharNumber;
     private Activity activity;
     private Spinner SpinGender,SpinVillage,SpinDistrict;
     CardView cvUploadAdhar;
@@ -57,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         btnSignUp = findViewById(R.id.btnRegister);
         etName = findViewById(R.id.etName);
+        etAadharNumber = findViewById(R.id.etAadhar_num);
         etPassword = findViewById(R.id.etpassword);
         etEmail = findViewById(R.id.etEmail);
         etOccupation = findViewById(R.id.etOccupation);
@@ -130,8 +131,11 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(activity, "Select District", Toast.LENGTH_SHORT).show();
             }else if (!aadhaaruploaded){
                 Toast.makeText(activity, "Upload Aadhaar Card", Toast.LENGTH_SHORT).show();
-            }
-            else{
+            }else if(etAadharNumber.getText().toString().isEmpty()) {
+                etAadharNumber.setError("Enter aadhar number");
+            }else if(etAadharNumber.getText().toString().length() <12) {
+                etAadharNumber.setError("Enter proper aadharNumber");
+            }else{
                 RegisterUser();
             }
         });
@@ -219,6 +223,7 @@ public class RegisterActivity extends AppCompatActivity {
         params.put(Constant.OCCUPATION,etOccupation.getText().toString().trim());
         params.put(Constant.GENDER,SpinGender.getSelectedItem().toString().trim());
         params.put(Constant.ADDRESS,etAddress.getText().toString().trim());
+        params.put(Constant.AADHAR_NUMBER,etAadharNumber.getText().toString().trim());
         params.put(Constant.VILLAGE,SpinVillage.getSelectedItem().toString().trim());
         params.put(Constant.PINCODE,etPinCode.getText().toString().trim());
         params.put(Constant.DISTRICT,SpinDistrict.getSelectedItem().toString().trim());
@@ -273,7 +278,6 @@ public class RegisterActivity extends AppCompatActivity {
                 ivInactive.setVisibility(View.GONE);
                 filePath = result.getUriFilePath(activity, true);
                 aadhaaruploaded = true;
-
 //                filePath = result.getUriFilePath(activity, true);
 //                Glide.with(activity).load(filePath).into(postimg);
 //                thumbnailexist = true;

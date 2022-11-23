@@ -185,6 +185,28 @@
                     android:layout_below="@id/feildOccupation"
                     android:layout_marginHorizontal="35dp"
                     android:layout_marginTop="10dp"
+                    android:hint="Aadhar number"
+                    android:textColorHint="@color/black"
+                    app:hintTextColor="@color/Primary_yellow">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAadhar_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:maxLength="12"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/LoginTextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/feildOccupation"
+                    android:layout_marginHorizontal="35dp"
+                    android:layout_marginTop="10dp"
                     android:hint="Pincode"
                     android:textColorHint="@color/black"
                     app:hintTextColor="@color/Primary_yellow">
