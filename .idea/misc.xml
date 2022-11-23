@@ -51,11 +51,11 @@
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_order.xml" value="0.20416666666666666" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_otp.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_payment.xml" value="0.19010416666666666" />
-        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_product_details.xml" value="0.20416666666666666" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_product_details.xml" value="0.2" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_register.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_sign_up.xml" value="0.18881578947368421" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
-        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_user_update.xml" value="0.20416666666666666" />
+        <entry key="..\:/brandke_android/app/src/main/res/layout/activity_user_update.xml" value="0.18" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/activity_wallet.xml" value="0.18" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/bottom_password_change.xml" value="0.20416666666666666" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/cart_model_layout.xml" value="0.20416666666666666" />
@@ -74,11 +74,6 @@
         <entry key="..\:/brandke_android/app/src/main/res/layout/protuct_list.xml" value="0.18981481481481483" />
         <entry key="..\:/brandke_android/app/src/main/res/layout/wallet_model_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/brandke_android/app/src/main/res/menu/home_menu_options.xml" value="0.18881578947368421" />
-        <entry key="..\:/brandke_android__/app/src/main/res/layout/activity_cart_acitivity.xml" value="0.2989583333333333" />
-        <entry key="..\:/brandke_android__/app/src/main/res/layout/activity_checkout.xml" value="0.2989583333333333" />
-        <entry key="..\:/brandke_android__/app/src/main/res/layout/activity_product_details.xml" value="0.2989583333333333" />
-        <entry key="..\:/brandke_android__/app/src/main/res/layout/activity_register.xml" value="0.19924529018924966" />
-        <entry key="..\:/brandke_android__/app/src/main/res/layout/activity_sign_up.xml" value="0.2989583333333333" />
       </map>
     </option>
   </component>

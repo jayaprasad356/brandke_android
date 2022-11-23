@@ -134,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
             }else if(etAadharNumber.getText().toString().isEmpty()) {
                 etAadharNumber.setError("Enter aadhar number");
             }else if(etAadharNumber.getText().toString().length() <12) {
-                etAadharNumber.setError("Enter proper aadharNumber");
+                etAadharNumber.setError("Invalid aadharNumber");
             }else{
                 RegisterUser();
             }
