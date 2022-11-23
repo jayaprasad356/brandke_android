@@ -55,7 +55,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         final ExploreItemHolder holder = (ExploreItemHolder) holderParent;
         final Product product = products.get(position);
 
-        Glide.with(activity).load(product.getImage()).placeholder(R.drawable.product_img).into(holder.ImgProduct);
+        Glide.with(activity).load(product.getImage()).placeholder(R.drawable.cartempty).into(holder.ImgProduct);
         holder.tvName.setText(product.getProduct_name());
         holder.tvPrice.setText("₹ "+product.getPrice());
         holder.tvMeasurement.setText(product.getMeasurement()+product.getUnit());

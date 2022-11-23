@@ -34,11 +34,11 @@
                 android:textSize="@dimen/_14sdp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/productRecycleView"
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/toolbar" />
 
 </RelativeLayout>
