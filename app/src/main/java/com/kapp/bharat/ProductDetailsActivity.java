@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,8 +30,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     Button addbtn;
     ImageView backimg;
     ImageView imgproduct;
-    TextView tv_productname,tvdescription,brand,tvQuantity,tvMeasurement;
-    String getproductname,getdescription,getbrand,getImage;
+    TextView tv_productname,tvdescription,brand,tvQuantity,tvMeasurement,tvMrpPrice;
+    String getproductname,getdescription,getbrand,getImage,getMrp;
     Activity activity;
     Button btnAddToCart;
     ImageButton imgAdd, imgMinus;
@@ -60,6 +61,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         imgAdd = findViewById(R.id.btnAddQuantity);
         imgMinus = findViewById(R.id.btnMinusQuantity);
         tvPrice = findViewById(R.id.tvPrice);
+        tvMrpPrice = findViewById(R.id.tvMrpPrice);
 
         getproductname = getIntent().getStringExtra(Constant.PRODUCT_NAME);
         getdescription = getIntent().getStringExtra(Constant.PRODUCT_DESCRIPTION);
@@ -68,6 +70,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         Measurement = getIntent().getStringExtra(Constant.MEASUREMENT);
         ProductId = getIntent().getStringExtra(Constant.ID);
         Price = getIntent().getStringExtra(Constant.PRICE);
+        getMrp = getIntent().getStringExtra(Constant.PRODUCT_MRP);
         tvMeasurement.setText(Measurement);
 
         imgMinus.setOnClickListener(v -> addQuantity(false));
@@ -83,8 +86,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         Glide.with(activity).load(getImage).placeholder(R.drawable.product_img).into(imgproduct);
         tv_productname.setText(""+getproductname);
         tvdescription.setText(""+getdescription);
+        tvMrpPrice.setText("₹"+getMrp);
+        tvMrpPrice.setPaintFlags(tvMrpPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         brand.setText(""+getbrand);
-        tvPrice.setText(Price);
+        tvPrice.setText("₹"+Price);
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

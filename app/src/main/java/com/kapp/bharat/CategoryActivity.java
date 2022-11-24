@@ -131,12 +131,10 @@ public class CategoryActivity extends AppCompatActivity{
         TextView tvToMeasure = bottomSheetDialog.findViewById(R.id.tvToMeasure);
         RangeSlider pricerangeSlider = bottomSheetDialog.findViewById(R.id.pricerangeSlider);
         RangeSlider rangeSliderMeasure = bottomSheetDialog.findViewById(R.id.rangeSliderMeasure);
-        RangeSlider rangeSliderLiter = bottomSheetDialog.findViewById(R.id.rangeSliderLiter);
         Spinner brandSpinner = bottomSheetDialog.findViewById(R.id.brandSpinner);
-        RadioButton radio1 = bottomSheetDialog.findViewById(R.id.radio1);
-        RadioButton radio2 = bottomSheetDialog.findViewById(R.id.radio2);
-        RadioButton radioLiter = bottomSheetDialog.findViewById(R.id.radioLiter);
-        RadioButton radioMiliLiter = bottomSheetDialog.findViewById(R.id.radioMiliLiter);
+        Spinner MeasurmentSpinner = bottomSheetDialog.findViewById(R.id.MeasurmentSpinner);
+
+
 
         brandSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -193,36 +191,36 @@ public class CategoryActivity extends AppCompatActivity{
 
             }
         });
-        Measurement = radio1.getText().toString();
+        Measurement = MeasurmentSpinner.getSelectedItem().toString();
 
-        radio1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!radio1.isSelected()) {
-                    radio1.setChecked(true);
-                    radio1.setSelected(true);
-                    Measurement = radio1.getText().toString();
-                } else {
-                    radio2.setChecked(false);
-                    radio2.setSelected(false);
-                }
-            }
-        });
-        radio2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!radio2.isSelected()) {
-                    radio2.setChecked(true);
-                    radio2.setSelected(true);
-                    Measurement = radio2.getText().toString();
-                } else {
-                    radio1.setChecked(false);
-                    radio1.setSelected(false);
-                }
-            }
-        });
+//        radio1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!radio1.isSelected()) {
+//                    radio1.setChecked(true);
+//                    radio1.setSelected(true);
+//                    Measurement = radio1.getText().toString();
+//                } else {
+//                    radio2.setChecked(false);
+//                    radio2.setSelected(false);
+//                }
+//            }
+//        });
+//        radio2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!radio2.isSelected()) {
+//                    radio2.setChecked(true);
+//                    radio2.setSelected(true);
+//                    Measurement = radio2.getText().toString();
+//                } else {
+//                    radio1.setChecked(false);
+//                    radio1.setSelected(false);
+//                }
+//            }
+//        });
 
-        
+
         btnFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

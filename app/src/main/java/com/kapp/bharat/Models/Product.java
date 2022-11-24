@@ -1,9 +1,9 @@
 package com.kapp.bharat.Models;
 
 public class Product {
-    String id, product_name,category_name,image,description,brand,price,measurement,unit;
+    String id, product_name,category_name,image,description,brand,price,measurement,unit,mrp;
 
-    public Product(String id, String product_name, String category_name, String image, String description, String brand, String price, String measurement, String unit) {
+    public Product(String id, String product_name, String category_name, String image, String description, String brand, String price, String measurement, String unit, String mrp) {
         this.id = id;
         this.product_name = product_name;
         this.category_name = category_name;
@@ -13,6 +13,7 @@ public class Product {
         this.price = price;
         this.measurement = measurement;
         this.unit = unit;
+        this.mrp = mrp;
     }
 
     public String getId() {
@@ -85,5 +86,13 @@ public class Product {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    public String getMrp() {
+        return mrp;
+    }
+
+    public void setMrp(String mrp) {
+        this.mrp = mrp;
     }
 }

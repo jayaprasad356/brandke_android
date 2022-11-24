@@ -11,6 +11,8 @@
     <string name="_18">18</string>
 
     <string name="item">item</string>
+    <string name="strike">  <strike>strike </strike> </string>
+
     <string-array name="brandarray">
         <item>All</item>
         <item>John Phillips</item>
@@ -24,6 +26,17 @@
         <item>Pheasant Bio</item>
         <item>Shyama</item>
         <item>Comfomax</item>
+
+    </string-array>
+
+
+    <string-array name="Measurmentarray">
+
+        <item>kg</item>
+        <item>g</item>
+        <item>l</item>
+        <item>ml</item>
+
 
     </string-array>
 
