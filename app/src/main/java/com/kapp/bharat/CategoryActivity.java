@@ -131,9 +131,12 @@ public class CategoryActivity extends AppCompatActivity{
         TextView tvToMeasure = bottomSheetDialog.findViewById(R.id.tvToMeasure);
         RangeSlider pricerangeSlider = bottomSheetDialog.findViewById(R.id.pricerangeSlider);
         RangeSlider rangeSliderMeasure = bottomSheetDialog.findViewById(R.id.rangeSliderMeasure);
+        RangeSlider rangeSliderLiter = bottomSheetDialog.findViewById(R.id.rangeSliderLiter);
         Spinner brandSpinner = bottomSheetDialog.findViewById(R.id.brandSpinner);
         RadioButton radio1 = bottomSheetDialog.findViewById(R.id.radio1);
         RadioButton radio2 = bottomSheetDialog.findViewById(R.id.radio2);
+        RadioButton radioLiter = bottomSheetDialog.findViewById(R.id.radioLiter);
+        RadioButton radioMiliLiter = bottomSheetDialog.findViewById(R.id.radioMiliLiter);
 
         brandSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -218,6 +221,8 @@ public class CategoryActivity extends AppCompatActivity{
                 }
             }
         });
+
+        
         btnFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

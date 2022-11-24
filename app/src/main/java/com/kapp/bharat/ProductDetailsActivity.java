@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -116,6 +117,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         params.put(Constant.PRODUCT_ID,ProductId);
         params.put(Constant.QUANTITY,tvQuantity.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("res",response);
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
