@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +55,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
     String GrandTotal_ = "";
     TextView tvDiscount;
     boolean discountapplied = false;
+    final int UPI_PAYMENT = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +118,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                         Date c = Calendar.getInstance().getTime();
                         SimpleDateFormat df = new SimpleDateFormat("ddMMyyyyHHmmss", Locale.getDefault());
                         String transcId = df.format(c);
-                        makePayment(""+Double.parseDouble(GrandTotal), Constant.UPI_ID_VAL, session.getData(Constant.NAME), "Amount", transcId);
+                        payUsingUpi(""+Double.parseDouble(GrandTotal), Constant.UPI_ID_VAL, Constant.UPI_ID_VAL,transcId);
 
 
                     }catch (Exception e){
@@ -152,6 +154,101 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
 
 
     }
+    void payUsingUpi(String amount, String upiId, String name, String transcId) {
+
+        Uri uri = Uri.parse("upi://pay").buildUpon()
+                .appendQueryParameter("pa", upiId)                  // YOUR UPI ID
+                .appendQueryParameter("pn", upiId)                  // USE YOUR UPI ID NOT YOUR NAME
+                .appendQueryParameter("mc", "1234")
+                .appendQueryParameter("tid", transcId)
+                .appendQueryParameter("tr", "asgdfuyas3153")
+                .appendQueryParameter("am", amount)
+                .appendQueryParameter("mam", amount)
+                .appendQueryParameter("cu", "INR")
+                .build();
+
+
+        Intent upiPayIntent = new Intent(Intent.ACTION_VIEW);
+        upiPayIntent.setData(uri);
+        Intent chooser = Intent.createChooser(upiPayIntent, "Pay with");
+        if (null != chooser.resolveActivity(getPackageManager())) {
+            startActivityForResult(chooser, UPI_PAYMENT);
+        } else {
+            Toast.makeText(this, "No UPI app found, please install one to continue", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case UPI_PAYMENT:
+                if ((RESULT_OK == resultCode) || (resultCode == 11)) {
+                    if (data != null) {
+                        String trxt = data.getStringExtra("response");
+                        //Log.d("UPI", "onActivityResult: " + trxt);
+                        ArrayList<String> dataList = new ArrayList<>();
+                        dataList.add(trxt);
+                        upiPaymentDataOperation(dataList);
+                    } else {
+                        //Log.d("UPI", "onActivityResult: " + "Return data is null");
+                        ArrayList<String> dataList = new ArrayList<>();
+                        dataList.add("nothing");
+                        upiPaymentDataOperation(dataList);
+                    }
+                } else {
+                    //Log.d("UPI", "onActivityResult: " + "Return data is null"); //when user simply back without payment
+                    ArrayList<String> dataList = new ArrayList<>();
+                    dataList.add("nothing");
+                    upiPaymentDataOperation(dataList);
+                }
+                break;
+        }
+    }
+
+    private void upiPaymentDataOperation(ArrayList<String> data) {
+        if (ApiConfig.isConnected(activity)) {
+            String str = data.get(0);
+            //Log.d("UPIPAY", "upiPaymentDataOperation: "+str);
+            String paymentCancel = "";
+            if(str == null) str = "discard";
+            String status = "";
+            String approvalRefNo = "";
+            String response[] = str.split("&");
+            for (int i = 0; i < response.length; i++) {
+                String equalStr[] = response[i].split("=");
+                if(equalStr.length >= 2) {
+                    if (equalStr[0].toLowerCase().equals("Status".toLowerCase())) {
+                        status = equalStr[1].toLowerCase();
+                    }
+                    else if (equalStr[0].toLowerCase().equals("ApprovalRefNo".toLowerCase()) || equalStr[0].toLowerCase().equals("txnRef".toLowerCase())) {
+                        approvalRefNo = equalStr[1];
+                    }
+                }
+                else {
+                    paymentCancel = "Payment cancelled by user.";
+                }
+            }
+
+            if (status.equals("success")) {
+                //Code to handle successful transaction here.
+                Toast.makeText(activity, "Transaction successful.", Toast.LENGTH_SHORT).show();
+                // Log.d("UPI", "responseStr: "+approvalRefNo);
+                Toast.makeText(this, "YOUR ORDER HAS BEEN PLACED\n THANK YOU AND ORDER AGAIN", Toast.LENGTH_LONG).show();
+            }
+            else if("Payment cancelled by user.".equals(paymentCancel)) {
+                Toast.makeText(activity, "Payment cancelled by user.", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(activity, "Transaction failed.Please try again", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(activity, "Internet connection is not available. Please check and try again", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     private void setDiscount()
     {
@@ -175,35 +272,6 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
 
         }
     }
-
-    private void makePayment(String amount, String upi, String name, String desc, String transactionId) {
-        // on below line we are calling an easy payment method and passing
-        // all parameters to it such as upi id,name, description and others.
-        final EasyUpiPayment easyUpiPayment = new EasyUpiPayment.Builder()
-                .with(this)
-                // on below line we are adding upi id.
-                .setPayeeVpa(upi)
-                // on below line we are setting name to which we are making oayment.
-                .setPayeeName(name)
-                // on below line we are passing transaction id.
-                .setTransactionId(transactionId)
-                // on below line we are passing transaction ref id.
-                .setTransactionRefId(transactionId)
-                // on below line we are adding description to payment.
-                .setDescription(desc)
-                // on below line we are passing amount which is being paid.
-                .setAmount(amount)
-                // on below line we are calling a build method to build this ui.
-                .build();
-        // on below line we are calling a start
-        // payment method to start a payment.
-        easyUpiPayment.startPayment();
-
-        // on below line we are calling a set payment
-        // status listener method to call other payment methods.
-        easyUpiPayment.setPaymentStatusListener(this);
-    }
-
 
     private void orderProduct(String method)
     {

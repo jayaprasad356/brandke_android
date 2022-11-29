@@ -191,7 +191,18 @@ public class CategoryActivity extends AppCompatActivity{
 
             }
         });
-        Measurement = MeasurmentSpinner.getSelectedItem().toString();
+        MeasurmentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Measurement = MeasurmentSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
 //        radio1.setOnClickListener(new View.OnClickListener() {
 //            @Override

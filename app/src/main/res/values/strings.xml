@@ -33,13 +33,12 @@
     <string-array name="Measurmentarray">
 
         <item>kg</item>
-        <item>g</item>
-        <item>l</item>
-        <item>ml</item>
+        <item>Gm</item>
+        <item>Ltr</item>
+        <item>Ml</item>
 
 
     </string-array>
-
 
 
 </resources>
