@@ -96,4 +96,5 @@ public class Constant {
     public static final String UPI_ID_VAL = "ezeetailtechnologiesprivalimited@icici";
 
     public static final String PRODUCT_MRP = "mrp";
+    public static final String PRODUCT_DISCOUNT = "discount_percentage";
 }

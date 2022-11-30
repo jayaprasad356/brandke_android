@@ -30,8 +30,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
     Button addbtn;
     ImageView backimg;
     ImageView imgproduct;
-    TextView tv_productname,tvdescription,brand,tvQuantity,tvMeasurement,tvMrpPrice;
-    String getproductname,getdescription,getbrand,getImage,getMrp;
+    TextView tv_productname,tvdescription,brand,tvQuantity,tvMeasurement,tvMrpPrice,tvDiscount;
+    String getproductname,getdescription,getbrand,getImage,getMrp,getDiscount;
     Activity activity;
     Button btnAddToCart;
     ImageButton imgAdd, imgMinus;
@@ -53,6 +53,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
         tv_productname = findViewById(R.id.tv_productname);
         tvdescription = findViewById(R.id.tvdescription);
         tvMeasurement = findViewById(R.id.tvMeasurement);
+        tvDiscount = findViewById(R.id.tvDiscount);
         imgproduct = findViewById(R.id.imgproduct);
         brand = findViewById(R.id.brand);
         backimg = findViewById(R.id.backbtn);
@@ -67,11 +68,13 @@ public class ProductDetailsActivity extends AppCompatActivity {
         getdescription = getIntent().getStringExtra(Constant.PRODUCT_DESCRIPTION);
         getImage = getIntent().getStringExtra(Constant.PRODUCT_IMAGE);
         getbrand = getIntent().getStringExtra(Constant.PRODUCT_BRAND);
+        getDiscount = getIntent().getStringExtra(Constant.PRODUCT_DISCOUNT);
         Measurement = getIntent().getStringExtra(Constant.MEASUREMENT);
         ProductId = getIntent().getStringExtra(Constant.ID);
         Price = getIntent().getStringExtra(Constant.PRICE);
         getMrp = getIntent().getStringExtra(Constant.PRODUCT_MRP);
         tvMeasurement.setText(Measurement);
+        tvDiscount.setText(getDiscount+"% off");
 
         imgMinus.setOnClickListener(v -> addQuantity(false));
         imgAdd.setOnClickListener(v -> addQuantity(true));
@@ -83,7 +86,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             }
         });
         tvQuantity.setText("0");
-        Glide.with(activity).load(getImage).placeholder(R.drawable.product_img).into(imgproduct);
+        Glide.with(activity).load(getImage).placeholder(R.drawable.cartempty).into(imgproduct);
         tv_productname.setText(""+getproductname);
         tvdescription.setText(""+getdescription);
         tvMrpPrice.setText("₹"+getMrp);

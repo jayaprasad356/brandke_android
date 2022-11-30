@@ -3,6 +3,7 @@ package com.kapp.bharat.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,10 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Glide.with(activity).load(product.getImage()).placeholder(R.drawable.cartempty).into(holder.ImgProduct);
         holder.tvName.setText(product.getProduct_name());
         holder.tvPrice.setText("₹ "+product.getPrice());
+        holder.tvMrpPrice.setText("₹ "+product.getMrp());
+        holder.tvMrpPrice.setPaintFlags(holder.tvMrpPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         holder.tvMeasurement.setText(product.getMeasurement()+product.getUnit());
+        holder.tvDiscount.setText(product.getDiscount_percentage()+"% off");
         holder.btnAddcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +76,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 intent.putExtra(Constant.PRODUCT_IMAGE,product.getImage());
                 intent.putExtra(Constant.PRODUCT_BRAND,product.getBrand());
                 intent.putExtra(Constant.PRODUCT_MRP,product.getMrp());
+                intent.putExtra(Constant.PRODUCT_DISCOUNT,product.getDiscount_percentage());
                 intent.putExtra(Constant.MEASUREMENT,product.getMeasurement()+product.getUnit());
                 activity.startActivity(intent);
             }
@@ -136,7 +141,7 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     static class ExploreItemHolder extends RecyclerView.ViewHolder {
 
         final ImageView ImgProduct;
-        final TextView tvName,tvPrice,tvMeasurement;
+        final TextView tvName,tvPrice,tvMeasurement,tvMrpPrice,tvDiscount;
         final Button btnAddcart;
         public ExploreItemHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,6 +150,8 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             tvPrice = itemView.findViewById(R.id.tvPrice);
             tvMeasurement = itemView.findViewById(R.id.tvMeasurement);
             btnAddcart = itemView.findViewById(R.id.btnAddcart);
+            tvMrpPrice = itemView.findViewById(R.id.tvMrpPrice);
+            tvDiscount = itemView.findViewById(R.id.tvDiscount);
 
         }
     }

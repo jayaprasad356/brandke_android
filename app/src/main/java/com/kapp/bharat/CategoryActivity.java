@@ -256,6 +256,7 @@ public class CategoryActivity extends AppCompatActivity{
         params.put(Constant.BRAND,Brand);
         params.put(Constant.UNIT,Measurement);
         ApiConfig.RequestToVolley((result, response) -> {
+
             Log.d("PRODUCTS_RES",response);
             Log.d("PRODUCTS_PAR",CategoryId  +" - " + from + " - " + to + " - " + from_m + " - " + to_m + " - " + Brand +" - " +  Measurement);
 

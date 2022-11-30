@@ -12,7 +12,7 @@
     <com.google.android.material.card.MaterialCardView
 
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_240sdp"
+        android:layout_height="@dimen/_260sdp"
         app:strokeColor="@color/Primary_yellow"
         app:strokeWidth="@dimen/_1sdp"
         app:cardCornerRadius="@dimen/_10sdp"
@@ -69,19 +69,43 @@
                 android:padding="@dimen/_2sdp"
                 />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
             <TextView
                 android:id="@+id/tvPrice"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="399"
-                android:gravity="left"
                 android:textColor="@color/Primary_yellow"
                 android:textSize="@dimen/_14sdp"
-                android:padding="@dimen/_2sdp"
                 android:textStyle="bold"
                 />
+
+
             <TextView
-                android:visibility="gone"
+                android:layout_toRightOf="@+id/tvPrice"
+                android:id="@+id/tvDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18% off"
+                android:textAlignment="center"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textColor="@color/green"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                />
+
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:id="@+id/tvMrpPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="₹ 499"
@@ -92,6 +116,11 @@
                 android:textStyle="bold"
                 android:foreground="@drawable/strikethrough_foreground"
                 />
+
+
+
+
+
 
             <com.google.android.material.divider.MaterialDivider
                 android:layout_width="match_parent"
