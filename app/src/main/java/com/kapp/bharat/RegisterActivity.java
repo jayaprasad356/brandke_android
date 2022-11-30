@@ -223,7 +223,7 @@ public class RegisterActivity extends AppCompatActivity {
         params.put(Constant.OCCUPATION,etOccupation.getText().toString().trim());
         params.put(Constant.GENDER,SpinGender.getSelectedItem().toString().trim());
         params.put(Constant.ADDRESS,etAddress.getText().toString().trim());
-        params.put(Constant.AADHAR_NUMBER,etAadharNumber.getText().toString().trim());
+        params.put(Constant.AADHAAR_NUMBER,etAadharNumber.getText().toString().trim());
         params.put(Constant.VILLAGE,SpinVillage.getSelectedItem().toString().trim());
         params.put(Constant.PINCODE,etPinCode.getText().toString().trim());
         params.put(Constant.DISTRICT,SpinDistrict.getSelectedItem().toString().trim());
