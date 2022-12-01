@@ -50,7 +50,7 @@ public class OtpActivity extends AppCompatActivity {
     Activity activity;
     private FirebaseAuth mAuth;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
-    String TAG = "OTPACT";
+    String TAG = "OTPACT", titleText;
 
 
     @Override
@@ -60,31 +60,26 @@ public class OtpActivity extends AppCompatActivity {
         activity = OtpActivity.this;
         btnVerifyOtp = findViewById(R.id.btnVerify);
         mAuth = FirebaseAuth.getInstance();
-
+        otp_view = findViewById(R.id.otpView);
+        titleText = getIntent().getStringExtra(Constant.TITLE);
         Phone = findViewById(R.id.PhoneNumber);
         Phone.setText(getIntent().getStringExtra(Constant.MOBILE));
         MobileNumber = getIntent().getStringExtra(Constant.MOBILE);
         session = new Session(activity);
 
-        btnVerifyOtp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (otp_view.getOTP().length() == 6) {
-                    if (!mVerificationId.equals("")) {
-                        verifyPhoneNumberWithCode(mVerificationId, otp_view.getOTP().toString());
-
-                    } else {
-                        Toast.makeText(activity, "Invalid OTP", Toast.LENGTH_SHORT).show();
-                    }
-
+        btnVerifyOtp.setOnClickListener(v -> {
+            if (otp_view.getOTP().length() == 6) {
+                if (!mVerificationId.equals("")) {
+                    verifyPhoneNumberWithCode(mVerificationId, otp_view.getOTP().toString());
 
                 } else {
-                    Toast.makeText(activity, "Enter OTP", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Invalid OTP", Toast.LENGTH_SHORT).show();
                 }
 
-
+            } else {
+                Toast.makeText(activity, "Enter OTP", Toast.LENGTH_SHORT).show();
             }
+
         });
 
 
@@ -124,7 +119,6 @@ public class OtpActivity extends AppCompatActivity {
                 Log.d(TAG, "onCodeSent:" + verificationId);
 
 
-
                 mVerificationId = verificationId;
 
 
@@ -156,11 +150,17 @@ public class OtpActivity extends AppCompatActivity {
 
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-
-                            Intent intent = new Intent(OtpActivity.this, RegisterActivity.class);
-                            intent.putExtra(Constant.MOBILE, MobileNumber);
-                            startActivity(intent);
-                            finish();
+                            if (titleText.equals(Constant.FORGOT_PASSWORD)) {
+                                Intent intent = new Intent(OtpActivity.this, ForgotPasswordActivity.class);
+                                intent.putExtra(Constant.MOBILE, MobileNumber);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Intent intent = new Intent(OtpActivity.this, RegisterActivity.class);
+                                intent.putExtra(Constant.MOBILE, MobileNumber);
+                                startActivity(intent);
+                                finish();
+                            }
                             // Update UI
                         } else {
                             // Sign in failed, display a message and update the UI
@@ -186,7 +186,6 @@ public class OtpActivity extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
         // [END start_phone_auth]
     }
-
 
 
 }

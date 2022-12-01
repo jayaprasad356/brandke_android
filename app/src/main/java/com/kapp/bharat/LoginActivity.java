@@ -26,50 +26,57 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
-    EditText etMobile,etPassword;
-    TextView tvsignupbtn;
+    EditText etMobile, etPassword;
+    TextView tvsignupbtn, forgetPassword;
     Activity activity;
     Session session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         activity = LoginActivity.this;
-        session =  new Session(activity);
+        session = new Session(activity);
 
         tvsignupbtn = findViewById(R.id.tvsignupbtn);
         etMobile = findViewById(R.id.etMobile);
+        forgetPassword = findViewById(R.id.forgotpassword);
         etPassword = findViewById(R.id.etPassword);
         tvsignupbtn.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
-            intent.putExtra(Constant.MOBILE,etMobile.getText().toString().trim());
+            intent.putExtra(Constant.TITLE, "Sign up");
+            intent.putExtra(Constant.MOBILE, etMobile.getText().toString().trim());
             startActivity(intent);
         });
         btnLogin = findViewById(R.id.btnLogin);
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                intent.putExtra(Constant.TITLE, Constant.FORGOT_PASSWORD);
+                startActivity(intent);
+            }
+        });
 
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (etMobile.getText().toString().trim().equals("")){
+                if (etMobile.getText().toString().trim().equals("")) {
                     etMobile.setError("Enter Mobile Number");
                     etMobile.requestFocus();
-                }
-                else if (etPassword.getText().toString().trim().equals("")){
+                } else if (etPassword.getText().toString().trim().equals("")) {
                     etPassword.setError("Enter Password");
                     etPassword.requestFocus();
-                }
-                else if (etMobile.getText().length() != 10){
+                } else if (etMobile.getText().length() != 10) {
                     etMobile.setError("Invalid");
                     etMobile.requestFocus();
-                }
-                else if (etPassword.getText().length() < 5){
+                } else if (etPassword.getText().length() < 5) {
                     etPassword.setError("Weak Password");
                     etPassword.requestFocus();
-                }
-                else{
+                } else {
                     loginUser();
                 }
             }
@@ -79,10 +86,10 @@ public class LoginActivity extends AppCompatActivity {
     private void loginUser() {
 
         Map<String, String> params = new HashMap<>();
-        params.put(Constant.MOBILE,etMobile.getText().toString().trim());
-        params.put(Constant.PASSWORD,etPassword.getText().toString().trim());
+        params.put(Constant.MOBILE, etMobile.getText().toString().trim());
+        params.put(Constant.PASSWORD, etPassword.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
-            Log.d("LOGIN_RES",etMobile.getText().toString().trim() + etPassword.getText().toString().trim());
+            Log.d("LOGIN_RES", etMobile.getText().toString().trim() + etPassword.getText().toString().trim());
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -90,21 +97,20 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
                         JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
                         session.setBoolean("is_logged_in", true);
-                        session.setData(Constant.ID,jsonArray.getJSONObject(0).getString(Constant.ID));
-                        session.setData(Constant.NAME,jsonArray.getJSONObject(0).getString(Constant.NAME));
-                        session.setData(Constant.MOBILE,jsonArray.getJSONObject(0).getString(Constant.MOBILE));
-                        session.setData(Constant.PINCODE,jsonArray.getJSONObject(0).getString(Constant.PINCODE));
+                        session.setData(Constant.ID, jsonArray.getJSONObject(0).getString(Constant.ID));
+                        session.setData(Constant.NAME, jsonArray.getJSONObject(0).getString(Constant.NAME));
+                        session.setData(Constant.MOBILE, jsonArray.getJSONObject(0).getString(Constant.MOBILE));
+                        session.setData(Constant.PINCODE, jsonArray.getJSONObject(0).getString(Constant.PINCODE));
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
-                    }
-                    else {
+                    } else {
                         Toast.makeText(LoginActivity.this, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
                     }
-                } catch (JSONException e){
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }, LoginActivity.this, Constant.LOGIN_URL, params,true);
+        }, LoginActivity.this, Constant.LOGIN_URL, params, true);
 
     }
 }

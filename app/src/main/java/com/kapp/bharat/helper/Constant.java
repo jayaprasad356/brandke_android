@@ -94,6 +94,8 @@ public class Constant {
     public static final String MEASUREMENT = "measurement";
     public static final String NEW_USER = "new user";
     public static final String UPI_ID_VAL = "ezeetailtechnologiesprivalimited@icici";
+    public static final String TITLE = "title";
+    public static final String FORGOT_PASSWORD = "Forgot Password";
 
     public static final String PRODUCT_MRP = "mrp";
     public static final String PRODUCT_DISCOUNT = "discount_percentage";

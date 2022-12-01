@@ -60,10 +60,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".TestUpiActivity"
-            android:exported="true" >
-
+            android:name=".ForgotPasswordActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
+        <activity
+            android:name=".TestUpiActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".OrderViewActivity"
             android:exported="false" />
@@ -72,7 +77,7 @@
             android:exported="false" />
         <activity
             android:name=".FilterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".CategoryListActivity"
             android:exported="true" />
@@ -99,7 +104,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".PaymentActivity"
@@ -127,7 +131,7 @@
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".OtpActivity"
             android:exported="false" />
