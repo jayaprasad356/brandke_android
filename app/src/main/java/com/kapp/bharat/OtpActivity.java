@@ -73,7 +73,6 @@ public class OtpActivity extends AppCompatActivity {
             if (otp_view.getOTP().length() == 6) {
                 if (Integer.parseInt(otp_view.getOTP()) == otp) {
                     verifyPhoneNumberOtp();
-                    //verifyPhoneNumberWithCode(mVerificationId, otp_view.getOTP().toString());
 
                 } else {
                     Toast.makeText(activity, "Invalid OTP", Toast.LENGTH_SHORT).show();
@@ -84,50 +83,6 @@ public class OtpActivity extends AppCompatActivity {
             }
 
         });
-
-
-        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-            @Override
-            public void onVerificationCompleted(PhoneAuthCredential credential) {
-
-                Log.d(TAG, "onVerificationCompleted:" + credential);
-
-                signInWithPhoneAuthCredential(credential);
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-                // This callback is invoked in an invalid request for verification is made,
-                // for instance if the the phone number format is not valid.
-                Log.w(TAG, "onVerificationFailed", e);
-                Toast.makeText(activity, "123", Toast.LENGTH_SHORT).show();
-
-
-                if (e instanceof FirebaseAuthInvalidCredentialsException) {
-                    // Invalid request
-                } else if (e instanceof FirebaseTooManyRequestsException) {
-                    // The SMS quota for the project has been exceeded
-                }
-
-                // Show a message and update the UI
-            }
-
-            @Override
-            public void onCodeSent(@NonNull String verificationId,
-                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
-                // The SMS verification code has been sent to the provided phone number, we
-                // now need to ask the user to enter the code and then construct a credential
-                // by combining the code with a verification ID.
-                Log.d(TAG, "onCodeSent:" + verificationId);
-
-
-                mVerificationId = verificationId;
-
-
-            }
-        };
-        //  startPhoneNumberVerification("+91" + MobileNumber);
         generateOTP();
 
     }
@@ -157,65 +112,5 @@ public class OtpActivity extends AppCompatActivity {
             }
         }, OtpActivity.this, url, null, true);
     }
-
-    private void verifyPhoneNumberWithCode(String verificationId, String code) {
-        // [START verify_with_code]
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
-        signInWithPhoneAuthCredential(credential);
-        // [END verify_with_code]
-    }
-
-    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            final String code = credential.getSmsCode();
-                            try {
-                                Thread.sleep(5000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCredential:success");
-                            if (titleText.equals(Constant.FORGOT_PASSWORD)) {
-                                Intent intent = new Intent(OtpActivity.this, ForgotPasswordActivity.class);
-                                intent.putExtra(Constant.MOBILE, MobileNumber);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                Intent intent = new Intent(OtpActivity.this, RegisterActivity.class);
-                                intent.putExtra(Constant.MOBILE, MobileNumber);
-                                startActivity(intent);
-                                finish();
-                            }
-                            // Update UI
-                        } else {
-                            // Sign in failed, display a message and update the UI
-                            Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
-                                Toast.makeText(activity, "Invalid OTP", Toast.LENGTH_SHORT).show();
-                                // The verification code entered was invalid
-                            }
-                        }
-                    }
-                });
-    }
-
-    private void startPhoneNumberVerification(String phoneNumber) {
-        // [START start_phone_auth]
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(phoneNumber)       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-        // [END start_phone_auth]
-    }
-
 
 }

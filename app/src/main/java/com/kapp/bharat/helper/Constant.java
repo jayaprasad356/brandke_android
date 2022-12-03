@@ -29,6 +29,7 @@ public class Constant {
     public static final String FILTER_LIST = BaseUrl + "filterproducts.php";
     public static final String SETTINGS_LIST = BaseUrl + "settings.php";
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
+    public static final String FORGOT_PASSWORD_URL = BaseUrl + "forgot-password.php";
     public static final String MOBILE = "mobile";
     public static final String ID = "id";
     public static final String AADHAAR_NUMBER = "aadhaar_num";
