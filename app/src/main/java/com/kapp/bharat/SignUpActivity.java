@@ -9,8 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kapp.bharat.helper.Constant;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     private Button btnSendOtp;
@@ -44,11 +48,15 @@ public class SignUpActivity extends AppCompatActivity {
                     etPhoneNumber.setError("Invaild Mobile");
                     etPhoneNumber.requestFocus();
                 } else {
-                    Intent i = new Intent(activity, OtpActivity.class);
-                    i.putExtra(Constant.MOBILE, etPhoneNumber.getText().toString());
-                    i.putExtra(Constant.TITLE, titleText);
-                    startActivity(i);
-                    registerUser();
+                    if (isValidMobileNo(etPhoneNumber.getText().toString())) {
+                        Intent i = new Intent(activity, OtpActivity.class);
+                        i.putExtra(Constant.MOBILE, etPhoneNumber.getText().toString());
+                        i.putExtra(Constant.TITLE, titleText);
+                        startActivity(i);
+                        registerUser();
+                    } else {
+                        Toast.makeText(activity, "Invaild Mobile", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }
@@ -57,5 +65,11 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void registerUser() {
 
+    }
+
+    private boolean isValidMobileNo(String moNumber) {
+        Pattern pattern = Pattern.compile("(0/91)?[7-9][0-9]{9}");
+        Matcher match = pattern.matcher(moNumber);
+        return (match.find() && match.group().equals(moNumber));
     }
 }

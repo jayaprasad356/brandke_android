@@ -49,7 +49,9 @@ public class ApiConfig extends Application {
         }
         return message;
     }
-    public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final boolean isProgress) {
+
+    public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params,
+                                       final boolean isProgress) {
         if (ProgressDisplay.mProgressBar != null) {
             ProgressDisplay.mProgressBar.setVisibility(View.GONE);
         }
@@ -84,8 +86,9 @@ public class ApiConfig extends Application {
         ApiConfig.getInstance().getRequestQueue().getCache().clear();
         ApiConfig.getInstance().addToRequestQueue(stringRequest);
     }
+
     public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final Map<String, String> fileParams) {
-        if(isConnected(activity)) {
+        if (isConnected(activity)) {
             VolleyMultiPartRequest multipartRequest = new VolleyMultiPartRequest(url,
                     response -> callback.onSuccess(true, response),
                     error -> callback.onSuccess(false, "")) {
@@ -126,6 +129,7 @@ public class ApiConfig extends Application {
         }
         return check;
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -133,6 +137,7 @@ public class ApiConfig extends Application {
 
 
     }
+
     public static void GetVolleyRequest(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final boolean isProgress) {
         if (ProgressDisplay.mProgressBar != null) {
             ProgressDisplay.mProgressBar.setVisibility(View.GONE);
@@ -168,6 +173,7 @@ public class ApiConfig extends Application {
         ApiConfig.getInstance().getRequestQueue().getCache().clear();
         ApiConfig.getInstance().addToRequestQueue(stringRequest);
     }
+
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -175,6 +181,7 @@ public class ApiConfig extends Application {
 
         return mRequestQueue;
     }
+
     public <T> void addToRequestQueue(Request<T> req) {
         req.setTag(TAG);
         getRequestQueue().add(req);

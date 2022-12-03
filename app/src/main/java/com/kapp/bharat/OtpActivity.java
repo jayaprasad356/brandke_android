@@ -33,6 +33,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import in.aabhasjindal.otptextview.OtpTextView;
@@ -40,6 +41,7 @@ import in.aabhasjindal.otptextview.OtpTextView;
 public class OtpActivity extends AppCompatActivity {
     private Button btnVerifyOtp;
     private TextView Phone;
+    private int otp;
 
     MaterialButton verifybtn;
     String MobileNumber;
@@ -69,8 +71,9 @@ public class OtpActivity extends AppCompatActivity {
 
         btnVerifyOtp.setOnClickListener(v -> {
             if (otp_view.getOTP().length() == 6) {
-                if (!mVerificationId.equals("")) {
-                    verifyPhoneNumberWithCode(mVerificationId, otp_view.getOTP().toString());
+                if (Integer.parseInt(otp_view.getOTP()) == otp) {
+                    verifyPhoneNumberOtp();
+                    //verifyPhoneNumberWithCode(mVerificationId, otp_view.getOTP().toString());
 
                 } else {
                     Toast.makeText(activity, "Invalid OTP", Toast.LENGTH_SHORT).show();
@@ -124,8 +127,35 @@ public class OtpActivity extends AppCompatActivity {
 
             }
         };
-        startPhoneNumberVerification("+91" + MobileNumber);
+        //  startPhoneNumberVerification("+91" + MobileNumber);
+        generateOTP();
 
+    }
+
+    private void verifyPhoneNumberOtp() {
+        if (titleText.equals(Constant.FORGOT_PASSWORD)) {
+            Intent intent = new Intent(OtpActivity.this, ForgotPasswordActivity.class);
+            intent.putExtra(Constant.MOBILE, MobileNumber);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(OtpActivity.this, RegisterActivity.class);
+            intent.putExtra(Constant.MOBILE, MobileNumber);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    private void generateOTP() {
+        Random random = new Random();
+        otp = random.nextInt(900000 + 10000);
+        String url = "https://sms6.rmlconnect.net/bulksms/bulksms?username=Mxcel&password=Xcel2020&type=0&dlr=1&destination=" + MobileNumber + "&source=XLSRVY&message=Dear%20User,%0A%0AYour%20OTP%20for%20Token%20App%20is%20" + otp + ".%20This%20is%20valid%20for%2010%20min,%20please%20do%20not%20share%20it%20with%20anyone.%0A%0ATeam%20Market-Xcel&entityid=1601100000000017697&tempid=1607100000000233745";
+
+        ApiConfig.RequestToVolley((result, response) -> {
+            if (result) {
+                Toast.makeText(OtpActivity.this, OtpActivity.this.getString(R.string.otp_send_success), Toast.LENGTH_SHORT).show();
+            }
+        }, OtpActivity.this, url, null, true);
     }
 
     private void verifyPhoneNumberWithCode(String verificationId, String code) {
