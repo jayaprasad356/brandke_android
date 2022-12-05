@@ -35,6 +35,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_190sdp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:src="@drawable/image" />
 
     <TextView
