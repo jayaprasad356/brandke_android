@@ -276,7 +276,7 @@ public class RegisterActivity extends AppCompatActivity {
                 tvactive.setVisibility(View.VISIBLE);
                 ivactive.setVisibility(View.VISIBLE);
                 ivInactive.setVisibility(View.GONE);
-                filePath = result.getUriFilePath(activity, true);
+              //  filePath = result.getUriFilePath(activity, true);
                 aadhaaruploaded = true;
 //                filePath = result.getUriFilePath(activity, true);
 //                Glide.with(activity).load(filePath).into(postimg);
