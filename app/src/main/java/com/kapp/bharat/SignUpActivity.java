@@ -48,15 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
                     etPhoneNumber.setError("Invaild Mobile");
                     etPhoneNumber.requestFocus();
                 } else {
-                    if (isValidMobileNo(etPhoneNumber.getText().toString())) {
-                        Intent i = new Intent(activity, OtpActivity.class);
-                        i.putExtra(Constant.MOBILE, etPhoneNumber.getText().toString());
-                        i.putExtra(Constant.TITLE, titleText);
-                        startActivity(i);
-                        registerUser();
-                    } else {
-                        Toast.makeText(activity, "Invaild Mobile", Toast.LENGTH_SHORT).show();
-                    }
+                    Intent i = new Intent(activity, OtpActivity.class);
+                    i.putExtra(Constant.MOBILE, etPhoneNumber.getText().toString());
+                    i.putExtra(Constant.TITLE, titleText);
+                    startActivity(i);
+                    registerUser();
                 }
 
             }
