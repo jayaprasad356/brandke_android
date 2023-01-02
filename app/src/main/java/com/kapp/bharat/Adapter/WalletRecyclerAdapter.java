@@ -18,7 +18,7 @@ public class WalletRecyclerAdapter extends RecyclerView.Adapter<WalletRecyclerAd
 
     private Context ctx;
     private ArrayList<WalletRecyclerModel> walletRecyclerModelArrayList;
-    WalletRecyclerAdapter(Context ctx, ArrayList<WalletRecyclerModel> walletRecyclerModelArrayList) {
+    public WalletRecyclerAdapter(Context ctx, ArrayList<WalletRecyclerModel> walletRecyclerModelArrayList) {
         this.ctx = ctx;
         this.walletRecyclerModelArrayList = walletRecyclerModelArrayList;
     }
