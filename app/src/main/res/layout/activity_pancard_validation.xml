@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fintech.AadhaarValidationActivity">
+    tools:context=".fintech.PanCardValidationActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Aadhaar Verfication"
+            android:text="PanCard Verfication"
             android:textSize="@dimen/_20sdp"
             android:fontFamily="@font/poppins_medium"
             android:layout_marginStart="20dp"
@@ -30,14 +30,14 @@
             style="@style/LoginTextInputLayoutStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Aadhaar Number"
+            android:hint="PanCardNumber"
             android:layout_margin="@dimen/_10sdp"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/Primary_yellow">
 
             <!--this is the actual edit text which takes the input-->
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edAadhaar"
+                android:id="@+id/edPan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_15sdp"
@@ -63,7 +63,7 @@
             android:background="@drawable/card_shadow"
             android:layout_margin="@dimen/_5sdp"
             android:padding="@dimen/_10sdp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,9 +75,9 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_15sdp"
-                    android:text="Aadhaar Number :"/>
+                    android:text="Pan Number :"/>
                 <TextView
-                    android:id="@+id/tvAadhaar"
+                    android:id="@+id/tvPanNumber"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/darkgray"
@@ -96,9 +96,9 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_15sdp"
-                    android:text="Age range :"/>
+                    android:text="First Name :"/>
                 <TextView
-                    android:id="@+id/tvAgerange"
+                    android:id="@+id/tvFirstName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/darkgray"
@@ -117,9 +117,9 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_15sdp"
-                    android:text="State :"/>
+                    android:text="Middle Name :"/>
                 <TextView
-                    android:id="@+id/tvState"
+                    android:id="@+id/tvMiddleName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/darkgray"
@@ -138,9 +138,9 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_15sdp"
-                    android:text="Gender :"/>
+                    android:text="Last Name :"/>
                 <TextView
-                    android:id="@+id/tvGender"
+                    android:id="@+id/tvLastName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/darkgray"
@@ -159,9 +159,9 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="@dimen/_15sdp"
-                    android:text="Mobile Linked :"/>
+                    android:text="Title :"/>
                 <TextView
-                    android:id="@+id/tvMobileLinked"
+                    android:id="@+id/tvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/darkgray"

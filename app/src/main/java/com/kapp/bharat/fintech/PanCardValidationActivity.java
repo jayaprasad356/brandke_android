@@ -24,33 +24,33 @@ import java.util.Map;
 
 public class PanCardValidationActivity extends AppCompatActivity {
     Activity activity;
-    EditText edAadhaar;
+    EditText edPan;
     Button btnValidate;
     LinearLayout liResult;
-    TextView tvAadhaar,tvAgerange,tvState,tvGender,tvMobileLinked;
+    TextView tvPan,tvLastname,tvFirstName,tvMiddleName,tvLastTile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aadhaar_validation);
+        setContentView(R.layout.activity_pancard_validation);
         activity = PanCardValidationActivity.this;
-        edAadhaar = findViewById(R.id.edAadhaar);
+        edPan = findViewById(R.id.edPan);
         btnValidate = findViewById(R.id.btnValidate);
         liResult = findViewById(R.id.liResult);
-        tvAadhaar = findViewById(R.id.tvAadhaar);
-        tvAgerange = findViewById(R.id.tvAgerange);
-        tvState = findViewById(R.id.tvState);
-        tvGender = findViewById(R.id.tvGender);
-        tvMobileLinked = findViewById(R.id.tvMobileLinked);
+        tvPan = findViewById(R.id.tvPanNumber);
+        tvFirstName = findViewById(R.id.tvFirstName);
+        tvMiddleName = findViewById(R.id.tvMiddleName);
+        tvLastname = findViewById(R.id.tvLastName);
+        tvLastTile = findViewById(R.id.tvTitle);
 
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edAadhaar.getText().toString().trim().equals("")){
-                    Toast.makeText(activity, "Enter Aadhaar Number", Toast.LENGTH_SHORT).show();
+                if (edPan.getText().toString().trim().equals("")){
+                    Toast.makeText(activity, "Enter Pan Number", Toast.LENGTH_SHORT).show();
 
-                }else if (edAadhaar.getText().length() != 12){
-                    Toast.makeText(activity, "Invalid Aadhaar Number", Toast.LENGTH_SHORT).show();
+                }else if (edPan.getText().length() != 12){
+                    Toast.makeText(activity, "Invalid pan Number", Toast.LENGTH_SHORT).show();
 
                 }else {
                     validateAadhaar();
@@ -66,27 +66,21 @@ public class PanCardValidationActivity extends AppCompatActivity {
         Long timestamp = System.currentTimeMillis()/1000;
         Map<String, String> params = new HashMap<>();
         params.put(Constant.REFID,timestamp.toString());
-        params.put(Constant.AADHAR_NUMBER,edAadhaar.getText().toString().trim());
+        params.put(Constant.PAN,edPan.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("ADHAAR_RES",response);
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.STATUS)) {
-                        Toast.makeText(activity, "Aadhaar Details Fetched Successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(activity, "Pan Details Fetched Successfully", Toast.LENGTH_SHORT).show();
                         liResult.setVisibility(View.VISIBLE);
                         JSONObject jsonObject1 = jsonObject.getJSONObject(Constant.DATA);
-                        tvAadhaar.setText(jsonObject1.getString("aadhaar_number"));
-                        tvAgerange.setText(jsonObject1.getString("age_range"));
-                        tvState.setText(jsonObject1.getString("state"));
-                        tvGender.setText(jsonObject1.getString("gender"));
-                        if (jsonObject1.getBoolean("is_mobile")){
-                            tvMobileLinked.setText("Yes");
-
-                        }else {
-                            tvMobileLinked.setText("No");
-                        }
-
+                        tvPan.setText(jsonObject1.getString("pan_number"));
+                        tvFirstName.setText(jsonObject1.getString("first_name"));
+                        tvLastname.setText(jsonObject1.getString("last_name"));
+                        tvMiddleName.setText(jsonObject1.getString("middle_name"));
+                        tvLastTile.setText(jsonObject1.getString("title"));
 
                     } else {
                         Toast.makeText(activity, "" + String.valueOf(jsonObject.getString(Constant.MESSAGE)), Toast.LENGTH_SHORT).show();
@@ -96,7 +90,7 @@ public class PanCardValidationActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, activity, Constant.AADHAAR_VALIDATE_URL, params, true,1);
+        }, activity, Constant.PAN_VALIDATE_URL, params, true,1);
 
     }
 }
