@@ -32,7 +32,7 @@ public class Constant {
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
     public static final String FORGOT_PASSWORD_URL = BaseUrl + "forgot-password.php";
     public static final String AADHAAR_VALIDATE_URL = FintechBaseUrl + "verification/aadharcard/validate";
-    public static final String PAN_VALIDATE_URL = FintechBaseUrl + "service/pan/verify";
+    public static final String PAN_VALIDATE_URL = FintechBaseUrl + "pan/verify";
     public static final String MOBILE = "mobile";
     public static final String ID = "id";
     public static final String AADHAAR_NUMBER = "aadhaar_num";
@@ -51,7 +51,7 @@ public class Constant {
     public static final String OLDPASSWORD = "oldpassword";
     public static final String NAME = "name";
     public static final String FROM = "from";
-    public static final String PAN = "pannumber";
+    public static final String PANNUMBER = "pannumber";
     public static final String FROM_M = "from_m";
     public static final String TO_M = "to_m";
     public static final String BRAND = "brand";
@@ -82,6 +82,7 @@ public class Constant {
     public static final String DATE = "date";
     public static final String STATUS = "status";
     public static final String REFID = "refid";
+    public static final String REFERENCEID = "referenceid";
     public static final String AADHAR_NUMBER = "aadhar_number";
     public static final String CART_ITEMS = "cart_items";
     public static final String SUB_TOTAL = "sub_total";

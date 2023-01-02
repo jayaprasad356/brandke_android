@@ -6,15 +6,12 @@ import android.os.Bundle;
 
 import com.kapp.bharat.Adapter.WalletRecyclerAdapter;
 import com.kapp.bharat.Models.WalletRecyclerModel;
-import com.kapp.bharat.databinding.ActivityWalletX2Binding;
-
 import java.util.ArrayList;
 
 public class WalletX2Activity extends AppCompatActivity {
 
 
     private WalletRecyclerAdapter walletRecyclerAdapter;
-    private ActivityWalletX2Binding binding;
     private ArrayList<WalletRecyclerModel> walletRecyclerModelArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class AadhaarValidationActivity extends AppCompatActivity {
     EditText edAadhaar;
     Button btnValidate;
     LinearLayout liResult;
+    ImageView imgBack;
     TextView tvAadhaar,tvAgerange,tvState,tvGender,tvMobileLinked;
 
     @Override
@@ -45,6 +47,14 @@ public class AadhaarValidationActivity extends AppCompatActivity {
         tvState = findViewById(R.id.tvState);
         tvGender = findViewById(R.id.tvGender);
         tvMobileLinked = findViewById(R.id.tvMobileLinked);
+        imgBack = findViewById(R.id.imgBack);
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override

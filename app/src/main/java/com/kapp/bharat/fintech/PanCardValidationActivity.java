@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class PanCardValidationActivity extends AppCompatActivity {
     Activity activity;
@@ -28,6 +31,7 @@ public class PanCardValidationActivity extends AppCompatActivity {
     Button btnValidate;
     LinearLayout liResult;
     TextView tvPan,tvLastname,tvFirstName,tvMiddleName,tvLastTile;
+    ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +46,37 @@ public class PanCardValidationActivity extends AppCompatActivity {
         tvMiddleName = findViewById(R.id.tvMiddleName);
         tvLastname = findViewById(R.id.tvLastName);
         tvLastTile = findViewById(R.id.tvTitle);
+        imgBack = findViewById(R.id.imgBack);
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String s = edPan.getText().toString().trim(); // get your editext value here
+                Pattern pattern = Pattern.compile("[A-Z]{5}[0-9]{4}[A-Z]{1}");
+
+                Matcher matcher = pattern.matcher(s);
+// Check if pattern matches
+
+
                 if (edPan.getText().toString().trim().equals("")){
                     Toast.makeText(activity, "Enter Pan Number", Toast.LENGTH_SHORT).show();
 
-                }else if (edPan.getText().length() != 12){
-                    Toast.makeText(activity, "Invalid pan Number", Toast.LENGTH_SHORT).show();
-
                 }else {
-                    validateAadhaar();
+                    if (matcher.matches()) {
+                        validatePan();
+                    }else {
+                        Toast.makeText(activity, "Invalid Pan Number", Toast.LENGTH_SHORT).show();
+
+
+                    }
+
                 }
 
             }
@@ -62,11 +85,11 @@ public class PanCardValidationActivity extends AppCompatActivity {
 
     }
 
-    private void validateAadhaar() {
+    private void validatePan() {
         Long timestamp = System.currentTimeMillis()/1000;
         Map<String, String> params = new HashMap<>();
-        params.put(Constant.REFID,timestamp.toString());
-        params.put(Constant.PAN,edPan.getText().toString().trim());
+        params.put(Constant.REFERENCEID,timestamp.toString());
+        params.put(Constant.PANNUMBER,edPan.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("ADHAAR_RES",response);
             if (result) {
