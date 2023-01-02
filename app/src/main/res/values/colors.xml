@@ -12,7 +12,9 @@
     <color name="Secondary_yellow">#9E7100</color>
     <color name="green">#059176</color>
     <color name="gray">#EEEEEE</color>
+    <color name="darkgray">#575757</color>
     <color name="red">#d32f2f</color>
+    <color name="trans_white">#F2FFFFFF</color>
 
 
 </resources>

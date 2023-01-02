@@ -235,7 +235,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                 //Code to handle successful transaction here.
                 Toast.makeText(activity, "Transaction successful.", Toast.LENGTH_SHORT).show();
                 // Log.d("UPI", "responseStr: "+approvalRefNo);
-                Toast.makeText(this, "YOUR ORDER HAS BEEN PLACED\n THANK YOU AND ORDER AGAIN", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, "YOUR ORDER HAS BEEN PLACED\n THANK YOU AND ORDER AGAIN", Toast.LENGTH_LONG).show();
             }
             else if("Payment cancelled by user.".equals(paymentCancel)) {
                 Toast.makeText(activity, "Payment cancelled by user.", Toast.LENGTH_SHORT).show();

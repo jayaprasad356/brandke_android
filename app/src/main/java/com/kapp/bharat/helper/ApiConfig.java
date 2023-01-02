@@ -6,8 +6,11 @@ import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -15,12 +18,18 @@ import com.android.volley.NetworkError;
 import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.ServerError;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class ApiConfig extends Application {
@@ -49,6 +58,64 @@ public class ApiConfig extends Application {
         }
         return message;
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final boolean isProgress, int method) {
+        if (ProgressDisplay.mProgressBar != null) {
+            ProgressDisplay.mProgressBar.setVisibility(View.GONE);
+        }
+        final ProgressDisplay progressDisplay = new ProgressDisplay(activity);
+        progressDisplay.hideProgress();
+
+        if (isProgress)
+            progressDisplay.showProgress();
+        StringRequest stringRequest = new StringRequest( method, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse( String s ) {
+                if (ApiConfig.isConnected(activity))
+                    callback.onSuccess(true, s);
+                if (isProgress)
+                    progressDisplay.hideProgress();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse( VolleyError volleyError ) {
+                try {
+                    String responseBody = new String( volleyError.networkResponse.data, "utf-8" );
+                    JSONObject jsonObject = new JSONObject( responseBody );
+                    if (ApiConfig.isConnected(activity))
+                        callback.onSuccess(true, responseBody);
+                    if (isProgress)
+                        progressDisplay.hideProgress();
+                } catch ( JSONException e ) {
+                    //Handle a malformed json response
+                } catch (UnsupportedEncodingException error){
+
+                }
+            }
+        }
+        ){
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> params1 = new HashMap<>();
+                params1.put(Constant.AUTHORISEDKEY, "NzE0MDUyODNlN2M1MmIwZTI1NGEwNTkzZjdiMmIxN2E=");
+                params1.put(Constant.TOKEN, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOjE2NzI0NjMyNjksInBhcnRuZXJJZCI6IlBTMDA5NDMiLCJyZXFpZCI6IjEyMzQ1In0.O3QUN-ilqSiouQLU8Gf6VVQ_rIKS7ARgBLWOcJsIehU");
+                return params1;
+            }
+
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                return params;
+            }
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(0, 0, 0));
+        ApiConfig.getInstance().getRequestQueue().getCache().clear();
+        ApiConfig.getInstance().addToRequestQueue(stringRequest);
+    }
+
+
 
     public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params,
                                        final boolean isProgress) {

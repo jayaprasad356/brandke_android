@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/card_shadow.xml" value="0.128" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/ic_check_circle.xml" value="0.163" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/ic_grey_rupee.xml" value="0.1" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/spinner_bg.xml" value="0.165" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/whitebackground.xml" value="0.163" />
+        <entry key="..\:/Studio Projects/Brandke/app/src/main/res/drawable/yellow_outline_bg.xml" value="0.128" />
+        <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_aadhaar_validation.xml" value="0.22" />
+        <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_address.xml" value="0.17552083333333332" />
+        <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_beneficiary.xml" value="0.17552083333333332" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_cart_acitivity.xml" value="0.17552083333333332" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_category.xml" value="0.22" />
         <entry key="..\:/Studio Projects/Brandke/app/src/main/res/layout/activity_category_list.xml" value="0.17552083333333332" />

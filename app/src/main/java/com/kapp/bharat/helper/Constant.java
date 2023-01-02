@@ -5,6 +5,7 @@ public class Constant {
     //public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
     //public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
     public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
+    public static final String FintechBaseUrl = "https://paysprint.in/service-api/api/v1/service/";
     //public static final String MainBaseUrl = "http://smartgram.co/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String LOGIN_URL = BaseUrl + "login.php";
@@ -30,6 +31,7 @@ public class Constant {
     public static final String SETTINGS_LIST = BaseUrl + "settings.php";
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
     public static final String FORGOT_PASSWORD_URL = BaseUrl + "forgot-password.php";
+    public static final String AADHAAR_VALIDATE_URL = FintechBaseUrl + "verification/aadharcard/validate";
     public static final String MOBILE = "mobile";
     public static final String ID = "id";
     public static final String AADHAAR_NUMBER = "aadhaar_num";
@@ -38,6 +40,8 @@ public class Constant {
     public static final String FEES = "fees";
     public static final String TYPE = "type";
     public static final String AMOUNT = "amount";
+    public static final String AUTHORISEDKEY = "Authorisedkey";
+    public static final String TOKEN = "token";
     public static final String CATEGORY_ID = "category_id";
     public static final String PRODUCT_ID = "product_id";
     public static final String CART_ID = "cart_id";
@@ -75,6 +79,8 @@ public class Constant {
     public static final String DATA = "data";
     public static final String DATE = "date";
     public static final String STATUS = "status";
+    public static final String REFID = "refid";
+    public static final String AADHAR_NUMBER = "aadhar_number";
     public static final String CART_ITEMS = "cart_items";
     public static final String SUB_TOTAL = "sub_total";
     public static final String DELIVERY_CHARGES = "delivery_charges";
