@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Models.GiftActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        android:background="@color/Primary_yellow">
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/token_logo" />
+
+        <ImageView
+            android:id="@+id/imgcart"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_shopping_cart_yellow"
+            android:backgroundTint="@color/black"
+
+            />
+    </RelativeLayout>
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="105dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_rectangle">
+                      <ImageView
+                          android:layout_width="50dp"
+                          android:layout_height="50dp"
+                          android:background="@drawable/ic_baseline_account_circle_24"
+                          android:layout_gravity="center_horizontal"
+                          android:layout_marginTop="@dimen/_5sdp"/>
+                    <TextView
+                        android:layout_width="105dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:text="Create Current Account"
+                        android:gravity="center_horizontal|top"
+                        />
+
+
+
+                </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_23sdp"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="105dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_rectangle">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/img"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+                    <TextView
+                        android:layout_width="105dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:text="Saving Account Opening"
+                        android:gravity="center_horizontal|top"
+                        />
+
+
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="105dp"
+                        android:layout_height="125dp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:background="@drawable/ic_rectangle">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/ic_bus" />
+
+                        <TextView
+                            android:layout_width="105dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentLeft="true"
+
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="70dp"
+                            android:gravity="center_horizontal|top"
+                            android:text="Bus Booking" />
+
+
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="105dp"
+                            android:layout_height="125dp"
+                            android:background="@drawable/ic_rectangle">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/img_6"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"/>
+                            <TextView
+                                android:layout_width="105dp"
+                                android:layout_height="42dp"
+                                android:layout_alignParentLeft="true"
+
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="70dp"
+                                android:text="Fastag Rechrage"
+                                android:gravity="center_horizontal|top"
+                                />
+
+
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_23sdp"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="105dp"
+                                android:layout_height="125dp"
+                                android:background="@drawable/ic_rectangle">
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/img_8"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_5sdp"/>
+                                <TextView
+                                    android:layout_width="105dp"
+                                    android:layout_height="42dp"
+                                    android:layout_alignParentLeft="true"
+
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="70dp"
+                                    android:text="LIC Premium Payment"
+                                    android:gravity="center_horizontal|top"
+                                    />
+
+
+
+                            </FrameLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_23sdp"
+                                android:orientation="horizontal">
+
+                                <FrameLayout
+                                    android:layout_width="105dp"
+                                    android:layout_height="125dp"
+                                    android:layout_marginRight="@dimen/_20sdp"
+                                    android:background="@drawable/ic_rectangle">
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:background="@drawable/img_9" />
+
+                                    <TextView
+                                        android:layout_width="105dp"
+                                        android:layout_height="42dp"
+                                        android:layout_alignParentLeft="true"
+
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginTop="70dp"
+                                        android:gravity="center_horizontal|top"
+                                        android:text="Pan Verification" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="105dp"
+                android:layout_height="125dp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/img_1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:text="Aadhar Verification"
+                    android:gravity="center_horizontal|top"
+                    />
+
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_23sdp"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="105dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_rectangle">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/img_2"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+                    <TextView
+                        android:layout_width="105dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:text="AePS &amp; Aadhar Pay"
+                        android:gravity="center_horizontal|top"
+                        />
+
+
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="105dp"
+                        android:layout_height="125dp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:background="@drawable/ic_rectangle">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/calculator" />
+
+                        <TextView
+                            android:layout_width="105dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentLeft="true"
+
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="70dp"
+                            android:gravity="center_horizontal|top"
+                            android:text="MATM" />
+
+
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="105dp"
+                            android:layout_height="125dp"
+                            android:background="@drawable/ic_rectangle">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/img_2"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"/>
+                            <TextView
+                                android:layout_width="105dp"
+                                android:layout_height="42dp"
+                                android:layout_alignParentLeft="true"
+
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="70dp"
+                                android:text="Create Current Account"
+                                android:gravity="center_horizontal|top"
+                                />
+
+
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_23sdp"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="105dp"
+                                android:layout_height="125dp"
+                                android:background="@drawable/ic_rectangle">
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/img_10"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_5sdp"/>
+                                <TextView
+                                    android:layout_width="105dp"
+                                    android:layout_height="42dp"
+                                    android:layout_alignParentLeft="true"
+
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="70dp"
+                                    android:text="Gst Verification"
+                                    android:gravity="center_horizontal|top"
+                                    />
+
+
+
+                            </FrameLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_23sdp"
+                                android:orientation="horizontal">
+
+                                <FrameLayout
+                                    android:layout_width="105dp"
+                                    android:layout_height="125dp"
+                                    android:layout_marginRight="@dimen/_20sdp"
+                                    android:background="@drawable/ic_rectangle">
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:background="@drawable/img_11" />
+
+                                    <TextView
+                                        android:layout_width="105dp"
+                                        android:layout_height="42dp"
+                                        android:layout_alignParentLeft="true"
+
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginTop="70dp"
+                                        android:gravity="center_horizontal|top"
+                                        android:text="OTT" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="105dp"
+                android:layout_height="125dp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/img_3"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:text="DMT"
+                    android:gravity="center_horizontal|top"
+                    />
+
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_23sdp"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="105dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_rectangle">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/img_4"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+                    <TextView
+                        android:layout_width="105dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:text="BBPS"
+                        android:gravity="center_horizontal|top"
+                        />
+
+
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="105dp"
+                        android:layout_height="125dp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:background="@drawable/ic_rectangle">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/img_5" />
+
+                        <TextView
+                            android:layout_width="105dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentLeft="true"
+
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="70dp"
+                            android:gravity="center_horizontal|top"
+                            android:text="LPG Clyinder Booking" />
+
+
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:orientation="horizontal">
+                        <FrameLayout
+                            android:layout_width="105dp"
+                            android:layout_height="125dp"
+                            android:background="@drawable/ic_rectangle">
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:background="@drawable/img_12"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_5sdp"/>
+                            <TextView
+                                android:layout_width="105dp"
+                                android:layout_height="42dp"
+                                android:layout_alignParentLeft="true"
+
+                                android:layout_alignParentTop="true"
+                                android:layout_marginTop="70dp"
+                                android:text="SMS"
+                                android:gravity="center_horizontal|top"
+                                />
+
+
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_23sdp"
+                            android:orientation="horizontal">
+                            <FrameLayout
+                                android:layout_width="105dp"
+                                android:layout_height="125dp"
+                                android:background="@drawable/ic_rectangle">
+                                <ImageView
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:background="@drawable/img_13"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/_5sdp"/>
+                                <TextView
+                                    android:layout_width="105dp"
+                                    android:layout_height="42dp"
+                                    android:layout_alignParentLeft="true"
+
+                                    android:layout_alignParentTop="true"
+                                    android:layout_marginTop="70dp"
+                                    android:text="Saving Account Opening"
+                                    android:gravity="center_horizontal|top"
+                                    />
+
+
+
+                            </FrameLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_23sdp"
+                                android:orientation="horizontal">
+
+                                <FrameLayout
+                                    android:layout_width="105dp"
+                                    android:layout_height="125dp"
+                                    android:layout_marginRight="@dimen/_20sdp"
+                                    android:background="@drawable/ic_rectangle">
+
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_gravity="center_horizontal"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:background="@drawable/img_14" />
+
+                                    <TextView
+                                        android:layout_width="105dp"
+                                        android:layout_height="42dp"
+                                        android:layout_alignParentLeft="true"
+
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginTop="70dp"
+                                        android:gravity="center_horizontal|top"
+                                        android:text="Bus Booking" />
+
+
+                                </FrameLayout>
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:orientation="horizontal">
+            <FrameLayout
+                android:layout_width="105dp"
+                android:layout_height="125dp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/img_6"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="105dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="70dp"
+                    android:text="GAS Payments"
+                    android:gravity="center_horizontal|top"
+                    />
+
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_23sdp"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="105dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/ic_rectangle">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/img_7"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_5sdp"/>
+                    <TextView
+                        android:layout_width="105dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:text="Demat"
+                        android:gravity="center_horizontal|top"
+                        />
+
+
+
+                </FrameLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_23sdp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="105dp"
+                        android:layout_height="125dp"
+                        android:background="@drawable/ic_rectangle">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@drawable/img_6" />
+
+                        <TextView
+                            android:layout_width="105dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentLeft="true"
+
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="70dp"
+                            android:gravity="center_horizontal|top"
+                            android:text="P2P" />
+
+
+                    </FrameLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</HorizontalScrollView>
+
+
+
+    </LinearLayout>
+</RelativeLayout>
