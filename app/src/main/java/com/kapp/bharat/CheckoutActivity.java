@@ -281,7 +281,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
         params.put(Constant.USER_ID, session.getData(Constant.ID));
         params.put(Constant.METHOD, method);
         params.put(Constant.DELIVERY_CHARGES, DeliveryCharges);
-        params.put(Constant.ADDRESS, DeliveryCharges);
+        params.put(Constant.ADDRESS, Address);
         params.put(Constant.MOBILE, Mobile);
         params.put(Constant.GRAND_TOTAL, GrandTotal);
         ApiConfig.RequestToVolley((result, response) -> {
@@ -318,6 +318,7 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
+
                         DeliveryCharges = jsonObject.getString(Constant.DELIVERY_CHARGES);
                         Mobile = jsonObject.getString(Constant.MOBILE);
                         Address = jsonObject.getString(Constant.NAME) + "," + jsonObject.getString(Constant.ADDRESS);
