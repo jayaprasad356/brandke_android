@@ -65,8 +65,13 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
         session = new Session(activity);
 
         tvName = findViewById(R.id.tvName);
+        tvName.setText(session.getData(Constant.NAME));
         tvAddress = findViewById(R.id.tvAddress);
+        tvAddress.setText(session.getData(Constant.ADDRESS));
+
         tvMobile = findViewById(R.id.tvMobile);
+        tvMobile.setText(session.getData(Constant.MOBILE));
+
         tvSubtotal = findViewById(R.id.tvSubtotal);
         tvDeliverycharges = findViewById(R.id.tvDeliverycharges);
         tvGrandTotal = findViewById(R.id.tvGrandTotal);
@@ -326,9 +331,9 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                         GrandTotal_ = jsonObject.getString(Constant.GRAND_TOTAL);
                         tvSubtotal.setText(jsonObject.getString(Constant.SUB_TOTAL));
                         tvDeliverycharges.setText(DeliveryCharges);
-                        tvName.setText(jsonObject.getString(Constant.NAME));
+                        tvName.setText(session.getData(Constant.NAME));
                         tvAddress.setText(jsonObject.getString(Constant.ADDRESS));
-                        tvMobile.setText(jsonObject.getString(Constant.MOBILE));
+                        tvMobile.setText(session.getData(Constant.MOBILE));
                         tvGrandTotal.setText(GrandTotal);
                         JSONObject object = new JSONObject(response);
                         JSONArray jsonArray = object.getJSONArray(Constant.CART_ITEMS);

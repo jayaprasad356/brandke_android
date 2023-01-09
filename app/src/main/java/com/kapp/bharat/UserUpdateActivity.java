@@ -146,6 +146,7 @@ public class UserUpdateActivity extends AppCompatActivity {
         params.put(Constant.GENDER, spinGender.getSelectedItem().toString().trim());
         params.put(Constant.EMAIL, etEmail.getText().toString().trim());
         params.put(Constant.ADDRESS, etAddress.getText().toString().trim());
+        session.setData(Constant.ADDRESS,etAddress.getText().toString());
         params.put(Constant.VILLAGE, etVillageName.getText().toString().trim());
         params.put(Constant.PINCODE, etPincode.getText().toString().trim());
         params.put(Constant.DISTRICT, etDistrict.getText().toString().trim());
