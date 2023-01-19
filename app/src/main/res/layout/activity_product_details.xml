@@ -80,6 +80,7 @@
 
           <TextView
               android:id="@+id/tvDiscount"
+              android:visibility="gone"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="18% Discount"
