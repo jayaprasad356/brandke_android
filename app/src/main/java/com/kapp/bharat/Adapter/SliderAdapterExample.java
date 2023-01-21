@@ -2,12 +2,16 @@ package com.kapp.bharat.Adapter;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.bumptech.glide.Glide;
 import com.kapp.bharat.Models.Slide;
@@ -61,6 +65,7 @@ public class SliderAdapterExample extends
                 .placeholder(R.drawable.token_logo)
                 .into(viewHolder.imageViewBackground);
 
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +73,11 @@ public class SliderAdapterExample extends
             }
         });
     }
+
+
+
+
+
 
     @Override
     public int getCount() {
@@ -90,5 +100,10 @@ public class SliderAdapterExample extends
             this.itemView = itemView;
         }
     }
+
+
+
+
+
 
 }
