@@ -65,10 +65,14 @@
 
 
 
-
+          <androidx.viewpager.widget.ViewPager
+              android:id="@+id/viewpager_id"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/_150sdp"/>
 
           <com.smarteist.autoimageslider.SliderView
               android:id="@+id/image_slider"
+              android:visibility="gone"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               app:sliderAnimationDuration="600"
