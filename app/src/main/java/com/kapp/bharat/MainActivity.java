@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 
 import com.kapp.bharat.helper.ApiConfig;
@@ -93,12 +95,16 @@ public class MainActivity extends AppCompatActivity {
         Map<String, String> params = new HashMap<>();
         params.put(Constant.USER_ID,session.getData(Constant.ID));
         ApiConfig.RequestToVolley((result, response) -> {
+            Log.d("USER_DETAILS",response);
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
                         JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
                         session.setData(Constant.BALANCE,jsonArray.getJSONObject(0).getString(Constant.BALANCE));
+                        if(jsonArray.getJSONObject(0).getString(Constant.STATUS).equals("1")){
+                            session.logoutUser(activity);
+                        }
                     }
 
                 } catch (JSONException e){

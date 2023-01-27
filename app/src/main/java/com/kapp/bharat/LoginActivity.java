@@ -89,20 +89,26 @@ public class LoginActivity extends AppCompatActivity {
         params.put(Constant.MOBILE, etMobile.getText().toString().trim());
         params.put(Constant.PASSWORD, etPassword.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
-            Log.d("LOGIN_RES", etMobile.getText().toString().trim() + etPassword.getText().toString().trim());
+            Log.d("LOGIN_RES", response);
             if (result) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getBoolean(Constant.SUCCESS)) {
-                        Toast.makeText(LoginActivity.this, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
                         JSONArray jsonArray = jsonObject.getJSONArray(Constant.DATA);
-                        session.setBoolean("is_logged_in", true);
-                        session.setData(Constant.ID, jsonArray.getJSONObject(0).getString(Constant.ID));
-                        session.setData(Constant.NAME, jsonArray.getJSONObject(0).getString(Constant.NAME));
-                        session.setData(Constant.MOBILE, jsonArray.getJSONObject(0).getString(Constant.MOBILE));
-                        session.setData(Constant.PINCODE, jsonArray.getJSONObject(0).getString(Constant.PINCODE));
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+
+                        if(jsonArray.getJSONObject(0).getString(Constant.STATUS).equals("1")){
+                            Toast.makeText(activity, "You are Blocked", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+                            Toast.makeText(LoginActivity.this, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
+                            session.setBoolean("is_logged_in", true);
+                            session.setData(Constant.ID, jsonArray.getJSONObject(0).getString(Constant.ID));
+                            session.setData(Constant.NAME, jsonArray.getJSONObject(0).getString(Constant.NAME));
+                            session.setData(Constant.MOBILE, jsonArray.getJSONObject(0).getString(Constant.MOBILE));
+                            session.setData(Constant.PINCODE, jsonArray.getJSONObject(0).getString(Constant.PINCODE));
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        }
                     } else {
                         Toast.makeText(LoginActivity.this, jsonObject.getString(Constant.MESSAGE), Toast.LENGTH_SHORT).show();
                     }

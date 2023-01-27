@@ -9,13 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.kapp.bharat.fintech.AadhaarValidationActivity;
 import com.kapp.bharat.fintech.PanCardValidationActivity;
 
 public class FinTechFragmnet extends Fragment {
 
-   Button btnAadhaar,btnPancard;
+   LinearLayout laadhaar,lpan;
 
     public FinTechFragmnet() {
         // Required empty public constructor
@@ -27,17 +28,17 @@ public class FinTechFragmnet extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root =  inflater.inflate(R.layout.fragment_fin_tech_fragmnet, container, false);
-        btnAadhaar = root.findViewById(R.id.btnAadhaar);
-        btnPancard = root.findViewById(R.id.btnPancard);
+        laadhaar = root.findViewById(R.id.laadhaar);
+        lpan = root.findViewById(R.id.lpan);
 
-        btnAadhaar.setOnClickListener(new View.OnClickListener() {
+        laadhaar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), AadhaarValidationActivity.class);
                 startActivity(intent);
             }
         });
-        btnPancard.setOnClickListener(new View.OnClickListener() {
+        lpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), PanCardValidationActivity.class);

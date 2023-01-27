@@ -1,30 +1,693 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FinTechFragmnet"
     android:background="@color/white">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical">
-        <Button
-            android:id="@+id/btnAadhaar"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:text="Aadhaar Validation"/>
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/laadhaar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/aadhaarimg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Aadhaar Verification"
+                    android:textColor="@color/black"
+                    />
 
-        <Button
-            android:id="@+id/btnPancard"
-            android:layout_width="wrap_content"
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/lpan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/panimg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Pan Verification"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/ic_baseline_account_circle_24"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Current Account Opening"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:text="Pancard Validation"/>
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/savingsimg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Saving Account Opening"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Bus Booking"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/aesimg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="Aeps Aadhaar Pay"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/calculator"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="MATM"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:src="@drawable/dmtimg"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"/>
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="DMT"
+                    android:textSize="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:background="@drawable/ic_rectangle">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/bbpsimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/_8sdp"
+                    android:text="BBPS"
+                    android:textColor="@color/black"
+                    />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/lpgimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="LPG Clyinder Booking"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/gaspayimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="GAS Payments"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/dematimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Demat"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/gaspayimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Fastag Rechrage"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/licimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="LIC Premium Payment"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/gstimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="GST Verification"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/ottimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="OTT"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+
+                    android:src="@drawable/smsimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="SMS"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/bankimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Savings Account Opening"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/ottimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="OTT"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+
+                    android:src="@drawable/smsimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="SMS"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_rectangle"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_3sdp"
+                android:paddingVertical="@dimen/_10sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:src="@drawable/bankimg" />
+
+                <TextView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Savings Account Opening"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_8sdp" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
-</RelativeLayout>
+
+</ScrollView>

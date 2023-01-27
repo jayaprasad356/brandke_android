@@ -60,6 +60,7 @@ public class ApiConfig extends Application {
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public static void RequestToVolley(final VolleyCallback callback, final Activity activity, final String url, final Map<String, String> params, final boolean isProgress, int method) {
+        String Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOjE2NzI0NjMyNjksInBhcnRuZXJJZCI6IlBTMDA5NDMiLCJyZXFpZCI6IjEyMzQ1In0.O3QUN-ilqSiouQLU8Gf6VVQ_rIKS7ARgBLWOcJsIehU";
         if (ProgressDisplay.mProgressBar != null) {
             ProgressDisplay.mProgressBar.setVisibility(View.GONE);
         }
@@ -98,7 +99,7 @@ public class ApiConfig extends Application {
             public Map<String, String> getHeaders() {
                 Map<String, String> params1 = new HashMap<>();
                 params1.put(Constant.AUTHORISEDKEY, "NzE0MDUyODNlN2M1MmIwZTI1NGEwNTkzZjdiMmIxN2E=");
-                params1.put(Constant.TOKEN, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lc3RhbXAiOjE2NzI0NjMyNjksInBhcnRuZXJJZCI6IlBTMDA5NDMiLCJyZXFpZCI6IjEyMzQ1In0.O3QUN-ilqSiouQLU8Gf6VVQ_rIKS7ARgBLWOcJsIehU");
+                params1.put(Constant.TOKEN, Token);
                 return params1;
             }
 

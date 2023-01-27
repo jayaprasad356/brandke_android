@@ -60,7 +60,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".GiftActivity"
+            android:name=".Models.GiftActivity"
             android:exported="false" />
         <activity
             android:name=".fintech.PanCardValidationActivity"

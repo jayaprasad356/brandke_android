@@ -65,7 +65,7 @@
 
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="70dp"
-                        android:text="Create Current Account"
+                        android:text="Current Account Opening"
                         android:gravity="center_horizontal|top"
                         />
 
@@ -85,7 +85,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/img"
+                        android:background="@drawable/savingsimg"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_5sdp"/>
                     <TextView
@@ -177,7 +177,7 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:background="@drawable/img_8"
+                                    android:background="@drawable/licimg"
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginTop="@dimen/_5sdp"/>
                                 <TextView
@@ -285,7 +285,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/img_2"
+                        android:background="@drawable/aesimg"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_5sdp"/>
                     <TextView
@@ -347,7 +347,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/img_2"
+                                android:background="@drawable/aesimg"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="@dimen/_5sdp"/>
                             <TextView
@@ -413,7 +413,7 @@
                                         android:layout_height="50dp"
                                         android:layout_gravity="center_horizontal"
                                         android:layout_marginTop="@dimen/_5sdp"
-                                        android:background="@drawable/img_11" />
+                                        android:background="@drawable/ottimg" />
 
                                     <TextView
                                         android:layout_width="105dp"
@@ -453,7 +453,7 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/img_3"
+                    android:background="@drawable/dmtimg"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/_5sdp"/>
                 <TextView
@@ -483,7 +483,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/img_4"
+                        android:background="@drawable/bbpsimg"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/_5sdp"/>
                     <TextView
@@ -546,7 +546,7 @@
                             <ImageView
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:background="@drawable/img_12"
+                                android:background="@drawable/smsimg"
                                 android:layout_gravity="center_horizontal"
                                 android:layout_marginTop="@dimen/_5sdp"/>
                             <TextView
@@ -576,7 +576,7 @@
                                 <ImageView
                                     android:layout_width="50dp"
                                     android:layout_height="50dp"
-                                    android:background="@drawable/img_13"
+                                    android:background="@drawable/bankimg"
                                     android:layout_gravity="center_horizontal"
                                     android:layout_marginTop="@dimen/_5sdp"/>
                                 <TextView
@@ -678,12 +678,14 @@
                     android:layout_width="105dp"
                     android:layout_height="125dp"
                     android:background="@drawable/ic_rectangle">
+
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@drawable/img_7"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/_5sdp"/>
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/dematimg" />
+
                     <TextView
                         android:layout_width="105dp"
                         android:layout_height="42dp"
