@@ -41,7 +41,7 @@ public class ImageSliderAdapter extends PagerAdapter {
             View view = inflater.inflate(R.layout.item_image_slider, container, false);
 
             ImageView imageView = view.findViewById(R.id.imageView);
-            Glide.with(context).load(images.get(position)).into(imageView);
+            Glide.with(context).load(images.get(position)).placeholder(R.drawable.applogo).into(imageView);
 
             container.addView(view);
             return view;
