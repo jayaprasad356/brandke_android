@@ -48,7 +48,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     ImageView backimg;
     ImageView imgproduct;
     TextView tv_productname, tvdescription, brand, tvQuantity, tvMeasurement, tvMrpPrice, tvDiscount;
-    String getproductname, getdescription, getbrand, getImage, getMrp, getDiscount;
+    String getproductname, getdescription, getbrand, getImage, getMrp, getDiscount,image1,image2,image3;
     Activity activity;
     Button btnAddToCart;
     ImageButton imgAdd, imgMinus;
@@ -151,6 +151,10 @@ public class ProductDetailsActivity extends AppCompatActivity {
         tvMeasurement.setText(Measurement);
         tvDiscount.setText(getDiscount + "% off");
 
+        imageUrls.add(getIntent().getStringExtra(Constant.IMAGE1));
+        imageUrls.add(getIntent().getStringExtra(Constant.IMAGE2));
+        imageUrls.add(getIntent().getStringExtra(Constant.IMAGE3));
+
         imgMinus.setOnClickListener(v -> addQuantity(false));
         imgAdd.setOnClickListener(v -> addQuantity(true));
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
@@ -205,7 +209,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                            imageUrls.add(String.valueOf(jsonObject1.get("image")));
+                          //  imageUrls.add(String.valueOf(jsonObject1.get("image")));
                             if (jsonObject1 != null) {
                                 com.kapp.bharat.Models.Slide group = g.fromJson(jsonObject1.toString(), Slide.class);
                                 slides.add(group);

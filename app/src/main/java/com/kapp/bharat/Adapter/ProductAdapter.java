@@ -78,6 +78,9 @@ public class ProductAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 intent.putExtra(Constant.PRODUCT_MRP,product.getMrp());
                 intent.putExtra(Constant.PRODUCT_DISCOUNT,product.getDiscount_percentage());
                 intent.putExtra(Constant.MEASUREMENT,product.getMeasurement()+product.getUnit());
+                intent.putExtra(Constant.IMAGE1,product.getImage());
+                intent.putExtra(Constant.IMAGE2,product.getImage1());
+                intent.putExtra(Constant.IMAGE3,product.getImage2());
                 activity.startActivity(intent);
             }
         });

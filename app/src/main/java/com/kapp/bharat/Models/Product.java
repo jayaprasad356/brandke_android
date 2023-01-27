@@ -1,7 +1,36 @@
 package com.kapp.bharat.Models;
 
 public class Product {
-    String id, product_name, category_name, image, description, brand, price, measurement, unit, mrp, discount_percentage;
+    String id;
+    String product_name;
+    String category_name;
+    String image;
+    String description;
+    String brand;
+    String price;
+    String measurement;
+    String unit;
+    String mrp;
+    String discount_percentage;
+    String image1;
+    String image2;
+
+    public String getImage1() {
+        return image1;
+    }
+
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+    public String getImage2() {
+        return image2;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
 
 
     public Product(String id, String product_name, String category_name, String image, String description, String brand, String price, String measurement, String unit, String mrp, String discount_percentage) {

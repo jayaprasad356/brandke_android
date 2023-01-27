@@ -109,4 +109,9 @@ public class Constant {
 
     public static final String PRODUCT_MRP = "mrp";
     public static final String PRODUCT_DISCOUNT = "discount_percentage";
+
+
+    public static final String IMAGE1 = "image1";
+    public static final String IMAGE2 = "image2";
+    public static final String IMAGE3 = "image3";
 }
