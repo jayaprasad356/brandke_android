@@ -220,6 +220,7 @@ public class WalletFragment extends Fragment  implements PaymentStatusListener{
                 Toast.makeText(activity, "Transaction successful.", Toast.LENGTH_SHORT).show();
                 // Log.d("UPI", "responseStr: "+approvalRefNo);
                 Toast.makeText(activity, "YOUR ORDER HAS BEEN PLACED\n THANK YOU AND ORDER AGAIN", Toast.LENGTH_LONG).show();
+                rechargeWallet();
             }
             else if("Payment cancelled by user.".equals(paymentCancel)) {
                 Toast.makeText(activity, "Payment cancelled by user.", Toast.LENGTH_SHORT).show();
