@@ -76,9 +76,7 @@ public class AadhaarValidationActivity extends AppCompatActivity {
     }
 
     private void validateAadhaar() {
-        Long timestamp = System.currentTimeMillis()/1000;
         Map<String, String> params = new HashMap<>();
-        params.put(Constant.REFID,timestamp.toString());
         params.put(Constant.AADHAR_NUMBER,edAadhaar.getText().toString().trim());
         ApiConfig.RequestToVolley((result, response) -> {
             Log.d("ADHAAR_RES",response);

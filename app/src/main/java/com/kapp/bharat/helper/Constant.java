@@ -5,7 +5,7 @@ public class Constant {
     //public static final String MainBaseUrl = "https://bharat.greymatterworks.in/";
     //public static final String MainBaseUrl = "http://192.168.43.38/bharat/";
     public static final String MainBaseUrl = "https://appadmin.project-bharat.com/bharat/";
-    public static final String FintechBaseUrl = "https://paysprint.in/service-api/api/v1/service/";
+    public static final String FintechBaseUrl = "https://gmw.graymatterworks.com/";
     //public static final String MainBaseUrl = "http://smartgram.co/";
     public static final String BaseUrl = MainBaseUrl + "api/";
     public static final String LOGIN_URL = BaseUrl + "login.php";
@@ -31,7 +31,7 @@ public class Constant {
     public static final String SETTINGS_LIST = BaseUrl + "settings.php";
     public static final String CHANGE_PASSWORD_URL = BaseUrl + "changepassword.php";
     public static final String FORGOT_PASSWORD_URL = BaseUrl + "forgot-password.php";
-    public static final String AADHAAR_VALIDATE_URL = FintechBaseUrl + "verification/aadharcard/validate";
+    public static final String AADHAAR_VALIDATE_URL = FintechBaseUrl + "aadhar_validation.php";
     public static final String PAN_VALIDATE_URL = FintechBaseUrl + "pan/verify";
     public static final String MOBILE = "mobile";
     public static final String ID = "id";
