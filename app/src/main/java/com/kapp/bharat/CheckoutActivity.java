@@ -112,11 +112,10 @@ public class CheckoutActivity extends AppCompatActivity implements PaymentStatus
                     Method = "UPI";
                 }
                 int bal = Integer.parseInt(session.getData(Constant.BALANCE));
-                int gt = Integer.parseInt(GrandTotal);
-                if (Method.equals("Wallet") && bal < gt){
+                double gt = Double.parseDouble(GrandTotal);
+                if (Method.equals("Wallet") && bal < gt) {
                     Toast.makeText(activity, "You Haven't Enough Balance", Toast.LENGTH_SHORT).show();
                     return;
-
                 }
                 if (Method.equals("UPI")){
                     try {
