@@ -121,8 +121,6 @@ public class RegisterActivity extends AppCompatActivity {
                 etOccupation.setError("Occupation");
             }else if(SpinGender.getSelectedItemId() == 0){
                 Toast.makeText(activity, "Enter Gender", Toast.LENGTH_SHORT).show();
-            }else if(etAddress.getText().toString().isEmpty()){
-                etOccupation.setError("Address");
             }else if(SpinVillage.getSelectedItemId() == 0){
                 Toast.makeText(activity, "Enter Village", Toast.LENGTH_SHORT).show();
             }else if(etPinCode.getText().toString().isEmpty()){
@@ -276,7 +274,7 @@ public class RegisterActivity extends AppCompatActivity {
                 tvactive.setVisibility(View.VISIBLE);
                 ivactive.setVisibility(View.VISIBLE);
                 ivInactive.setVisibility(View.GONE);
-              //  filePath = result.getUriFilePath(activity, true);
+                filePath = result.getUriFilePath(activity, true);
                 aadhaaruploaded = true;
 //                filePath = result.getUriFilePath(activity, true);
 //                Glide.with(activity).load(filePath).into(postimg);
